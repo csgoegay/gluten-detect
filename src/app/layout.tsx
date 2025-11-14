@@ -13,27 +13,27 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "GlutenDetect - Home Gluten Test",
-  description: "The first and only home test to monitor your gluten-free diet compliance.",
+  title: "GlutenDetect - Teste Caseiro de Glúten",
+  description: "O primeiro e único teste caseiro para monitorizar a sua dieta sem glúten e proteger a sua saúde.",
 };
 
 // Footer data
 const footerLinkColumns = [
   {
-    title: 'Navigate',
+    title: 'Navegar',
     links: [
-      { label: 'Home', href: '/' },
-      { label: 'How It Works', href: '/#how-it-works' },
-      { label: 'Benefits', href: '/#benefits' },
+      { label: 'Início', href: '/' },
+      { label: 'Como Funciona', href: '/#how-it-works' },
+      { label: 'Benefícios', href: '/#benefits' },
       { label: 'FAQ', href: '/#faq' },
     ],
   },
   {
-    title: 'Support',
+    title: 'Apoio',
     links: [
-      { label: 'Contact Us', href: '/contact' },
-      { label: 'Shipping & Returns', href: '/shipping' },
-      { label: 'My Account', href: '/account' },
+      { label: 'Contacte-nos', href: '/contact' },
+      { label: 'Envio e Devoluções', href: '/shipping' },
+      { label: 'A Minha Conta', href: '/account' },
     ],
   },
 ];
@@ -52,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="pt-PT" className={inter.variable}>
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
@@ -64,11 +64,11 @@ export default function RootLayout({
           <main className="flex-grow">{children}</main>
           <Footer
             brandName={companyName}
-            brandDescription="Empowering celiac patients with the tools to confidently manage their gluten-free diet."
+            brandDescription="Capacitar os doentes celíacos com as ferramentas para gerir com confiança a sua dieta sem glúten."
             linkColumns={footerLinkColumns}
             socialLinks={footerSocialLinks}
-            copyrightText={`© ${new Date().getFullYear()} ${companyName}. All Rights Reserved.`}
-            disclaimerText="This product is not intended to diagnose, treat, cure, or prevent any disease. Consult with your healthcare provider for any medical advice."
+            copyrightText={`© ${new Date().getFullYear()} ${companyName}. Todos os Direitos Reservados.`}
+            disclaimerText="Este produto não se destina a diagnosticar, tratar, curar ou prevenir qualquer doença. Consulte o seu profissional de saúde para qualquer aconselhamento médico."
           />
         </div>
       </body>
