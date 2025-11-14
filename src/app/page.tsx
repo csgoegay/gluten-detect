@@ -4,6 +4,7 @@ import TextWithImageSection from "@/components/TextWithImageSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import ValidationSection from "@/components/ValidationSection";
 import BenefitsSection from "@/components/BenefitsSection";
+import SocialProofSection from "@/components/SocialProofSection";
 import FaqSection from "@/components/FaqSection";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
@@ -86,6 +87,65 @@ const featureData = {
   ],
 };
 
+const testimonialsData = [
+  { 
+    rating: 5, 
+    quote: "This gave me the peace of mind I was desperately looking for. So easy to use and the results are fast. Highly recommend!", 
+    author: "Sarah K." 
+  },
+  { 
+    rating: 5, 
+    quote: "Finally found the answers I needed. GlutenDetect was a game-changer for my diet and well-being.", 
+    author: "Michael P." 
+  },
+  { 
+    rating: 4.5, 
+    quote: "I was skeptical at first, but this product is incredibly accurate. It's a must-have for anyone with gluten sensitivity.", 
+    author: "Jessica L." 
+  },
+  { 
+    rating: 5, 
+    quote: "As a parent, this has been an invaluable tool for managing my child's diet. Simple, reliable, and trustworthy.", 
+    author: "David R." 
+  },
+  { 
+    rating: 5, 
+    quote: "The clarity this test provides is unmatched. No more guessing about hidden gluten in my food.", 
+    author: "Emily T." 
+  },
+  { 
+    rating: 4.5, 
+    quote: "Worth every penny. The confidence I have in my diet now is priceless.", 
+    author: "Robert M." 
+  },
+];
+
+const featuredInData = {
+  title: "As Featured In",
+  logos: [
+    { 
+      src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDoLrzlwfNS1ra7NhtAuc2BIxlTjSZBpbNIA6rQLq7b8O3hvSwec_TWbJC6_TQwvTiFc87O9t21yYokBzuCcGJT-tldk_iapnop3l1lqCrB3lr5vGLxBPYEU_t97WQQ5HBzfO49jI0tfRCtvQubjr7WQhXq6w_mKTscrLaXJWAsoCf4LvF1i8SwsbdCJ99dIYLvvLaPV_5wQtYGFyHnuJftF3IudBwi5dVQCcTGC-ji0AxQDWlb57ZxEyVcfsf4nqqteKg3MDaFfC8', 
+      alt: 'Forbes Logo' 
+    },
+    { 
+      src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBR_rY1e02n5i2eOaSYFHlQio3f6ilUanpgt3mc8ko62CL6LXj53tdrG8Ojwf3rAAWU-NkLelMqU_Oi4qO9HDVBnfG2w5s8l0DkohFA75qqw2fOLl1kUif76Lvl757WwmUc9u1UNP9uOpxAVDsu1oNZpjcuSkLoeU-4HybTs_B5PeH10pNg73ftPNeE5hEIBk_A7xFNpI7eSwdjzYXmUtex7PxqOxdyMecZD50K5uiJjY9sMhSQjGyoXPYSfm4gRNiyzE6ieLL4OrU', 
+      alt: 'Medical News Today Logo' 
+    },
+    { 
+      src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDoLrzlwfNS1ra7NhtAuc2BIxlTjSZBpbNIA6rQLq7b8O3hvSwec_TWbJC6_TQwvTiFc87O9t21yYokBzuCcGJT-tldk_iapnop3l1lqCrB3lr5vGLxBPYEU_t97WQQ5HBzfO49jI0tfRCtvQubjr7WQhXq6w_mKTscrLaXJWAsoCf4LvF1i8SwsbdCJ99dIYLvvLaPV_5wQtYGFyHnuJftF3IudBwi5dVQCcTGC-ji0AxQDWlb57ZxEyVcfsf4nqqteKg3MDaFfC8', 
+      alt: 'Healthline Logo' 
+    },
+    { 
+      src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDoLrzlwfNS1ra7NhtAuc2BIxlTjSZBpbNIA6rQLq7b8O3hvSwec_TWbJC6_TQwvTiFc87O9t21yYokBzuCcGJT-tldk_iapnop3l1lqCrB3lr5vGLxBPYEU_t97WQQ5HBzfO49jI0tfRCtvQubjr7WQhXq6w_mKTscrLaXJWAsoCf4LvF1i8SwsbdCJ99dIYLvvLaPV_5wQtYGFyHnuJftF3IudBwi5dVQCcTGC-ji0AxQDWlb57ZxEyVcfsf4nqqteKg3MDaFfC8', 
+      alt: 'WebMD Logo' 
+    },
+    { 
+      src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBR_rY1e02n5i2eOaSYFHlQio3f6ilUanpgt3mc8ko62CL6LXj53tdrG8Ojwf3rAAWU-NkLelMqU_Oi4qO9HDVBnfG2w5s8l0DkohFA75qqw2fOLl1kUif76Lvl757WwmUc9u1UNP9uOpxAVDsu1oNZpjcuSkLoeU-4HybTs_B5PeH10pNg73ftPNeE5hEIBk_A7xFNpI7eSwdjzYXmUtex7PxqOxdyMecZD50K5uiJjY9sMhSQjGyoXPYSfm4gRNiyzE6ieLL4OrU', 
+      alt: 'Celiac Foundation Logo' 
+    },
+  ]
+};
+
 const faqData = [
   {
     question: 'How accurate is the test?',
@@ -116,7 +176,6 @@ export default function Home() {
       <main className="flex-grow">
         <HeroSection
           backgroundImageUrl="https://lh3.googleusercontent.com/aida-public/AB6AXuDoLrzlwfNS1ra7NhtAuc2BIxlTjSZBpbNIA6rQLq7b8O3hvSwec_TWbJC6_TQwvTiFc87O9t21yYokBzuCcGJT-tldk_iapnop3l1lqCrB3lr5vGLxBPYEU_t97WQQ5HBzfO49jI0tfRCtvQubjr7WQhXq6w_mKTscrLaXJWAsoCf4LvF1i8SwsbdCJ99dIYLvvLaPV_5wQtYGFyHnuJftF3IudBwi5dVQCcTGC-ji0AxQDWlb57ZxEyVcfsf4nqqteKg3MDaFfC8"
-          notificationText="70% of celiac patients have intestinal damage WITHOUT symptoms."
           mainHeadline="Are you sure your gluten-free diet is really working?"
           subHeadline="The first and only home test to monitor your gluten-free diet compliance."
           buttonText="Learn How It Works"
@@ -144,6 +203,11 @@ export default function Home() {
         <BenefitsSection
           headline="Take Control of Your Gluten-Free Diet"
           benefits={benefitsData}
+        />
+        <SocialProofSection
+          headline="Join Thousands of Confident Users"
+          testimonials={testimonialsData}
+          featuredIn={featuredInData}
         />
         <FaqSection
           id="faq"

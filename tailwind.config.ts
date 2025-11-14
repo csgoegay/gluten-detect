@@ -74,6 +74,9 @@ export default {
         // Consolidated and new colors
         "primary": "#003357",
         "accent-sky": "#38bdf8",
+        // New text colors for social proof section
+        "text-main": "#101518",
+        "text-subtle": "#5A6D7C",
       },
       borderRadius: {
         lg: 'var(--radius)',
