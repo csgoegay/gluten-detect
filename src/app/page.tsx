@@ -6,6 +6,7 @@ import ValidationSection from "@/components/ValidationSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import FaqSection from "@/components/FaqSection";
 import SocialProofSection from "@/components/SocialProofSection";
+import ProductSection from "@/components/ProductSection";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const navLinks = [
@@ -169,6 +170,21 @@ const faqData = [
   },
 ];
 
+const productData = {
+  headline: "Your Complete At-Home Gluten Monitoring Kit",
+  description: "Everything you need to monitor your gluten-free diet with confidence. This kit provides a simple, reliable, and quick way to detect hidden gluten in your system.",
+  features: [
+    "Includes 5 Individual Tests",
+    "Results in Under 15 Minutes",
+    "Medically Validated Technology",
+  ],
+  price: "$79.99",
+  buttonText: "Add to Cart",
+  buttonLink: "/cart/add?product_id=123",
+  imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDoLrzlwfNS1ra7NhtAuc2BIxlTjSZBpbNIA6rQLq7b8O3hvSwec_TWbJC6_TQwvTiFc87O9t21yYokBzuCcGJT-tldk_iapnop3l1lqCrB3lr5vGLxBPYEU_t97WQQ5HBzfO49jI0tfRCtvQubjr7WQhXq6w_mKTscrLaXJWAsoCf4LvF1i8SwsbdCJ99dIYLvvLaPV_5wQtYGFyHnuJftF3IudBwi5dVQCcTGC-ji0AxQDWlb57ZxEyVcfsf4nqqteKg3MDaFfC8",
+  imageAlt: "High-quality image of the GlutenDetect Home Kit box, test cassette, and other contents displayed neatly.",
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -193,6 +209,7 @@ export default function Home() {
           headline="A Simple 3-Step Process to Peace of Mind"
           steps={processSteps}
         />
+        <ProductSection {...productData} />
         <ValidationSection
           headline="Medically Validated and Recommended by Experts"
           endorsements={endorsementData}

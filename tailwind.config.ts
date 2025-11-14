@@ -62,6 +62,7 @@ export default {
         },
         // Custom colors from the design
         "button-cta": "#2291D0",
+        "button-cta-hover": "#1f82bb",
         "background-light": "#f6f7f8",
         "background-dark": "#121b20",
         "heading-dark": "#003357",
@@ -77,6 +78,8 @@ export default {
         // New text colors for social proof section
         "text-main": "#101518",
         "text-subtle": "#5A6D7C",
+        // New colors for ProductSection
+        "price-green": "#5CA60D",
       },
       borderRadius: {
         lg: 'var(--radius)',
