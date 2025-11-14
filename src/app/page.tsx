@@ -10,27 +10,27 @@ import ProductSection from "@/components/ProductSection";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const navLinks = [
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Science', href: '#science' },
+  { label: 'Como Funciona', href: '#how-it-works' },
+  { label: 'Ciência', href: '#science' },
   { label: 'FAQ', href: '#faq' },
-  { label: 'Buy Now', href: '/buy' },
+  { label: 'Comprar Agora', href: '/buy' },
 ];
 
 const processSteps = [
   {
     iconName: 'science',
-    title: '1. Collect Sample',
-    description: 'Easily collect a urine or stool sample in the comfort of your home.',
+    title: '1. Recolha',
+    description: 'Recolha de forma fácil e privada uma amostra de urina ou fezes em casa.',
   },
   {
     iconName: 'colorize',
-    title: '2. Perform the Test',
-    description: 'Apply the sample to the test strip, just like a pregnancy test.',
+    title: '2. Teste',
+    description: 'Aplique a amostra na cassete de teste.',
   },
   {
     iconName: 'timer',
-    title: '3. Get Results',
-    description: 'Read the clear, reliable results in just 15 minutes.',
+    title: '3. Resultados',
+    description: 'Obtenha um resultado visual e claro em menos de 15 minutos.',
   },
 ];
 
