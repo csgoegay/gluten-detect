@@ -1,95 +1,143 @@
 "use client";
 
-import Link from "next/link";
+import { useState } from "react";
 
-interface FooterLink {
-  label: string;
-  href: string;
-}
+const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [isSubscribed, setIsSubscribed] = useState(false);
 
-interface FooterLinkColumn {
-  title: string;
-  links: FooterLink[];
-}
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      setIsSubscribed(true);
+      setTimeout(() => setIsSubscribed(false), 3000);
+      setEmail("");
+    }
+  };
 
-interface SocialLink {
-  name: string;
-  href: string;
-  icon: React.ReactNode;
-}
+  const footerLinks = [
+    {
+      title: "Product",
+      links: [
+        { name: "Features", href: "#features" },
+        { name: "How It Works", href: "#how-it-works" },
+        { name: "Pricing", href: "#pricing" },
+        { name: "FAQ", href: "#faq" },
+      ],
+    },
+    {
+      title: "Company",
+      links: [
+        { name: "About Us", href: "#about" },
+        { name: "Blog", href: "#blog" },
+        { name: "Careers", href: "#careers" },
+        { name: "Contact", href: "#contact" },
+      ],
+    },
+    {
+      title: "Legal",
+      links: [
+        { name: "Privacy Policy", href: "#privacy" },
+        { name: "Terms of Service", href: "#terms" },
+        { name: "Cookie Policy", href: "#cookies" },
+      ],
+    },
+  ];
 
-interface FooterProps {
-  brandName: string;
-  brandDescription: string;
-  linkColumns: FooterLinkColumn[];
-  socialLinks: SocialLink[];
-  copyrightText: string;
-  disclaimerText: string;
-}
-
-const Footer = ({
-  brandName,
-  brandDescription,
-  linkColumns,
-  socialLinks,
-  copyrightText,
-  disclaimerText,
-}: FooterProps) => {
   return (
-    <footer className="bg-primary text-white py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          {/* Column 1: Brand Identity */}
-          <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <span className="material-symbols-outlined text-3xl text-white">science</span>
-              <span className="text-2xl font-bold">{brandName}</span>
+    <footer className="bg-section-dark-blue text-white">
+      <div className="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 py-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Column 1: Brand & Newsletter */}
+            <div className="space-y-4">
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 bg-accent-gold rounded-full flex items-center justify-center">
+                  <span className="material-symbols-outlined text-white text-sm">
+                    restaurant
+                  </span>
+                </div>
+                <span className="text-xl font-bold">GlutenDetect</span>
+              </div>
+              <p className="text-gray-300 text-sm">
+                Your trusted companion for safe gluten-free dining.
+              </p>
+              <form onSubmit={handleSubscribe} className="space-y-2">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-gold"
+                  required
+                />
+                <button
+                  type="submit"
+                  className="w-full px-4 py-2 bg-accent-gold text-white rounded-md hover:bg-accent-gold/90 transition-colors"
+                >
+                  Subscribe
+                </button>
+              </form>
+              {isSubscribed && (
+                <p className="text-green-400 text-sm">Successfully subscribed!</p>
+              )}
             </div>
-            <p className="text-white/80 text-sm">{brandDescription}</p>
-          </div>
 
-          {/* Dynamic Link Columns */}
-          {linkColumns.map((column, index) => (
-            <div key={index} className="space-y-4">
-              <h3 className="text-lg font-semibold">{column.title}</h3>
+            {/* Column 2: Product Links */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold">Product</h3>
               <ul className="space-y-2">
-                {column.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
-                    <Link
+                {footerLinks[0].links.map((link, index) => (
+                  <li key={index}>
+                    <a
                       href={link.href}
-                      className="text-white/80 hover:text-white transition-colors"
+                      className="text-gray-300 hover:text-white transition-colors"
                     >
-                      {link.label}
-                    </Link>
+                      {link.name}
+                    </a>
                   </li>
                 ))}
               </ul>
             </div>
-          ))}
 
-          {/* Column 4: Follow Us */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Follow Us</h3>
-            <div className="flex space-x-4">
-              {socialLinks.map((socialLink, index) => (
-                <a
-                  key={index}
-                  href={socialLink.href}
-                  aria-label={`Follow us on ${socialLink.name}`}
-                  className="text-white/80 hover:text-white transition-colors"
-                >
-                  {socialLink.icon}
-                </a>
-              ))}
+            {/* Column 3: Company Links */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold">Company</h3>
+              <ul className="space-y-2">
+                {footerLinks[1].links.map((link, index) => (
+                  <li key={index}>
+                    <a
+                      href={link.href}
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Column 4: Legal Links */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold">Legal</h3>
+              <ul className="space-y-2">
+                {footerLinks[2].links.map((link, index) => (
+                  <li key={index}>
+                    <a
+                      href={link.href}
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
-        </div>
 
-        <hr className="border-t border-white/20 my-8" />
-        
-        <div className="text-center text-white/70 space-y-2">
-          <p className="text-sm">{copyrightText}</p>
-          <p className="text-xs">{disclaimerText}</p>
+          <div className="border-t border-white/20 mt-8 pt-8 text-center text-gray-400 text-sm">
+            <p>&copy; 2024 GlutenDetect. All rights reserved.</p>
+          </div>
         </div>
       </div>
     </footer>
