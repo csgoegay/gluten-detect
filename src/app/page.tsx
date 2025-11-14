@@ -4,6 +4,7 @@ import TextWithImageSection from "@/components/TextWithImageSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import ValidationSection from "@/components/ValidationSection";
 import BenefitsSection from "@/components/BenefitsSection";
+import FaqSection from "@/components/FaqSection";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const navLinks = [
@@ -85,6 +86,29 @@ const featureData = {
   ],
 };
 
+const faqData = [
+  {
+    question: 'How accurate is the test?',
+    answer: 'Our GlutenDetect home-testing kit is highly accurate, utilizing advanced immunochromatographic technology to detect gluten peptides with over 99% specificity and sensitivity, ensuring reliable results you can trust.',
+  },
+  {
+    question: 'How often should I test myself?',
+    answer: 'The frequency of testing depends on your lifestyle and dietary habits. For ongoing monitoring, testing after potential gluten exposure or on a regular schedule (e.g., monthly) can help ensure you are maintaining a gluten-free diet.',
+  },
+  {
+    question: 'Which test is better, urine or stool?',
+    answer: 'Both urine and stool tests are effective. Urine tests are ideal for identifying recent exposure (within 24-48 hours), while stool tests can detect gluten consumed over a longer period (up to several days).',
+  },
+  {
+    question: 'Do I need a prescription?',
+    answer: 'No, a prescription is not required to purchase the GlutenDetect home-testing kit. You can order it directly from our website.',
+  },
+  {
+    question: 'Do you ship internationally?',
+    answer: 'Yes, we ship to many countries worldwide. To see if we ship to your location, please proceed to checkout and enter your address.',
+  },
+];
+
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -120,6 +144,14 @@ export default function Home() {
         <BenefitsSection
           headline="Take Control of Your Gluten-Free Diet"
           benefits={benefitsData}
+        />
+        <FaqSection
+          id="faq"
+          headline="Have Questions? We Have Answers."
+          faqItems={faqData}
+          contactText="Still have questions?"
+          contactLinkText="Contact our support team."
+          contactLinkHref="/contact"
         />
       </main>
       <MadeWithDyad />
