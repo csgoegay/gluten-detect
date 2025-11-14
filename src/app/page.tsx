@@ -2,6 +2,7 @@ import TopNavBar from "@/components/TopNavBar";
 import HeroSection from "@/components/HeroSection";
 import TextWithImageSection from "@/components/TextWithImageSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
+import BenefitsSection from "@/components/BenefitsSection";
 import ValidationSection from "@/components/ValidationSection";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
@@ -27,6 +28,29 @@ const processSteps = [
     iconName: 'timer',
     title: '3. Get Results',
     description: 'Read the clear, reliable results in just 15 minutes.',
+  },
+];
+
+const benefitsData = [
+  {
+    iconName: 'search',
+    title: 'Early Detection',
+    description: 'Identify hidden gluten exposure before it causes long-term damage.',
+  },
+  {
+    iconName: 'monitoring',
+    title: 'Objective Monitoring',
+    description: 'Get objective data on your diet\'s effectiveness.',
+  },
+  {
+    iconName: 'health_and_safety',
+    title: 'Health Protection',
+    description: 'Prevent long-term complications associated with celiac disease.',
+  },
+  {
+    iconName: 'sentiment_satisfied',
+    title: 'Peace of Mind',
+    description: 'Live with confidence knowing your diet is truly working.',
   },
 ];
 
@@ -85,6 +109,10 @@ export default function Home() {
         <HowItWorksSection
           headline="A Simple 3-Step Process to Peace of Mind"
           steps={processSteps}
+        />
+        <BenefitsSection
+          headline="Take Control of Your Gluten-Free Diet"
+          benefits={benefitsData}
         />
         <ValidationSection
           headline="Medically Validated and Recommended by Experts"
