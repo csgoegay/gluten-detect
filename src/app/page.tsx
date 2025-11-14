@@ -1,6 +1,7 @@
 import TopNavBar from "@/components/TopNavBar";
 import HeroSection from "@/components/HeroSection";
 import TextWithImageSection from "@/components/TextWithImageSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const navLinks = [
@@ -8,6 +9,24 @@ const navLinks = [
   { label: 'Science', href: '#science' },
   { label: 'FAQ', href: '#faq' },
   { label: 'Buy Now', href: '/buy' },
+];
+
+const processSteps = [
+  {
+    iconName: 'science',
+    title: '1. Collect Sample',
+    description: 'Easily collect a urine or stool sample in the comfort of your home.',
+  },
+  {
+    iconName: 'colorize',
+    title: '2. Perform the Test',
+    description: 'Apply the sample to the test strip, just like a pregnancy test.',
+  },
+  {
+    iconName: 'timer',
+    title: '3. Get Results',
+    description: 'Read the clear, reliable results in just 15 minutes.',
+  },
 ];
 
 export default function Home() {
@@ -22,6 +41,10 @@ export default function Home() {
           subHeadline="The first and only home test to monitor your gluten-free diet compliance."
           buttonText="Learn How It Works"
           buttonLink="#how-it-works"
+        />
+        <HowItWorksSection
+          headline="A Simple 3-Step Process to Peace of Mind"
+          steps={processSteps}
         />
         <TextWithImageSection
           headline="The Silent Damage of Inadvertent Gluten Exposure"

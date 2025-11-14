@@ -68,6 +68,9 @@ export default {
         "body-dark": "#333333",
         "cta-secondary": "#00A79D",
         "cta-secondary-hover": "#008f86",
+        // New colors for How It Works section
+        "section-dark-blue": "#003357",
+        "accent-gold": "#D09000",
       },
       borderRadius: {
         lg: 'var(--radius)',
