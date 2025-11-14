@@ -137,10 +137,7 @@ const SocialProofSection = ({
         </div>
 
         {/* Featured In Section */}
-        <p className="text-text-subtle dark:text-gray-400 text-sm font-medium text-center uppercase tracking-wider mb-8 mt-16 md:mt-24">
-          {featuredIn.title}
-        </p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 items-center justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 items-center justify-items-center mt-16 md:mt-24">
           {featuredIn.logos.map((logo, index) => (
             <div key={index} className="flex items-center justify-center">
               <Image
