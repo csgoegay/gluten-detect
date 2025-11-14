@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 interface TextWithImageSectionProps {
   headline: string;
@@ -27,10 +26,7 @@ const TextWithImageSection = ({
       <div className="layout-content-container flex flex-col max-w-7xl w-full flex-1">
         <div className="@container">
           <div className={`flex flex-col gap-10 lg:gap-16 lg:items-center ${reverseLayout ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
-            <div
-              ref={useScrollAnimation({ type: 'fade-in-up', config: { duration: 500, delay: 0, easing: 'ease-out' } })}
-              className="flex flex-col gap-6 lg:gap-8 lg:w-1/2"
-            >
+            <div className="flex flex-col gap-6 lg:gap-8 lg:w-1/2">
               <div className="flex flex-col gap-4 text-left">
                 <h1 className="text-heading-dark dark:text-slate-200 text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">
                   {headline}
@@ -45,11 +41,8 @@ const TextWithImageSection = ({
                 </button>
               </Link>
             </div>
-            <div
-              ref={useScrollAnimation({ type: 'scale-in', config: { duration: 500, delay: 100, easing: 'ease-out' } })}
-              className="lg:w-1/2"
-            >
-              <div
+            <div className="lg:w-1/2">
+              <div 
                 className="w-full bg-center bg-no-repeat aspect-square sm:aspect-video lg:aspect-square bg-cover rounded-xl"
                 role="img"
                 aria-label={imageAlt}
