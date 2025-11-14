@@ -4,8 +4,8 @@ import TextWithImageSection from "@/components/TextWithImageSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import ValidationSection from "@/components/ValidationSection";
 import BenefitsSection from "@/components/BenefitsSection";
-import SocialProofSection from "@/components/SocialProofSection";
 import FaqSection from "@/components/FaqSection";
+import SocialProofSection from "@/components/SocialProofSection";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const navLinks = [
@@ -204,11 +204,6 @@ export default function Home() {
           headline="Take Control of Your Gluten-Free Diet"
           benefits={benefitsData}
         />
-        <SocialProofSection
-          headline="Join Thousands of Confident Users"
-          testimonials={testimonialsData}
-          featuredIn={featuredInData}
-        />
         <FaqSection
           id="faq"
           headline="Have Questions? We Have Answers."
@@ -216,6 +211,11 @@ export default function Home() {
           contactText="Still have questions?"
           contactLinkText="Contact our support team."
           contactLinkHref="/contact"
+        />
+        <SocialProofSection
+          headline="Join Thousands of Confident Users"
+          testimonials={testimonialsData}
+          featuredIn={featuredInData}
         />
       </main>
       <MadeWithDyad />
