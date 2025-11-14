@@ -209,7 +209,6 @@ export default function Home() {
           headline="A Simple 3-Step Process to Peace of Mind"
           steps={processSteps}
         />
-        <ProductSection {...productData} />
         <ValidationSection
           headline="Medically Validated and Recommended by Experts"
           endorsements={endorsementData}
@@ -234,6 +233,7 @@ export default function Home() {
           testimonials={testimonialsData}
           featuredIn={featuredInData}
         />
+        <ProductSection {...productData} />
       </main>
       <MadeWithDyad />
     </div>
