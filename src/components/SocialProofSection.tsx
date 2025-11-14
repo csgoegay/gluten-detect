@@ -136,19 +136,6 @@ const SocialProofSection = ({
           </div>
         </div>
 
-        {/* Featured In Section */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 items-center justify-items-center mt-16 md:mt-24">
-          {featuredIn.logos.map((logo, index) => (
-            <Image
-              key={index}
-              src={logo.src}
-              alt={logo.alt}
-              width={128}
-              height={32}
-              className="h-8 w-auto filter grayscale opacity-60 dark:invert dark:opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-            />
-          ))}
-        </div>
       </div>
     </section>
   );
