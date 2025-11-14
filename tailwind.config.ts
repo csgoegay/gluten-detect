@@ -71,6 +71,9 @@ export default {
         // New colors for How It Works section
         "section-dark-blue": "#003357",
         "accent-gold": "#D09000",
+        // Consolidated and new colors
+        "primary": "#003357",
+        "accent-sky": "#38bdf8",
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -112,5 +115,5 @@ export default {
       }
     }
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/container-queries")],
 } satisfies Config;

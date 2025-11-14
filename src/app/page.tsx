@@ -2,6 +2,7 @@ import TopNavBar from "@/components/TopNavBar";
 import HeroSection from "@/components/HeroSection";
 import TextWithImageSection from "@/components/TextWithImageSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
+import ValidationSection from "@/components/ValidationSection";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const navLinks = [
@@ -29,6 +30,37 @@ const processSteps = [
   },
 ];
 
+const endorsementData = {
+  title: 'Endorsed By',
+  items: [
+    {
+      imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDoLrzlwfNS1ra7NhtAuc2BIxlTjSZBpbNIA6rQLq7b8O3hvSwec_TWbJC6_TQwvTiFc87O9t21yYokBzuCcGJT-tldk_iapnop3l1lqCrB3lr5vGLxBPYEU_t97WQQ5HBzfO49jI0tfRCtvQubjr7WQhXq6w_mKTscrLaXJWAsoCf4LvF1i8SwsbdCJ99dIYLvvLaPV_5wQtYGFyHnuJftF3IudBwi5dVQCcTGC-ji0AxQDWlb57ZxEyVcfsf4nqqteKg3MDaFfC8',
+      imageAlt: 'Spanish Society of Celiac Disease Logo',
+      name: 'Spanish Society of Celiac Disease (SEEC)',
+    },
+    {
+      imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBR_rY1e02n5i2eOaSYFHlQio3f6ilUanpgt3mc8ko62CL6LXj53tdrG8Ojwf3rAAWU-NkLelMqU_Oi4qO9HDVBnfG2w5s8l0DkohFA75qqw2fOLl1kUif76Lvl757WwmUc9u1UNP9uOpxAVDsu1oNZpjcuSkLoeU-4HybTs_B5PeH10pNg73ftPNeE5hEIBk_A7xFNpI7eSwdjzYXmUtex7PxqOxdyMecZD50K5uiJjY9sMhSQjGyoXPYSfm4gRNiyzE6ieLL4OrU',
+      imageAlt: 'Celiac Disease Association of Aragon Logo',
+      name: 'Celiac Disease Association of Aragon',
+    },
+    {
+      imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDoLrzlwfNS1ra7NhtAuc2BIxlTjSZBpbNIA6rQLq7b8O3hvSwec_TWbJC6_TQwvTiFc87O9t21yYokBzuCcGJT-tldk_iapnop3l1lqCrB3lr5vGLxBPYEU_t97WQQ5HBzfO49jI0tfRCtvQubjr7WQhXq6w_mKTscrLaXJWAsoCf4LvF1i8SwsbdCJ99dIYLvvLaPV_5wQtYGFyHnuJftF3IudBwi5dVQCcTGC-ji0AxQDWlb57ZxEyVcfsf4nqqteKg3MDaFfC8',
+      imageAlt: 'University of Vigo Logo',
+      name: 'University of Vigo Research Group',
+    },
+  ],
+};
+
+const featureData = {
+  title: 'Based on Patented GIP Detection Technology',
+  description: 'GlutenDetect is based on a patented technology that detects gluten immunogenic peptides (GIP) in urine and stool. Its efficacy is supported by multiple peer-reviewed clinical studies, ensuring reliable and accurate results for monitoring a gluten-free diet.',
+  items: [
+    { iconName: 'check_circle', text: 'Patented technology for non-invasive gluten detection.' },
+    { iconName: 'science', text: 'Validated through extensive, peer-reviewed clinical trials.' },
+    { iconName: 'verified_user', text: 'Recommended by celiac disease experts and associations.' },
+  ],
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -53,6 +85,13 @@ export default function Home() {
         <HowItWorksSection
           headline="A Simple 3-Step Process to Peace of Mind"
           steps={processSteps}
+        />
+        <ValidationSection
+          headline="Medically Validated and Recommended by Experts"
+          endorsements={endorsementData}
+          features={featureData}
+          buttonText="View Clinical Studies"
+          buttonLink="/studies"
         />
       </main>
       <MadeWithDyad />
