@@ -64,6 +64,10 @@ export default {
         "button-cta": "#2291D0",
         "background-light": "#f6f7f8",
         "background-dark": "#121b20",
+        "heading-dark": "#003357",
+        "body-dark": "#333333",
+        "cta-secondary": "#00A79D",
+        "cta-secondary-hover": "#008f86",
       },
       borderRadius: {
         lg: 'var(--radius)',
