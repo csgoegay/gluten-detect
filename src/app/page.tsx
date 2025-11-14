@@ -2,8 +2,8 @@ import TopNavBar from "@/components/TopNavBar";
 import HeroSection from "@/components/HeroSection";
 import TextWithImageSection from "@/components/TextWithImageSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
-import BenefitsSection from "@/components/BenefitsSection";
 import ValidationSection from "@/components/ValidationSection";
+import BenefitsSection from "@/components/BenefitsSection";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const navLinks = [
@@ -110,16 +110,16 @@ export default function Home() {
           headline="A Simple 3-Step Process to Peace of Mind"
           steps={processSteps}
         />
-        <BenefitsSection
-          headline="Take Control of Your Gluten-Free Diet"
-          benefits={benefitsData}
-        />
         <ValidationSection
           headline="Medically Validated and Recommended by Experts"
           endorsements={endorsementData}
           features={featureData}
           buttonText="View Clinical Studies"
           buttonLink="/studies"
+        />
+        <BenefitsSection
+          headline="Take Control of Your Gluten-Free Diet"
+          benefits={benefitsData}
         />
       </main>
       <MadeWithDyad />
