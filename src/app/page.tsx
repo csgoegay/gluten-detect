@@ -235,7 +235,6 @@ export default function Home() {
         />
         <ProductSection {...productData} />
       </main>
-      <MadeWithDyad />
     </div>
   );
 }
