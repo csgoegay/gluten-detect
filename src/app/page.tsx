@@ -42,10 +42,6 @@ export default function Home() {
           buttonText="Learn How It Works"
           buttonLink="#how-it-works"
         />
-        <HowItWorksSection
-          headline="A Simple 3-Step Process to Peace of Mind"
-          steps={processSteps}
-        />
         <TextWithImageSection
           headline="The Silent Damage of Inadvertent Gluten Exposure"
           description="Studies show that 60-88% of celiac patients on a gluten-free diet continue to consume gluten without realizing it, leading to asymptomatic intestinal damage. Awareness and monitoring are key to preventing long-term complications."
@@ -53,6 +49,10 @@ export default function Home() {
           buttonLink="#how-it-works"
           imageUrl="https://lh3.googleusercontent.com/aida-public/AB6AXuBR_rY1e02n5i2eOaSYFHlQio3f6ilUanpgt3mc8ko62CL6LXj53tdrG8Ojwf3rAAWU-NkLelMqU_Oi4qO9HDVBnfG2w5s8l0DkohFA75qqw2fOLl1kUif76Lvl757WwmUc9u1UNP9uOpxAVDsu1oNZpjcuSkLoeU-4HybTs_B5PeH10pNg73ftPNeE5hEIBk_A7xFNpI7eSwdjzYXmUtex7PxqOxdyMecZD50K5uiJjY9sMhSQjGyoXPYSfm4gRNiyzE6ieLL4OrU"
           imageAlt="A thoughtful person carefully reading the ingredients label on a food product in a bright, modern kitchen."
+        />
+        <HowItWorksSection
+          headline="A Simple 3-Step Process to Peace of Mind"
+          steps={processSteps}
         />
       </main>
       <MadeWithDyad />
