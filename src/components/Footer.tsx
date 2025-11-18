@@ -19,10 +19,10 @@ const Footer = () => {
     {
       title: "Produto",
       links: [
-        { name: "Funcionalidades", href: "#features" },
+        { name: "Benefícios", href: "#features" },
         { name: "Como Funciona", href: "#how-it-works" },
-        { name: "Preços", href: "/404" },
-        { name: "FAQ", href: "/404" },
+        { name: "Preço", href: "/404" },
+        { name: "Perguntas Frequentes", href: "#faq" },
       ],
     },
     {
