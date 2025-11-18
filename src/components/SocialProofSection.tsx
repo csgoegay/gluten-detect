@@ -66,7 +66,7 @@ const SocialProofSection = ({
         </h1>
         
         {/* Testimonial Marquee */}
-        <div className="relative w-full py-5">
+        <div className="relative w-full py-4">
           <Marquee>
             <MarqueeFade side="left" />
             <MarqueeFade side="right" />
