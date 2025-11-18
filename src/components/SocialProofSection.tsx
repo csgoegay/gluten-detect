@@ -72,14 +72,14 @@ const SocialProofSection = ({
             <MarqueeFade side="right" />
             <MarqueeContent speed={40} pauseOnHover={true}>
               {testimonials.map((testimonial, index) => (
-                <MarqueeItem key={index} className="min-w-[280px]">
-                  <div className="flex h-full flex-col gap-4 rounded-xl bg-white dark:bg-gray-800 p-6 shadow-md">
+                <MarqueeItem key={index} className="w-80 h-64">
+                  <div className="flex h-full flex-col gap-4 rounded-xl bg-white dark:bg-gray-800 p-6 shadow-md mb-4">
                     <StarRating rating={testimonial.rating} />
-                    <div>
-                      <p className="text-text-main dark:text-gray-100 text-base font-normal leading-relaxed mb-3">
+                    <div className="flex flex-col flex-1">
+                      <p className="text-text-main dark:text-gray-100 text-base font-normal leading-relaxed mb-3 line-clamp-4">
                         {testimonial.quote}
                       </p>
-                      <p className="text-text-subtle dark:text-gray-400 text-sm font-medium">
+                      <p className="text-text-subtle dark:text-gray-400 text-sm font-medium mt-auto">
                         {testimonial.author}
                       </p>
                     </div>
