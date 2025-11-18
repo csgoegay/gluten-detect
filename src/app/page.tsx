@@ -223,7 +223,7 @@ export default function Home() {
           benefits={benefitsData}
         />
         <FaqSection
-          headline="As Suas Perguntas, Respondidas."
+          headline="As Suas Perguntas, Aqui Respondidas."
           faqItems={faqData}
           contactText="Ainda tem perguntas?"
           contactLinkText="Contacte a nossa equipa de apoio."
