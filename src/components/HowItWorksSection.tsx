@@ -20,13 +20,13 @@ const HowItWorksSection = ({ headline, steps }: HowItWorksSectionProps) => {
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {steps.map((step, index) => (
-            <div key={index} className="flex flex-1 gap-4 rounded-xl p-6 flex-col items-center text-center">
-              <div className="flex items-center justify-center h-16 w-16 mb-4 rounded-full bg-white/10">
-                <span className="material-symbols-outlined text-accent-gold">{step.iconName}</span>
+            <div key={index} className="flex flex-1 gap-4 rounded-xl p-[1.1rem] flex-col items-center text-center">
+              <div className="flex items-center justify-center h-[4.4rem] w-[4.4rem] mb-[1.1rem] rounded-full bg-white/10">
+                <span className="material-symbols-outlined text-accent-gold text-[1.1rem]">{step.iconName}</span>
               </div>
               <div className="flex flex-col gap-2">
-                <h2 className="text-white text-xl font-bold leading-tight">{step.title}</h2>
-                <p className="text-gray-300 text-base font-normal leading-relaxed">{step.description}</p>
+                <h2 className="text-white text-[1.1rem] font-bold leading-tight">{step.title}</h2>
+                <p className="text-gray-300 text-[1.1rem] font-normal leading-relaxed">{step.description}</p>
               </div>
             </div>
           ))}
