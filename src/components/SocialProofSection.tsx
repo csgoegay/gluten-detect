@@ -66,7 +66,7 @@ const SocialProofSection = ({
         </h1>
         
         {/* Testimonial Marquee */}
-        <div className="relative w-full py-4">
+        <div className="relative w-full py-5">
           <Marquee speed={40} pauseOnHover={true}>
             {testimonials.map((testimonial, index) => (
               <div
