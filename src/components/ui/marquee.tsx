@@ -18,7 +18,6 @@ const Marquee = ({
   pauseOnHover = true,
   direction = "left"
 }: MarqueeProps) => {
-  const [isPaused, setIsPaused] = useState(false);
   const [contentWidth, setContentWidth] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -35,29 +34,18 @@ const Marquee = ({
     return () => window.removeEventListener('resize', updateWidth);
   }, [children]);
 
-  const handleMouseEnter = () => {
-    if (pauseOnHover) {
-      setIsPaused(true);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (pauseOnHover) {
-      setIsPaused(false);
-    }
-  };
-
   return (
     <div 
       ref={containerRef}
       className={cn("relative w-full overflow-hidden", className)}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
     >
       <div 
-        className="flex"
+        className={cn(
+          "flex",
+          pauseOnHover && "hover:pause-animation"
+        )}
         style={{
-          animation: isPaused ? 'none' : `marquee-${direction} ${speed}s linear infinite`,
+          animation: `marquee-${direction} ${speed}s linear infinite`,
           width: contentWidth * 2, // Double width for seamless loop
         }}
       >
@@ -88,6 +76,10 @@ const Marquee = ({
           100% {
             transform: translateX(0);
           }
+        }
+
+        .hover\\:pause-animation:hover {
+          animation-play-state: paused !important;
         }
       `}</style>
     </div>
