@@ -191,7 +191,7 @@ export default function Home() {
       <TopNavBar brandName="GlutenDetect" navLinks={navLinks} />
       <main className="flex-grow">
         <HeroSection
-          backgroundImageUrl="https://lh3.googleusercontent.com/aida-public/AB6AXuDoLrzlwfNS1ra7NhtAuc2BIxlTjSZBpbNIA6rQLq7b8O3hvSwec_TWbJC6_TQwvTiFc87O9t21yYokBzuCcGJT-tldk_iapnop3l1lqCrB3lr5vGLxBPYEU_t97WQQ5HBzfO49jI0tfRCtvQubjr7WQhXq6w_mKTscrLaXJWAsoCf4LvF1i8SwsbdCJ99dIYLvvLaPV_5wQtYGFyHnuJftF3IudBwi5dVQCcTGC-ji0AxQDWlb57ZxEyVcfsf4nqqteKg3MDaFfC8"
+          backgroundImageUrl="/img/upscalemedia-transformed.webp"
           mainHeadline="Está Realmente Sem Glúten? O Glúten Oculto que Não Vê Está a Prejudicá-lo."
           subHeadline="Apresentamos o GlutenDetect: O Primeiro e Único Teste Caseiro para Monitorizar a Exposição ao Glúten e Proteger a Sua Saúde."
           buttonText="Assuma o Controlo da Sua Dieta Hoje"
