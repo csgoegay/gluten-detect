@@ -73,7 +73,7 @@ const SocialProofSection = ({
             <MarqueeContent speed={40} pauseOnHover={true}>
               {testimonials.map((testimonial, index) => (
                 <MarqueeItem key={index} className="w-80 h-64">
-                  <div className="flex h-full flex-col gap-4 rounded-xl bg-white dark:bg-gray-800 p-6 shadow-md mb-4">
+                  <div className="flex h-full flex-col gap-4 rounded-xl bg-white dark:bg-gray-800 p-6 shadow-lg mb-4">
                     <StarRating rating={testimonial.rating} />
                     <div className="flex flex-col flex-1">
                       <p className="text-text-main dark:text-gray-100 text-base font-normal leading-relaxed mb-3 line-clamp-4">
