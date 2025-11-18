@@ -1,89 +1,59 @@
-"use client";
+'use client';
 
-import React, { useRef, useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
+import type { HTMLAttributes } from 'react';
+import FastMarquee from 'react-fast-marquee';
+import type { MarqueeProps as FastMarqueeProps } from 'react-fast-marquee';
 
-interface MarqueeProps {
-  children: React.ReactNode;
-  className?: string;
-  speed?: number;
-  pauseOnHover?: boolean;
-  direction?: "left" | "right";
-}
+export type MarqueeProps = HTMLAttributes<HTMLDivElement>;
 
-const Marquee = ({ 
-  children, 
-  className, 
-  speed = 30, 
+export const Marquee = ({ className, ...props }: MarqueeProps) => (
+  <div
+    className={cn('relative w-full overflow-hidden', className)}
+    {...props}
+  />
+);
+
+export type MarqueeContentProps = FastMarqueeProps;
+
+export const MarqueeContent = ({
+  loop = 0,
+  autoFill = true,
   pauseOnHover = true,
-  direction = "left"
-}: MarqueeProps) => {
-  const [contentWidth, setContentWidth] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
+  ...props
+}: MarqueeContentProps) => (
+  <FastMarquee
+    loop={loop}
+    autoFill={autoFill}
+    pauseOnHover={pauseOnHover}
+    {...props}
+  />
+);
 
-  useEffect(() => {
-    const updateWidth = () => {
-      if (contentRef.current) {
-        setContentWidth(contentRef.current.scrollWidth);
-      }
-    };
-
-    updateWidth();
-    window.addEventListener('resize', updateWidth);
-    return () => window.removeEventListener('resize', updateWidth);
-  }, [children]);
-
-  return (
-    <div 
-      ref={containerRef}
-      className={cn("relative w-full overflow-hidden", className)}
-    >
-      <div 
-        className={cn(
-          "flex",
-          pauseOnHover && "hover:pause-animation"
-        )}
-        style={{
-          animation: `marquee-${direction} ${speed}s linear infinite`,
-          width: contentWidth * 2, // Double width for seamless loop
-        }}
-      >
-        {/* First set of content */}
-        <div ref={contentRef} className="flex items-stretch gap-6">
-          {children}
-        </div>
-        {/* Duplicate content for seamless loop */}
-        <div className="flex items-stretch gap-6">
-          {children}
-        </div>
-      </div>
-      
-      <style jsx>{`
-        @keyframes marquee-left {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        
-        @keyframes marquee-right {
-          0% {
-            transform: translateX(-50%);
-          }
-          100% {
-            transform: translateX(0);
-          }
-        }
-
-        .hover\\:pause-animation:hover {
-          animation-play-state: paused !important;
-        }
-      `}</style>
-    </div>
-  );
+export type MarqueeFadeProps = HTMLAttributes<HTMLDivElement> & {
+  side: 'left' | 'right';
 };
 
-export default Marquee;
+export const MarqueeFade = ({
+  className,
+  side,
+  ...props
+}: MarqueeFadeProps) => (
+  <div
+    className={cn(
+      'absolute top-0 bottom-0 z-10 h-full w-24 from-background to-transparent',
+      side === 'left' ? 'left-0 bg-gradient-to-r' : 'right-0 bg-gradient-to-l',
+      className
+    )}
+    {...props}
+  />
+);
+
+export type MarqueeItemProps = HTMLAttributes<HTMLDivElement>;
+
+export const MarqueeItem = ({ className, ...props }: MarqueeItemProps) => (
+  <div
+    className={cn('mx-2 flex-shrink-0 object-contain', className)}
+    {...props}
+  />
+);

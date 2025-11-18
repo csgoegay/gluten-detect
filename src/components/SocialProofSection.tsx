@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import Marquee from "@/components/ui/marquee";
+import { Marquee, MarqueeContent, MarqueeFade, MarqueeItem } from "@/components/ui/marquee";
 
 interface Testimonial {
   rating: number;
@@ -67,23 +67,26 @@ const SocialProofSection = ({
         
         {/* Testimonial Marquee */}
         <div className="relative w-full py-5">
-          <Marquee speed={40} pauseOnHover={true}>
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="flex h-full flex-col gap-4 rounded-xl min-w-[280px] bg-white dark:bg-gray-800 p-6 shadow-md"
-              >
-                <StarRating rating={testimonial.rating} />
-                <div>
-                  <p className="text-text-main dark:text-gray-100 text-base font-normal leading-relaxed mb-3">
-                    {testimonial.quote}
-                  </p>
-                  <p className="text-text-subtle dark:text-gray-400 text-sm font-medium">
-                    {testimonial.author}
-                  </p>
-                </div>
-              </div>
-            ))}
+          <Marquee>
+            <MarqueeFade side="left" />
+            <MarqueeFade side="right" />
+            <MarqueeContent speed={40} pauseOnHover={true}>
+              {testimonials.map((testimonial, index) => (
+                <MarqueeItem key={index} className="min-w-[280px]">
+                  <div className="flex h-full flex-col gap-4 rounded-xl bg-white dark:bg-gray-800 p-6 shadow-md">
+                    <StarRating rating={testimonial.rating} />
+                    <div>
+                      <p className="text-text-main dark:text-gray-100 text-base font-normal leading-relaxed mb-3">
+                        {testimonial.quote}
+                      </p>
+                      <p className="text-text-subtle dark:text-gray-400 text-sm font-medium">
+                        {testimonial.author}
+                      </p>
+                    </div>
+                  </div>
+                </MarqueeItem>
+              ))}
+            </MarqueeContent>
           </Marquee>
         </div>
 
