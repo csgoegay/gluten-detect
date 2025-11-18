@@ -1,9 +1,5 @@
 import { Layout, Pointer, Zap } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
 interface TabContent {
   badge: string;
   title: string;
@@ -83,54 +79,56 @@ const Feature108 = ({
     <section className="py-32">
       <div className="container mx-auto">
         <div className="flex flex-col items-center gap-4 text-center">
-          <Badge variant="outline">{badge}</Badge>
+          <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold">
+            {badge}
+          </span>
           <h1 className="max-w-2xl text-3xl font-semibold md:text-4xl">
             {heading}
           </h1>
-          <p className="text-muted-foreground">{description}</p>
+          <p className="text-gray-600">{description}</p>
         </div>
-        <Tabs defaultValue={tabs[0].value} className="mt-8">
-          <TabsList className="container flex flex-col items-center justify-center gap-4 sm:flex-row md:gap-10">
+        
+        {/* Simple tab implementation without shadcn components */}
+        <div className="mt-8">
+          <div className="container flex flex-col items-center justify-center gap-4 sm:flex-row md:gap-10">
             {tabs.map((tab) => (
-              <TabsTrigger
+              <button
                 key={tab.value}
-                value={tab.value}
-                className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-muted-foreground data-[state=active]:bg-muted data-[state=active]:text-primary"
+                className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-gray-600 hover:bg-gray-100"
               >
                 {tab.icon} {tab.label}
-              </TabsTrigger>
+              </button>
             ))}
-          </TabsList>
-          <div className="mx-auto mt-8 max-w-screen-xl rounded-2xl bg-muted/70 p-6 lg:p-16">
+          </div>
+          <div className="mx-auto mt-8 max-w-screen-xl rounded-2xl bg-gray-50 p-6 lg:p-16">
             {tabs.map((tab) => (
-              <TabsContent
+              <div
                 key={tab.value}
-                value={tab.value}
                 className="grid place-items-center gap-20 lg:grid-cols-2 lg:gap-10"
               >
                 <div className="flex flex-col gap-5">
-                  <Badge variant="outline" className="w-fit bg-background">
+                  <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-white">
                     {tab.content.badge}
-                  </Badge>
+                  </span>
                   <h3 className="text-3xl font-semibold lg:text-5xl">
                     {tab.content.title}
                   </h3>
-                  <p className="text-muted-foreground lg:text-lg">
+                  <p className="text-gray-600 lg:text-lg">
                     {tab.content.description}
                   </p>
-                  <Button className="mt-2.5 w-fit gap-2" size="lg">
+                  <button className="mt-2.5 w-fit gap-2 rounded-md bg-blue-600 px-8 py-4 text-base font-bold text-white hover:bg-blue-700">
                     {tab.content.buttonText}
-                  </Button>
+                  </button>
                 </div>
                 <img
                   src={tab.content.imageSrc}
                   alt={tab.content.imageAlt}
                   className="rounded-xl"
                 />
-              </TabsContent>
+              </div>
             ))}
           </div>
-        </Tabs>
+        </div>
       </div>
     </section>
   );
