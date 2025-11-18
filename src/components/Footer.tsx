@@ -21,25 +21,25 @@ const Footer = () => {
       links: [
         { name: "Funcionalidades", href: "#features" },
         { name: "Como Funciona", href: "#how-it-works" },
-        { name: "Preços", href: "#pricing" },
-        { name: "FAQ", href: "#faq" },
+        { name: "Preços", href: "/404" },
+        { name: "FAQ", href: "/404" },
       ],
     },
     {
       title: "Empresa",
       links: [
-        { name: "Sobre Nós", href: "#about" },
-        { name: "Blog", href: "#blog" },
-        { name: "Carreiras", href: "#careers" },
-        { name: "Contacto", href: "#contact" },
+        { name: "Sobre Nós", href: "/404" },
+        { name: "Blog", href: "/404" },
+        { name: "Carreiras", href: "/404" },
+        { name: "Contacto", href: "/404" },
       ],
     },
     {
       title: "Legal",
       links: [
-        { name: "Política de Privacidade", href: "#privacy" },
-        { name: "Termos de Serviço", href: "#terms" },
-        { name: "Política de Cookies", href: "#cookies" },
+        { name: "Política de Privacidade", href: "/404" },
+        { name: "Termos de Serviço", href: "/404" },
+        { name: "Política de Cookies", href: "/404" },
       ],
     },
   ];
