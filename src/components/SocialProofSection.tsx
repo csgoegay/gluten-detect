@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import Image from "next/image";
+import Marquee from "@/components/ui/marquee";
 
 interface Testimonial {
   rating: number;
@@ -57,30 +58,6 @@ const SocialProofSection = ({
   testimonials,
   featuredIn,
 }: SocialProofSectionProps) => {
-  const carouselRef = useRef<HTMLDivElement>(null);
-
-  const scrollLeft = () => {
-    if (carouselRef.current) {
-      const firstCard = carouselRef.current.children[0].children[0] as HTMLElement;
-      const scrollAmount = firstCard.offsetWidth + 24; // card width + gap
-      carouselRef.current.scrollBy({
-        left: -scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const scrollRight = () => {
-    if (carouselRef.current) {
-      const firstCard = carouselRef.current.children[0].children[0] as HTMLElement;
-      const scrollAmount = firstCard.offsetWidth + 24; // card width + gap
-      carouselRef.current.scrollBy({
-        left: scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-
   return (
     <section className="flex flex-1 justify-center py-16 md:py-24">
       <div className="layout-content-container flex flex-col max-w-6xl flex-1 px-4 md:px-8">
@@ -88,52 +65,26 @@ const SocialProofSection = ({
           {headline}
         </h1>
         
-        {/* Testimonial Carousel */}
-        <div className="relative w-full">
-          {/* Navigation Buttons */}
-          <button
-            onClick={scrollLeft}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-            aria-label="Previous testimonials"
-          >
-            <span className="material-symbols-outlined text-gray-700 dark:text-gray-300">
-              chevron_left
-            </span>
-          </button>
-          <button
-            onClick={scrollRight}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-            aria-label="Next testimonials"
-          >
-            <span className="material-symbols-outlined text-gray-700 dark:text-gray-300">
-              chevron_right
-            </span>
-          </button>
-
-          {/* Carousel Container */}
-          <div
-            ref={carouselRef}
-            className="flex overflow-x-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden pb-4"
-          >
-            <div className="flex items-stretch p-2 gap-6">
-              {testimonials.map((testimonial, index) => (
-                <div
-                  key={index}
-                  className="flex h-full flex-1 flex-col gap-4 rounded-xl min-w-[280px] bg-white dark:bg-gray-800 p-6 shadow-md"
-                >
-                  <StarRating rating={testimonial.rating} />
-                  <div>
-                    <p className="text-text-main dark:text-gray-100 text-base font-normal leading-relaxed mb-3">
-                      {testimonial.quote}
-                    </p>
-                    <p className="text-text-subtle dark:text-gray-400 text-sm font-medium">
-                      {testimonial.author}
-                    </p>
-                  </div>
+        {/* Testimonial Marquee */}
+        <div className="relative w-full py-4">
+          <Marquee speed={40} pauseOnHover={true}>
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="flex h-full flex-col gap-4 rounded-xl min-w-[280px] bg-white dark:bg-gray-800 p-6 shadow-md"
+              >
+                <StarRating rating={testimonial.rating} />
+                <div>
+                  <p className="text-text-main dark:text-gray-100 text-base font-normal leading-relaxed mb-3">
+                    {testimonial.quote}
+                  </p>
+                  <p className="text-text-subtle dark:text-gray-400 text-sm font-medium">
+                    {testimonial.author}
+                  </p>
                 </div>
-              ))}
-            </div>
-          </div>
+              </div>
+            ))}
+          </Marquee>
         </div>
 
       </div>
