@@ -26,15 +26,6 @@ const Footer = () => {
       ],
     },
     {
-      title: "Empresa",
-      links: [
-        { name: "Sobre Nós", href: "/404" },
-        { name: "Blog", href: "/404" },
-        { name: "Carreiras", href: "/404" },
-        { name: "Contacto", href: "/404" },
-      ],
-    },
-    {
       title: "Legal",
       links: [
         { name: "Política de Privacidade", href: "/404" },
@@ -48,7 +39,7 @@ const Footer = () => {
     <footer className="bg-section-dark-blue text-white">
       <div className="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 py-12">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Coluna 1: Marca & Newsletter */}
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
@@ -100,28 +91,11 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Coluna 3: Ligações da Empresa */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Empresa</h3>
-              <ul className="space-y-2">
-                {footerLinks[1].links.map((link, index) => (
-                  <li key={index}>
-                    <a
-                      href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors"
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Coluna 4: Ligações Legais */}
+            {/* Coluna 3: Ligações Legais */}
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Legal</h3>
               <ul className="space-y-2">
-                {footerLinks[2].links.map((link, index) => (
+                {footerLinks[1].links.map((link, index) => (
                   <li key={index}>
                     <a
                       href={link.href}
