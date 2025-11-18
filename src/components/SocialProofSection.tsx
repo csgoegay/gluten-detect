@@ -59,7 +59,7 @@ const SocialProofSection = ({
   featuredIn,
 }: SocialProofSectionProps) => {
   return (
-    <section className="flex flex-1 justify-center py-16 md:py-24">
+    <section className="flex flex-1 justify-center py-14 md:py-24">
       <div className="layout-content-container flex flex-col max-w-6xl flex-1 px-4 md:px-8">
         <h1 className="text-primary tracking-tight text-3xl md:text-4xl font-bold leading-tight text-center pb-8 md:pb-12">
           {headline}
