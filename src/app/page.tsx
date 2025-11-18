@@ -1,7 +1,7 @@
 import TopNavBar from "@/components/TopNavBar";
 import HeroSection from "@/components/HeroSection";
 import TextWithImageSection from "@/components/TextWithImageSection";
-import { Feature108 } from "@/components/ui/feature108";
+import Feature108 from "@/components/ui/feature108";
 import ValidationSection from "@/components/ValidationSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import FaqSection from "@/components/FaqSection";
