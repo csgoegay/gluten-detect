@@ -6,7 +6,9 @@ interface ProductSectionProps {
   headline: string;
   description: string;
   features: string[];
-  price: string;
+  originalPrice: string;
+  discountedPrice: string;
+  discountPercentage: number;
   buttonText: string;
   buttonLink: string;
   imageUrl: string;
@@ -18,7 +20,9 @@ const ProductSection = ({
   headline,
   description,
   features,
-  price,
+  originalPrice,
+  discountedPrice,
+  discountPercentage,
   buttonText,
   buttonLink,
   imageUrl,
@@ -56,9 +60,22 @@ const ProductSection = ({
                 ))}
               </ul>
               <div className="flex flex-col items-start gap-4">
-                <p className="text-3xl font-bold text-price-green dark:text-green-400">
-                  {price}
-                </p>
+                {/* Pricing Display */}
+                <div className="flex items-center gap-3">
+                  <div className="flex flex-col">
+                    <div className="flex items-center gap-2">
+                      <span className="text-3xl font-bold text-price-green dark:text-green-400">
+                        {discountedPrice}
+                      </span>
+                      <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200">
+                        -{discountPercentage}%
+                      </span>
+                    </div>
+                    <span className="text-lg text-gray-500 line-through">
+                      {originalPrice}
+                    </span>
+                  </div>
+                </div>
                 <Link href={buttonLink}>
                   <button className="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-button-cta px-5 py-3 text-base font-bold leading-normal text-white transition-colors hover:bg-button-cta-hover sm:w-auto sm:px-8 sm:py-4">
                     <span className="truncate">{buttonText}</span>
