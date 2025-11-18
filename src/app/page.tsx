@@ -216,7 +216,7 @@ export default function Home() {
           endorsements={endorsementData}
           features={featureData}
           buttonText="Ver Estudos Clínicos"
-          buttonLink="/studies"
+          buttonLink="/estudos"
         />
         <BenefitsSection
           headline="Porquê Adivinhar Quando Pode Ter a Certeza?"
@@ -227,7 +227,7 @@ export default function Home() {
           faqItems={faqData}
           contactText="Ainda tem perguntas?"
           contactLinkText="Contacte a nossa equipa de apoio."
-          contactLinkHref="/contact"
+          contactLinkHref="/contactos"
         />
         <SocialProofSection
           headline="A Comunidade Celíaca Confia no GlutenDetect."
