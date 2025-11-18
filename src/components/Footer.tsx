@@ -17,29 +17,29 @@ const Footer = () => {
 
   const footerLinks = [
     {
-      title: "Product",
+      title: "Produto",
       links: [
-        { name: "Features", href: "#features" },
-        { name: "How It Works", href: "#how-it-works" },
-        { name: "Pricing", href: "#pricing" },
+        { name: "Funcionalidades", href: "#features" },
+        { name: "Como Funciona", href: "#how-it-works" },
+        { name: "Preços", href: "#pricing" },
         { name: "FAQ", href: "#faq" },
       ],
     },
     {
-      title: "Company",
+      title: "Empresa",
       links: [
-        { name: "About Us", href: "#about" },
+        { name: "Sobre Nós", href: "#about" },
         { name: "Blog", href: "#blog" },
-        { name: "Careers", href: "#careers" },
-        { name: "Contact", href: "#contact" },
+        { name: "Carreiras", href: "#careers" },
+        { name: "Contacto", href: "#contact" },
       ],
     },
     {
       title: "Legal",
       links: [
-        { name: "Privacy Policy", href: "#privacy" },
-        { name: "Terms of Service", href: "#terms" },
-        { name: "Cookie Policy", href: "#cookies" },
+        { name: "Política de Privacidade", href: "#privacy" },
+        { name: "Termos de Serviço", href: "#terms" },
+        { name: "Política de Cookies", href: "#cookies" },
       ],
     },
   ];
@@ -49,7 +49,7 @@ const Footer = () => {
       <div className="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 py-12">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Column 1: Brand & Newsletter */}
+            {/* Coluna 1: Marca & Newsletter */}
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 bg-accent-gold rounded-full flex items-center justify-center">
@@ -60,14 +60,14 @@ const Footer = () => {
                 <span className="text-xl font-bold">GlutenDetect</span>
               </div>
               <p className="text-gray-300 text-sm">
-                Your trusted companion for safe gluten-free dining.
+                O seu companheiro de confiança para refeições seguras sem glúten.
               </p>
               <form onSubmit={handleSubscribe} className="space-y-2">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
+                  placeholder="Introduza o seu email"
                   className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-gold"
                   required
                 />
@@ -75,17 +75,17 @@ const Footer = () => {
                   type="submit"
                   className="w-full px-4 py-2 bg-accent-gold text-white rounded-md hover:bg-accent-gold/90 transition-colors"
                 >
-                  Subscribe
+                  Subscrever
                 </button>
               </form>
               {isSubscribed && (
-                <p className="text-green-400 text-sm">Successfully subscribed!</p>
+                <p className="text-green-400 text-sm">Subscrito com sucesso!</p>
               )}
             </div>
 
-            {/* Column 2: Product Links */}
+            {/* Coluna 2: Ligações do Produto */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Product</h3>
+              <h3 className="text-lg font-semibold">Produto</h3>
               <ul className="space-y-2">
                 {footerLinks[0].links.map((link, index) => (
                   <li key={index}>
@@ -100,9 +100,9 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Column 3: Company Links */}
+            {/* Coluna 3: Ligações da Empresa */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Company</h3>
+              <h3 className="text-lg font-semibold">Empresa</h3>
               <ul className="space-y-2">
                 {footerLinks[1].links.map((link, index) => (
                   <li key={index}>
@@ -117,7 +117,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Column 4: Legal Links */}
+            {/* Coluna 4: Ligações Legais */}
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Legal</h3>
               <ul className="space-y-2">
@@ -136,7 +136,7 @@ const Footer = () => {
           </div>
 
           <div className="border-t border-white/20 mt-8 pt-8 text-center text-gray-400 text-sm">
-            <p>&copy; 2024 GlutenDetect. All rights reserved.</p>
+            <p>&copy; 2024 GlutenDetect. Todos os direitos reservados.</p>
           </div>
         </div>
       </div>
