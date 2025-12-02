@@ -23,7 +23,7 @@ const FaqSection = ({
   contactLinkHref,
 }: FaqSectionProps) => {
   return (
-    <section className="px-4 py-12 sm:px-6 md:px-10 lg:px-20 xl:px-40 flex flex-1 justify-center">
+    <section id="faq" className="px-4 py-12 sm:px-6 md:px-10 lg:px-20 xl:px-40 flex flex-1 justify-center">
       <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
         <h1 className="text-primary dark:text-white/90 tracking-tight text-3xl sm:text-4xl font-bold leading-tight text-center pb-4 pt-6">
           {headline}

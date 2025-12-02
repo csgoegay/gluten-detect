@@ -19,10 +19,10 @@ const Footer = () => {
     {
       title: "Produto",
       links: [
-        { name: "Benefícios", href: "#features" },
+        { name: "Benefícios", href: "#benefits" }, // Updated to match BenefitsSection ID
         { name: "Como Funciona", href: "#how-it-works" },
-        { name: "Comprar", href: "#produto" }, // Changed from "Preço" to "Comprar" and updated href
-        { name: "Perguntas Frequentes", href: "#faq" },
+        { name: "Comprar", href: "#produto" },
+        { name: "Perguntas Frequentes", href: "#faq" }, // Updated to match FaqSection ID
       ],
     },
     {
