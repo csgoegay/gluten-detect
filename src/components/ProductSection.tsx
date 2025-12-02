@@ -30,7 +30,7 @@ const ProductSection = ({
   reverseLayout = false,
 }: ProductSectionProps) => {
   return (
-    <section className="flex flex-1 items-center justify-center px-4 py-10 sm:px-6 md:px-8 lg:py-20">
+    <section id="produto" className="flex flex-1 items-center justify-center px-4 py-10 sm:px-6 md:px-8 lg:py-20">
       <div className="layout-content-container flex w-full max-w-5xl flex-col">
         <div className="@container">
           <div className={`flex flex-col gap-8 lg:items-center lg:gap-12 ${reverseLayout ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>

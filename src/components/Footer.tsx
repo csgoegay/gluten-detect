@@ -21,7 +21,7 @@ const Footer = () => {
       links: [
         { name: "Benefícios", href: "#features" },
         { name: "Como Funciona", href: "#how-it-works" },
-        { name: "Preço", href: "/404" },
+        { name: "Comprar", href: "#produto" }, // Changed from "Preço" to "Comprar" and updated href
         { name: "Perguntas Frequentes", href: "#faq" },
       ],
     },
