@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { Star, StarHalf } from "lucide-react"; // Import icons
-import { Marquee, MarqueeFade, MarqueeItem } from "@/components/ui/marquee";
+import { Star, StarHalf } from "lucide-react";
+import { Marquee, MarqueeItem } from "@/components/ui/marquee";
 
 interface Testimonial {
   rating: number;
@@ -23,7 +23,7 @@ interface FeaturedIn {
 interface SocialProofSectionProps {
   headline: string;
   testimonials: Testimonial[];
-  featuredIn?: FeaturedIn; // Made optional to prevent errors if not passed
+  featuredIn?: FeaturedIn;
 }
 
 // --- LUCIDE STAR RATING ---
@@ -34,20 +34,15 @@ const StarRating = ({ rating }: { rating: number }) => {
 
   return (
     <div className="flex items-center gap-0.5">
-      {/* Full Stars: Filled and Colored */}
       {[...Array(fullStars)].map((_, i) => (
         <Star 
           key={`full-${i}`} 
           className="w-5 h-5 fill-amber-400 text-amber-400" 
         />
       ))}
-      
-      {/* Half Star: Uses StarHalf icon, filled */}
       {hasHalfStar && (
         <StarHalf className="w-5 h-5 fill-amber-400 text-amber-400" />
       )}
-      
-      {/* Empty Stars: Gray outline, no fill */}
       {[...Array(emptyStars)].map((_, i) => (
         <Star 
           key={`empty-${i}`} 
@@ -70,10 +65,11 @@ const SocialProofSection = ({
         </h1>
 
         <div className="relative w-full py-4 overflow-hidden">
-          <MarqueeFade side="left" />
-          <MarqueeFade side="right" />
-
-          <Marquee pauseOnHover className="[--gap:2rem]" duration="40s">
+          <Marquee 
+            pauseOnHover 
+            className="[--gap:2rem] [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]" 
+            duration="40s"
+          >
             {testimonials.map((testimonial, index) => (
               <MarqueeItem key={index} className="w-80 h-64 mx-4">
                 <div className="flex h-full flex-col gap-4 rounded-xl bg-white dark:bg-gray-800 p-6 shadow-lg mb-5 border border-gray-100 dark:border-gray-700">
