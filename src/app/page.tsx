@@ -179,25 +179,57 @@ const featuredInData = {
 
 const faqData = [
   {
-    question: 'Qual é a precisão do teste?',
-    answer: 'O GlutenDetect é uma ferramenta cientificamente validada com elevada especificidade e sensibilidade na deteção de fragmentos de glúten. O teste de fezes é mais sensível para detetar pequenas quantidades de glúten, enquanto o teste de urina é ideal para identificar uma exposição significativa.',
+    question: 'Como funciona o GlutenDetect?',
+    answer: 'É semelhante a um teste de COVID ou de gravidez. Se consumiu glúten, aparecerá uma linha vermelha na zona de teste (T) juntamente com uma linha verde na zona de controlo (C). Se não consumiu glúten, aparecerá apenas uma linha verde na zona de controlo (C). O resultado é obtido em 15-30 minutos.'
   },
   {
-    question: 'Com que frequência devo fazer o teste?',
-    answer: 'Para uma monitorização de rotina, a Sociedade Espanhola de Doença Celíaca recomenda um controlo a cada 6 meses. Se foi recentemente diagnosticado, é aconselhável testar a cada 3 meses durante o primeiro ano. Pode também testar sempre que suspeitar que foi exposto.',
+    question: 'Qual devo usar, o teste de fezes ou o de urina?',
+    answer: 'Para a monitorização de uma Dieta Isenta de Glúten, ambos são igualmente eficazes. De acordo com a Sociedade Espanhola de Doença Celíaca, para um controlo eficaz de uma Dieta Isenta de Glúten, devem ser realizados 3 testes de urina ou 2 testes de fezes na mesma semana, a cada 3 ou 6 meses. O teste de urina consegue detetar glúten 2-15 horas após a ingestão, enquanto o teste de fezes consegue detetar 1-6 dias após a ingestão.'
   },
   {
-    question: 'Qual o teste certo para mim: urina ou fezes?',
-    answer: 'O Teste de Urina é o melhor para detetar uma exposição significativa ao glúten nas últimas 24 horas (por exemplo, após uma refeição suspeita num restaurante). O Teste de Fezes é mais sensível e pode detetar vestígios mais pequenos de glúten consumidos até 4 dias antes, tornando-o ideal para a monitorização de rotina.',
+    question: 'Quanto glúten preciso de consumir para obter um resultado positivo?',
+    answer: 'O teste consegue detetar ingestões a partir de 50 mg de glúten/dia, que é, segundo o consenso científico, a quantidade mínima de glúten prejudicial para doentes celíacos.'
   },
   {
-    question: 'Preciso de receita médica?',
-    answer: 'Não, o GlutenDetect é um teste caseiro de venda livre que pode ser encomendado diretamente e enviado para sua casa.',
+    question: 'O que faço se obtiver um resultado positivo?',
+    answer: 'Verifique os seus hábitos alimentares para detetar a origem da transgressão com glúten.'
   },
   {
-    question: 'Enviamos para Portugal?',
-    answer: 'Sim, enviamos para Portugal e muitos outros países. Para verificar se enviamos para a sua localização, por favor prossiga para o checkout e introduza o seu endereço.',
+    question: 'Os meus filhos estão a cumprir a dieta isenta de glúten adequada na escola?',
+    answer: 'Para determinar se os seus filhos estão a seguir uma dieta isenta de glúten adequada na escola, recomendamos a utilização de um teste de urina, que pode detetar glúten 2-15 horas após a ingestão, ou um teste de fezes, que pode detetar glúten 1-6 dias após a ingestão.'
   },
+  {
+    question: 'Com que frequência recomendamos a utilização do GlutenDetect?',
+    answer: 'A Sociedade Espanhola de Doença Celíaca recomenda a análise de 3 amostras de urina na mesma semana, preferencialmente uma delas ao fim de semana, utilizando a última urina do dia ou a primeira da manhã. Alternativamente, pode analisar 2 amostras de fezes com 3-4 dias de intervalo na mesma semana. De acordo com estudos clínicos recentes, 97% dos doentes celíacos que obtêm resultados negativos em todos os testes não apresentam lesão intestinal.'
+  },
+  {
+    question: 'Apareceu uma linha vermelha ténue no meu teste, isso significa que o resultado é negativo ou positivo?',
+    answer: 'O teste é qualitativo. Uma linha vermelha, independentemente da sua intensidade, indica a presença de glúten e um resultado positivo.'
+  },
+  {
+    question: 'Gostaria de saber mais sobre a quantidade de contaminação que um doente celíaco pode sofrer por ano. Existem estudos sobre isso?',
+    answer: 'Segundo vários estudos, a ingestão de glúten, seja voluntária ou involuntária, é comum entre doentes celíacos. Estima-se que quase 90% dos celíacos possam ingerir glúten pelo menos uma vez por mês. Seguir uma dieta isenta de glúten todos os dias é um desafio, mas é importante avaliar o nível de exposição ao glúten nos hábitos diários ou em circunstâncias ambientais variáveis (por exemplo: depois de comer fora).'
+  },
+  {
+    question: 'Se eu tomar alguma medicação, isso pode interferir com o resultado?',
+    answer: 'Até à data, não foi detetada qualquer interferência medicamentosa.'
+  },
+  {
+    question: 'É necessária receita médica?',
+    answer: 'Não, não se trata de um teste de diagnóstico.'
+  },
+  {
+    question: 'Não tenho quaisquer sintomas de doença celíaca. Porque devo usar o teste?',
+    answer: 'Este é um dos erros mais comuns que encontramos. Estudos clínicos recentes mostram que mais de 70% dos doentes celíacos que não apresentam sintomas têm atrofia (danos) na mucosa intestinal. Embora muitos doentes baseiem o cumprimento da sua dieta na ausência de sintomas, podem ainda estar a ingerir glúten sem o saberem. Estas pequenas ingestões só são detetáveis através de fragmentos de glúten excretados nas fezes e na urina. É importante saber que quantidades mínimas de glúten causam danos intestinais aos doentes celíacos. O GlutenDetect verifica estes consumos silenciosos de glúten e ajuda-o a localizar de onde podem estar a vir.'
+  },
+  {
+    question: 'De que forma as ingestões despercebidas de glúten podem afetar o meu intestino delgado?',
+    answer: 'Os danos causados por ingestões pequenas e contínuas de glúten são cumulativos e, a longo prazo, impedem a recuperação da mucosa intestinal. Estes danos fazem com que as vilosidades percam a sua capacidade de absorver nutrientes e aumentam a probabilidade de futuras doenças mais graves, tais como linfomas, doenças autoimunes e fraqueza óssea.'
+  },
+  {
+    question: 'Como devo conservar o GlutenDetect?',
+    answer: 'O GlutenDetect deve ser conservado à temperatura ambiente.'
+  }
 ];
 
 const productData = {
