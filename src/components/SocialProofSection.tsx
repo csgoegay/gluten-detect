@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Star, StarHalf } from "lucide-react"; // Import icons
 import { Marquee, MarqueeFade, MarqueeItem } from "@/components/ui/marquee";
 
 interface Testimonial {
@@ -22,49 +23,36 @@ interface FeaturedIn {
 interface SocialProofSectionProps {
   headline: string;
   testimonials: Testimonial[];
-  featuredIn: FeaturedIn;
+  featuredIn?: FeaturedIn; // Made optional to prevent errors if not passed
 }
 
-// Star Rating helper component
+// --- LUCIDE STAR RATING ---
 const StarRating = ({ rating }: { rating: number }) => {
   const fullStars = Math.floor(rating);
   const hasHalfStar = rating % 1 !== 0;
   const emptyStars = 5 - Math.ceil(rating);
 
-  // Define styles for filled vs outlined states
-  // We use fontVariationSettings to force the 'FILL' axis to 1 for solid stars
-  const filledStyle = { fontVariationSettings: "'FILL' 1" };
-  const outlinedStyle = { fontVariationSettings: "'FILL' 0" };
-
   return (
-    // Changed color to amber-400 for a better "gold" look
-    <div className="flex text-amber-400 gap-0.5">
+    <div className="flex items-center gap-0.5">
+      {/* Full Stars: Filled and Colored */}
       {[...Array(fullStars)].map((_, i) => (
-        <span
-          key={`full-${i}`}
-          className="material-symbols-outlined text-2xl"
-          style={filledStyle}
-        >
-          star
-        </span>
+        <Star 
+          key={`full-${i}`} 
+          className="w-5 h-5 fill-amber-400 text-amber-400" 
+        />
       ))}
+      
+      {/* Half Star: Uses StarHalf icon, filled */}
       {hasHalfStar && (
-        <span
-          className="material-symbols-outlined text-2xl"
-          style={filledStyle}
-        >
-          star_half
-        </span>
+        <StarHalf className="w-5 h-5 fill-amber-400 text-amber-400" />
       )}
+      
+      {/* Empty Stars: Gray outline, no fill */}
       {[...Array(emptyStars)].map((_, i) => (
-        // Empty stars remain outlined and a lighter color
-        <span
-          key={`empty-${i}`}
-          className="material-symbols-outlined text-2xl text-gray-300 dark:text-gray-600"
-          style={outlinedStyle}
-        >
-          star
-        </span>
+        <Star 
+          key={`empty-${i}`} 
+          className="w-5 h-5 text-gray-300 dark:text-gray-600" 
+        />
       ))}
     </div>
   );
@@ -81,14 +69,10 @@ const SocialProofSection = ({
           {headline}
         </h1>
 
-        {/* Testimonial Marquee Wrapper */}
         <div className="relative w-full py-4 overflow-hidden">
-          
-          {/* Fades are now OUTSIDE the Marquee, but inside the relative container */}
           <MarqueeFade side="left" />
           <MarqueeFade side="right" />
 
-          {/* Props applied to Marquee directly */}
           <Marquee pauseOnHover className="[--gap:2rem]" duration="40s">
             {testimonials.map((testimonial, index) => (
               <MarqueeItem key={index} className="w-80 h-64 mx-4">
