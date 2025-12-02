@@ -1,15 +1,14 @@
-import * as React from "react"
+import * as React from "react";
+import { cn } from "@/lib/utils";
 
-import { cn } from "@/lib/utils"
-
-interface MarqueeProps {
-  className?: string
-  reverse?: boolean
-  pauseOnHover?: boolean
-  children?: React.ReactNode
-  vertical?: boolean
-  repeat?: number
-  [key: string]: any
+interface MarqueeProps extends React.HTMLAttributes<HTMLDivElement> {
+  className?: string;
+  reverse?: boolean;
+  pauseOnHover?: boolean;
+  children?: React.ReactNode;
+  vertical?: boolean;
+  repeat?: number;
+  duration?: string;
 }
 
 export function Marquee({
@@ -19,19 +18,23 @@ export function Marquee({
   children,
   vertical = false,
   repeat = 4,
+  duration = "40s",
   ...props
 }: MarqueeProps) {
   return (
     <div
       {...props}
       className={cn(
-        "group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]",
+        "group flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)]",
         {
           "flex-row": !vertical,
           "flex-col": vertical,
         },
-        className,
+        className
       )}
+      style={{
+        "--duration": duration,
+      } as React.CSSProperties}
     >
       {Array(repeat)
         .fill(0)
@@ -49,22 +52,7 @@ export function Marquee({
           </div>
         ))}
     </div>
-  )
-}
-
-export function MarqueeContent({
-  className,
-  children,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
-  return (
-    <div
-      {...props}
-      className={cn("flex items-center gap-4 px-2", className)}
-    >
-      {children}
-    </div>
-  )
+  );
 }
 
 export function MarqueeItem({
@@ -73,13 +61,10 @@ export function MarqueeItem({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div
-      {...props}
-      className={cn("flex-shrink-0", className)}
-    >
+    <div {...props} className={cn("flex-shrink-0", className)}>
       {children}
     </div>
-  )
+  );
 }
 
 export function MarqueeFade({
@@ -87,19 +72,21 @@ export function MarqueeFade({
   className,
   ...props
 }: {
-  side: "left" | "right"
+  side: "left" | "right";
 } & React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       {...props}
       className={cn(
-        "absolute top-0 z-10 h-full w-20",
+        "pointer-events-none absolute top-0 z-10 h-full w-20",
         {
-          "left-0 bg-gradient-to-r from-background to-transparent": side === "left",
-          "right-0 bg-gradient-to-l from-background to-transparent": side === "right",
+          "left-0 bg-gradient-to-r from-background to-transparent":
+            side === "left",
+          "right-0 bg-gradient-to-l from-background to-transparent":
+            side === "right",
         },
-        className,
+        className
       )}
     />
-  )
+  );
 }

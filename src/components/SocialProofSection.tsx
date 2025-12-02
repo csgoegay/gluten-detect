@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
-import { Marquee, MarqueeContent, MarqueeFade, MarqueeItem } from "@/components/ui/marquee";
+import { Marquee, MarqueeFade, MarqueeItem } from "@/components/ui/marquee";
 
 interface Testimonial {
   rating: number;
@@ -40,9 +39,7 @@ const StarRating = ({ rating }: { rating: number }) => {
         </span>
       ))}
       {hasHalfStar && (
-        <span className="material-symbols-outlined text-2xl">
-          star_half
-        </span>
+        <span className="material-symbols-outlined text-2xl">star_half</span>
       )}
       {[...Array(emptyStars)].map((_, i) => (
         <span key={`empty-${i}`} className="material-symbols-outlined text-2xl">
@@ -56,7 +53,6 @@ const StarRating = ({ rating }: { rating: number }) => {
 const SocialProofSection = ({
   headline,
   testimonials,
-  featuredIn,
 }: SocialProofSectionProps) => {
   return (
     <section className="flex flex-1 justify-center py-14 md:py-24">
@@ -64,32 +60,33 @@ const SocialProofSection = ({
         <h1 className="text-primary tracking-tight text-3xl md:text-4xl font-bold leading-tight text-center pb-8 md:pb-12">
           {headline}
         </h1>
-        
-        {/* Testimonial Marquee */}
-        <div className="relative w-full py-4">
-          <Marquee>
-            <MarqueeFade side="left" />
-            <MarqueeFade side="right" />
-            <MarqueeContent speed={40} pauseOnHover={true}>
-              {testimonials.map((testimonial, index) => (
-                <MarqueeItem key={index} className="w-80 h-64">
-                  <div className="flex h-full flex-col gap-4 rounded-xl bg-white dark:bg-gray-800 p-6 shadow-lg mb-5">
-                    <StarRating rating={testimonial.rating} />
-                    <div className="flex flex-col flex-1">
-                      <p className="text-text-main dark:text-gray-100 text-base font-normal leading-relaxed mb-3 line-clamp-4">
-                        {testimonial.quote}
-                      </p>
-                      <p className="text-text-subtle dark:text-gray-400 text-sm font-medium mt-auto">
-                        {testimonial.author}
-                      </p>
-                    </div>
+
+        {/* Testimonial Marquee Wrapper */}
+        <div className="relative w-full py-4 overflow-hidden">
+          
+          {/* Fades are now OUTSIDE the Marquee, but inside the relative container */}
+          <MarqueeFade side="left" />
+          <MarqueeFade side="right" />
+
+          {/* Props applied to Marquee directly */}
+          <Marquee pauseOnHover className="[--gap:2rem]" duration="40s">
+            {testimonials.map((testimonial, index) => (
+              <MarqueeItem key={index} className="w-80 h-64 mx-4">
+                <div className="flex h-full flex-col gap-4 rounded-xl bg-white dark:bg-gray-800 p-6 shadow-lg mb-5 border border-gray-100 dark:border-gray-700">
+                  <StarRating rating={testimonial.rating} />
+                  <div className="flex flex-col flex-1">
+                    <p className="text-text-main dark:text-gray-100 text-base font-normal leading-relaxed mb-3 line-clamp-4">
+                      {testimonial.quote}
+                    </p>
+                    <p className="text-text-subtle dark:text-gray-400 text-sm font-medium mt-auto">
+                      {testimonial.author}
+                    </p>
                   </div>
-                </MarqueeItem>
-              ))}
-            </MarqueeContent>
+                </div>
+              </MarqueeItem>
+            ))}
           </Marquee>
         </div>
-
       </div>
     </section>
   );
