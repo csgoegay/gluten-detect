@@ -31,19 +31,39 @@ const StarRating = ({ rating }: { rating: number }) => {
   const hasHalfStar = rating % 1 !== 0;
   const emptyStars = 5 - Math.ceil(rating);
 
+  // Define styles for filled vs outlined states
+  // We use fontVariationSettings to force the 'FILL' axis to 1 for solid stars
+  const filledStyle = { fontVariationSettings: "'FILL' 1" };
+  const outlinedStyle = { fontVariationSettings: "'FILL' 0" };
+
   return (
-    <div className="flex text-yellow-500">
+    // Changed color to amber-400 for a better "gold" look
+    <div className="flex text-amber-400 gap-0.5">
       {[...Array(fullStars)].map((_, i) => (
-        <span key={`full-${i}`} className="material-symbols-outlined text-2xl">
+        <span
+          key={`full-${i}`}
+          className="material-symbols-outlined text-2xl"
+          style={filledStyle}
+        >
           star
         </span>
       ))}
       {hasHalfStar && (
-        <span className="material-symbols-outlined text-2xl">star_half</span>
+        <span
+          className="material-symbols-outlined text-2xl"
+          style={filledStyle}
+        >
+          star_half
+        </span>
       )}
       {[...Array(emptyStars)].map((_, i) => (
-        <span key={`empty-${i}`} className="material-symbols-outlined text-2xl">
-          star_outline
+        // Empty stars remain outlined and a lighter color
+        <span
+          key={`empty-${i}`}
+          className="material-symbols-outlined text-2xl text-gray-300 dark:text-gray-600"
+          style={outlinedStyle}
+        >
+          star
         </span>
       ))}
     </div>
