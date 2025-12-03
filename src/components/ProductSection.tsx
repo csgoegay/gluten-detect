@@ -71,7 +71,7 @@ const ProductSection = ({
                 className="aspect-[4/3] w-full rounded-xl bg-gray-100 bg-cover bg-center bg-no-repeat dark:bg-gray-800 shadow-xl"
                 role="img"
                 aria-label={imageAlt}
-                style={{ backgroundImage: `url(${imageUrl})` }}
+                style={{ backgroundImage: `url(/img/GlutenDetectTesteUrina.webp)` }}
                 style={{
                   transform: `perspective(1000px) rotateX(${rotateX.get()}deg) rotateY(${rotateY.get()}deg) scale(${isHovered ? 1.05 : 1})`,
                   transition: "transform 0.1s ease-out"
