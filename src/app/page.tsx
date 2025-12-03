@@ -241,7 +241,7 @@ export default function Home() {
           description="Você segue a sua dieta. Verifica os rótulos. Faz as perguntas certas. Mas os estudos revelam uma verdade assustadora: até 88% das pessoas em dieta sem glúten continuam a consumir glúten sem o saber. Este glúten oculto, consumido através de contaminação cruzada e alimentos mal rotulados, pode causar danos silenciosos e cumulativos nos seus intestinos."
           buttonText="Saiba Mais"
           buttonLink="#how-it-works"
-          imageUrl="https://lh3.googleusercontent.com/aida-public/AB6AXuBR_rY1e02n5i2eOaSYFHlQio3f6ilUanpgt3mc8ko62CL6LXj53tdrG8Ojwf3rAAWU-NkLelMqU_Oi4qO9HDVBnfG2w5s8l0DkohFA75qqw2fOLl1kUif76Lvl757WwmUc9u1UNP9uOpxAVDsu1oNZpjcuSkLoeU-4HybTs_B5PeH10pNg73ftPNeE5hEIBk_A7xFNpI7eSwdjzYXmUtex7PxqOxdyMecZD50K5uiJjY9sMhSQjGyoXPYSfm4gRNiyzE6ieLL4OrU"
+          imageUrl="/img/JantarDeAmigosSemGluten.webp"
           imageAlt="Uma pessoa atenta a ler cuidadosamente o rótulo dos ingredientes de um produto alimentar numa cozinha moderna e iluminada."
         />
         <HowItWorksSection
