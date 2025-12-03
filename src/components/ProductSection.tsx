@@ -140,13 +140,13 @@ const ProductSection = ({
                       <motion.span 
                         className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200"
                         initial={{ scale: 0 }}
-                        whileInView={{ scale: [0, 1.2, 1] }}
+                        whileInView={{ scale: 1 }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ 
                           delay: 0.8,
-                          duration: 0.5,
                           type: "spring",
-                          stiffness: 200
+                          stiffness: 200,
+                          damping: 10
                         }}
                       >
                         -{discountPercentage}%
