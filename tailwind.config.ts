@@ -121,6 +121,14 @@ export default {
           from: { transform: "translateY(0)" },
           to: { transform: "translateY(calc(-100% - var(--gap)))" },
         },
+        shimmer: {
+          '0%': {
+            transform: 'translateX(-100%)',
+          },
+          '100%': {
+            transform: 'translateX(200%)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -128,6 +136,7 @@ export default {
         pulse: 'pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         marquee: "marquee var(--duration) linear infinite",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+        shimmer: 'shimmer 3s infinite',
       }
     }
   },
