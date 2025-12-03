@@ -220,7 +220,7 @@ const productData = {
   discountPercentage: 32,
   buttonText: "Adicionar ao Carrinho",
   buttonLink: "/cart/add?product_id=123",
-  imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDoLrzlwfNS1ra7NhtAuc2BIxlTjSZBpbNIA6rQLq7b8O3hvSwec_TWbJC6_TQwvTiFc87O9t21yYokBzuCcGJT-tldk_iapnop3l1lqCrB3lr5vGLxBPYEU_t97WQQ5HBzfO49jI0tfRCtvQubjr7WQhXq6w_mKTscrLaXJWAsoCf4LvF1i8SwsbdCJ99dIYLvvLaPV_5wQtYGFyHnuJftF3IudBwi5dVQCcTGC-ji0AxQDWlb57ZxEyVcfsf4nqqteKg3MDaFfC8",
+  imageUrl: "/img/GlutenDetectTesteUrina.webp",
   imageAlt: "Imagem de alta qualidade da caixa do Kit Caseiro GlutenDetect, cassete de teste e outros conteúdos exibidos de forma organizada.",
 };
 
