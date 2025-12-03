@@ -111,33 +111,18 @@ const featureData = {
 const testimonialsData = [
   {
     rating: 5,
-    quote: "Este teste deu-me a paz de espírito que desesperadamente procurava. Muito fácil de usar e os resultados são rápidos. Altamente recomendado!",
-    author: "David R."
+    quote: "Levo sempre um teste na mala quando viajo. A paz de espírito de ver um resultado negativo depois de jantar num restaurante novo não tem preço.",
+    author: "Miguel Santos, Porto"
   },
   {
     rating: 5,
-    quote: "Finalmente encontrei as respostas de que precisava. O GlutenDetect mudou tudo. Ajudou-me a aprender e a confirmar que os meus novos hábitos estavam realmente a funcionar.",
-    author: "Michael P."
-  },
-  {
-    rating: 4.5,
-    quote: "Eu não tenho sintomas fortes, por isso nunca sabia se estava a ser contaminado acidentalmente. A primeira vez que usei o teste de fezes, deu positivo. Ajudou-me a identificar um produto 'sem glúten' que estava a contaminar a minha dieta.",
-    author: "Jessica L."
+    quote: "Sempre que tenho dúvidas sobre um sintoma, faço o teste. É um alívio imediato saber se ingeri glúten ou não. É muito fácil de usar.",
+    author: "Ana Silva, Lisboa"
   },
   {
     rating: 5,
-    quote: "Gerir a doença celíaca do meu filho era uma fonte constante de ansiedade. O GlutenDetect deu-nos o poder de saber com certeza. É simples, fiável e trouxe tanta paz à nossa família.",
-    author: "David R."
-  },
-  {
-    rating: 5,
-    quote: "Este produto é incrivelmente preciso. É indispensável para qualquer pessoa com sensibilidade ao glúten. A clareza que este teste proporciona é incomparável.",
-    author: "Sarah K."
-  },
-  {
-    rating: 4.5,
-    quote: "Vale cada cêntimo. A confiança que tenho na minha dieta agora é impagável. Sinto-me com muito mais controlo sobre a minha saúde agora.",
-    author: "Robert M."
+    quote: "Fundamental para festas de aniversário. Como mãe, uso para garantir que o meu filho não ingeriu glúten acidentalmente fora de casa.",
+    author: "Sofia Martins, Coimbra"
   },
 ];
 
