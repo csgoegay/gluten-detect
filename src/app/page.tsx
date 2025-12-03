@@ -1,7 +1,7 @@
 import TopNavBar from "@/components/TopNavBar";
 import HeroSection from "@/components/HeroSection";
 import TextWithImageSection from "@/components/TextWithImageSection";
-// import Feature108 from "@/components/ui/feature108";
+import HowItWorksSection from "@/components/HowItWorksSection";
 import ValidationSection from "@/components/ValidationSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import FaqSection from "@/components/FaqSection";
@@ -17,52 +17,42 @@ const navLinks = [
   { label: 'Comprar Agora', href: '/buy' },
 ];
 
-const howItWorksData = {
-  badge: "Processo Simples",
-  heading: "A Sua Saúde, Nas Suas Mãos. Paz de Espírito em 15 Minutos.",
-  description: "Três passos fáceis para monitorizar a sua dieta sem glúten com confiança.",
-  tabs: [
-    {
-      value: "tab-1",
-      icon: <Science className="h-auto w-4 shrink-0" />,
-      label: "1. Recolha",
-      content: {
-        badge: "Passo 1",
-        title: "Recolha de Amostra",
-        description: "Recolha de forma fácil e privada uma amostra de urina ou fezes em casa. O nosso kit inclui tudo o que precisa para uma recolha segura e higiénica.",
-        buttonText: "Ver Instruções",
-        imageSrc: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop&crop=center",
-        imageAlt: "Pessoa recolhendo amostra para teste em casa",
-      },
-    },
-    {
-      value: "tab-2",
-      icon: <Colorize className="h-auto w-4 shrink-0" />,
-      label: "2. Teste",
-      content: {
-        badge: "Passo 2",
-        title: "Aplique o Teste",
-        description: "Aplique a amostra na cassete de teste e aguarde. A nossa tecnologia patenteada deteta Peptídeos Imunogénicos do Glúten (GIP) com alta precisão.",
-        buttonText: "Ver Demonstração",
-        imageSrc: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=600&fit=crop&crop=center",
-        imageAlt: "Aplicação do teste na cassete",
-      },
-    },
-    {
-      value: "tab-3",
-      icon: <Timer className="h-auto w-4 shrink-0" />,
-      label: "3. Resultados",
-      content: {
-        badge: "Passo 3",
-        title: "Resultados Rápidos",
-        description: "Obtenha um resultado visual e claro em menos de 15 minutos. Saiba imediatamente se foi exposto ao glúten e tome as medidas necessárias.",
-        buttonText: "Interpretar Resultados",
-        imageSrc: "https://images.unsplash.com/photo-1584467735871-8ec4bb12fb12?w=800&h=600&fit=crop&crop=center",
-        imageAlt: "Resultados do teste mostrando positivo ou negativo",
-      },
-    },
-  ],
-};
+const howItWorksSteps = [
+  {
+    iconName: 'water_drop',
+    title: '1. Recolha',
+    description: (
+      <>
+        Utilize o copo de recolha fornecido no kit para recolher uma pequena amostra de urina.
+        <br/><br/>
+        <span className="font-bold text-white">Dica:</span> Para obter a máxima sensibilidade e precisão, recomenda-se a utilização da primeira urina da manhã.
+      </>
+    )
+  },
+  {
+    iconName: 'science',
+    title: '2. Preparação',
+    description: 'Com a seringa incluída, transfira 2 ml da sua amostra para o tubo da solução condicionadora. Feche a tampa e agite o tubo suavemente durante 5 a 10 segundos para misturar bem.'
+  },
+  {
+    iconName: 'colorize',
+    title: '3. Aplicação',
+    description: 'Retire a tira de teste da embalagem e coloque-a numa superfície plana. Inverta o tubo da solução e adicione 4 gotas na zona marcada com a letra "S" (Sample) da tira de teste.'
+  },
+  {
+    iconName: 'fact_check',
+    title: '4. Resultado',
+    description: (
+      <>
+        Aguarde 15 minutos sem mexer na tira.
+        <br/><br/>
+        <strong className="text-green-400">Negativo:</strong> Apenas uma linha verde (C).
+        <br/>
+        <strong className="text-red-400">Positivo:</strong> Duas linhas (Verde na zona C + Vermelha na zona T), indicando que houve ingestão de glúten nas últimas 24 horas.
+      </>
+    )
+  }
+];
 
 const benefitsData = [
   {
@@ -269,7 +259,11 @@ export default function Home() {
           imageUrl="https://lh3.googleusercontent.com/aida-public/AB6AXuBR_rY1e02n5i2eOaSYFHlQio3f6ilUanpgt3mc8ko62CL6LXj53tdrG8Ojwf3rAAWU-NkLelMqU_Oi4qO9HDVBnfG2w5s8l0DkohFA75qqw2fOLl1kUif76Lvl757WwmUc9u1UNP9uOpxAVDsu1oNZpjcuSkLoeU-4HybTs_B5PeH10pNg73ftPNeE5hEIBk_A7xFNpI7eSwdjzYXmUtex7PxqOxdyMecZD50K5uiJjY9sMhSQjGyoXPYSfm4gRNiyzE6ieLL4OrU"
           imageAlt="Uma pessoa atenta a ler cuidadosamente o rótulo dos ingredientes de um produto alimentar numa cozinha moderna e iluminada."
         />
-        {/* <Feature108 {...howItWorksData} /> */}
+        <HowItWorksSection
+          headline="O Processo Simples em 4 Passos"
+          subtitle="Monitorize a sua dieta sem glúten com confiança em menos de 15 minutos"
+          steps={howItWorksSteps}
+        />
         <ValidationSection
           headline="Comprovado Clinicamente, Recomendado por Especialistas."
           endorsements={endorsementData}
