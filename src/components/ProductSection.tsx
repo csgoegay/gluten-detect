@@ -107,7 +107,7 @@ const ProductSection = ({
                 {features.map((feature, index) => (
                   <motion.li 
                     key={index} 
-                    className="flex items-center gap-3 text-base text-primary/90 dark:text-gray-200"
+                    className="flex items-start gap-3 text-base text-primary/90 dark:text-gray-200"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
@@ -118,13 +118,13 @@ const ProductSection = ({
                     }}
                   >
                     <motion.span 
-                      className="material-symbols-outlined text-accent-gold"
+                      className="material-symbols-outlined text-accent-gold text-2xl leading-none mt-0.5 shrink-0"
                       whileHover={{ scale: 1.2, rotate: 10 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
                       check_circle
                     </motion.span>
-                    <span>{feature}</span>
+                    <span className="leading-snug">{feature}</span>
                   </motion.li>
                 ))}
               </ul>
