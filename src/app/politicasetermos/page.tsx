@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Shield, Description, Cookie, Search, Menu, X, ChevronRight, ArrowUp } from "lucide-react";
+import { Shield, FileText, Cookie, Search, Menu, X, ChevronRight, ArrowUp } from "lucide-react";
 
 // Navigation item type
 interface NavItem {
@@ -346,7 +346,7 @@ export default function PoliticasETermos() {
     {
       id: "terms-of-service",
       title: "Termos de Serviço",
-      icon: <Description className="w-5 h-5" />,
+      icon: <FileText className="w-5 h-5" />,
       subsections: legalContent.termsOfService.sections.map(section => ({
         id: section.id,
         title: section.title
