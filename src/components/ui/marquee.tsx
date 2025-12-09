@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { useEffect, useRef, useState } from "react";
 
 interface MarqueeProps {
   className?: string;
@@ -9,79 +10,97 @@ interface MarqueeProps {
   children?: React.ReactNode;
   vertical?: boolean;
   repeat?: number;
-  duration?: string;
   [key: string]: any;
 }
 
-const Marquee = ({
+export default function Marquee({
   className,
   reverse,
   pauseOnHover = false,
   children,
   vertical = false,
   repeat = 4,
-  duration = "40s",
   ...props
-}: MarqueeProps) => {
+}: MarqueeProps) {
+  const [isClient, setIsClient] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null;
+  }
+
   return (
     <div
+      ref={containerRef}
       {...props}
       className={cn(
-        // Added w-full and max-w-full to prevent horizontal overflow
-        "group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)] w-full max-w-full select-none",
+        // Core constraints to prevent overflow
+        "w-full max-w-full overflow-hidden select-none",
+        // Animation classes
+        "group flex",
         {
+          "[--duration:40s]": !props.duration,
           "flex-row": !vertical,
           "flex-col": vertical,
         },
         className
       )}
       style={{
-        "--duration": duration,
-      } as React.CSSProperties}
+        // Ensure the container never exceeds parent width
+        width: "100%",
+        maxWidth: "100%",
+        overflow: "hidden",
+        // Prevent text selection on mobile for better UX
+        WebkitUserSelect: "none",
+        userSelect: "none",
+        // Performance optimization for smooth animations
+        willChange: "transform",
+        ...props.style,
+      }}
     >
-      {Array(repeat)
-        .fill(0)
-        .map((_, i) => (
-          <div
-            key={i}
-            className={cn(
-              "flex shrink-0 justify-around [gap:var(--gap)] min-w-full", // Changed min-w-0 to min-w-full for smoother looping
-              {
-                "animate-marquee flex-row": !vertical,
-                "animate-marquee-vertical flex-col": vertical,
-                "group-hover:[animation-play-state:paused]": pauseOnHover,
-                "[animation-direction:reverse]": reverse,
-              }
-            )}
-          >
+      <div
+        className={cn("flex shrink-0 justify-around gap-[var(--gap)]", {
+          "animate-marquee": !reverse,
+          "animate-marquee-reverse": reverse,
+          "flex-row": !vertical,
+          "flex-col": vertical,
+          "min-w-full": true, // Ensure track covers full width to prevent jitter
+          "[--gap:1rem]": !props.gap,
+          "group-hover:[animation-play-state:paused]": pauseOnHover,
+        })}
+      >
+        {Array.from({ length: repeat }).map((_, i) => (
+          <div key={i} className="flex shrink-0 justify-around gap-[var(--gap)]">
             {children}
           </div>
         ))}
+      </div>
     </div>
   );
-};
+}
 
-const MarqueeItem = ({
+export const MarqueeItem = ({
   className,
-  children,
   ...props
-}: {
-  className?: string;
-  children: React.ReactNode;
-  [key: string]: any;
-}) => {
+}: React.HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
       {...props}
       className={cn(
-        "flex-shrink-0 px-4", 
+        // Ensure items don't force container expansion
+        "shrink-0",
         className
       )}
-    >
-      {children}
-    </div>
+      style={{
+        // Prevent flex item from growing beyond container
+        flexShrink: 0,
+        minWidth: 0, // Allow item to shrink if needed
+        ...props.style,
+      }}
+    />
   );
 };
-
-export { Marquee, MarqueeItem };
-export default Marquee;
