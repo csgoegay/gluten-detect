@@ -211,7 +211,7 @@ const productData = {
   headline: "O Seu Kit Completo de Monitorização de Glúten em Casa",
   description: "Tudo o que precisa para monitorizar a sua dieta sem glúten com confiança. Este kit fornece uma forma simples, fiável e rápida de detetar glúten oculto no seu sistema.",
   features: [
-    "Inclui 5 Testes Individuais",
+    "1 Teste Individual (Portátil)",
     "Resultados em Menos de 15 Minutos",
     "Tecnologia Medicamente Validada",
   ],
