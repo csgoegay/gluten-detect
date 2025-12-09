@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Shield, FileText, Cookie, Search, Menu, X, ChevronRight, ArrowUp } from "lucide-react";
+import TopNavBar from "@/components/TopNavBar";
 
 // Navigation item type
 interface NavItem {
@@ -301,6 +302,13 @@ const legalContent = {
   }
 };
 
+const navLinks = [
+  { label: 'Como Funciona', href: '/#how-it-works' },
+  { label: 'Ciência', href: '/#science' },
+  { label: 'FAQ', href: '/#faq' },
+  { label: 'Comprar Agora', href: '/buy' },
+];
+
 export default function PoliticasETermos() {
   const [activeSection, setActiveSection] = useState("privacy-policy");
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
@@ -396,8 +404,11 @@ export default function PoliticasETermos() {
 
   return (
     <div className="min-h-screen bg-background-light dark:bg-background-dark">
+      {/* Sticky Navigation Bar */}
+      <TopNavBar brandName="GlutenDetect" navLinks={navLinks} />
+
       {/* Header */}
-      <header className="bg-section-dark-blue text-white py-16 px-4">
+      <header className="bg-section-dark-blue text-white py-16 px-4 mt-16">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
