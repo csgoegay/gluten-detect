@@ -64,14 +64,14 @@ const HeroSection = ({
           animate="show"
           className="mb-6"
         >
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight capitalize">
             {headlineWords.map((word, index) => (
               <motion.span
                 key={index}
                 variants={wordVariants}
                 className="inline-block mr-2"
               >
-                {word}
+                {word.toLowerCase()}
               </motion.span>
             ))}
           </h1>
