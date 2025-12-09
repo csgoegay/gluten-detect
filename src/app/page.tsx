@@ -213,7 +213,7 @@ const productData = {
   features: [
     "Inclui 5 Testes Individuais",
     "Resultados em Menos de 15 Minutos",
-    "Tecnologia Medicalmente Validada",
+    "Tecnologia Medicamente Validada",
   ],
   originalPrice: "€50,00",
   discountedPrice: "€33,85",
