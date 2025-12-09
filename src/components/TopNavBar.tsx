@@ -28,11 +28,8 @@ const TopNavBar = ({
     return unsubscribe;
   }, [scrollY]);
 
-  const backgroundColor = useTransform(
-    scrollY,
-    [0, 50],
-    ["rgba(0, 51, 87, 0)", "rgba(0, 51, 87, 0.9)"]
-  );
+  // Always use dark blue background, remove transparency
+  const backgroundColor = "rgba(0, 51, 87, 0.9)";
 
   const backdropBlur = useTransform(
     scrollY,
