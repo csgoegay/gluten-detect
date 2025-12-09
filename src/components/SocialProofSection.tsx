@@ -64,7 +64,7 @@ const SocialProofSection = ({
           {headline}
         </h1>
 
-        {/* Mobile responsive marquee container */}
+        {/* Mobile responsive marquee container with proper constraints */}
         <div className="relative w-full overflow-hidden">
           <div className="w-full max-w-full overflow-x-hidden">
             <Marquee 

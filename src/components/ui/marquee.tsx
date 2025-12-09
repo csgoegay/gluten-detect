@@ -27,7 +27,8 @@ const Marquee = ({
     <div
       {...props}
       className={cn(
-        "group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]",
+        // Added w-full and max-w-full to prevent horizontal overflow
+        "group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)] w-full max-w-full select-none",
         {
           "flex-row": !vertical,
           "flex-col": vertical,
@@ -43,12 +44,15 @@ const Marquee = ({
         .map((_, i) => (
           <div
             key={i}
-            className={cn("flex shrink-0 justify-around [gap:var(--gap)] min-w-0", {
-              "animate-marquee flex-row": !vertical,
-              "animate-marquee-vertical flex-col": vertical,
-              "group-hover:[animation-play-state:paused]": pauseOnHover,
-              "[animation-direction:reverse]": reverse,
-            })}
+            className={cn(
+              "flex shrink-0 justify-around [gap:var(--gap)] min-w-full", // Changed min-w-0 to min-w-full for smoother looping
+              {
+                "animate-marquee flex-row": !vertical,
+                "animate-marquee-vertical flex-col": vertical,
+                "group-hover:[animation-play-state:paused]": pauseOnHover,
+                "[animation-direction:reverse]": reverse,
+              }
+            )}
           >
             {children}
           </div>
@@ -70,7 +74,7 @@ const MarqueeItem = ({
     <div
       {...props}
       className={cn(
-        "flex-shrink-0 px-4", // Added padding and flex-shrink-0 for better mobile handling
+        "flex-shrink-0 px-4", 
         className
       )}
     >
