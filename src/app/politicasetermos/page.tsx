@@ -118,93 +118,134 @@ const legalContent = {
     ]
   },
   termsOfService: {
-    title: "Termos de Serviço",
-    subtitle: "Os termos e condições que regem a utilização dos nossos produtos e serviços",
+    title: "Termos e Condições Gerais de Venda",
+    subtitle: "As condições que regem a compra de produtos no nosso website",
     lastUpdated: "15 de Dezembro de 2024",
     sections: [
       {
-        id: "acceptance-of-terms",
-        title: "Aceitação dos Termos",
+        id: "general-information",
+        title: "1. Informação Geral",
         content: `
-          <p class="mb-4">Ao aceder e utilizar o website da GlutenDetect e os nossos serviços, concorda com estes Termos de Serviço. Se não concordar com estes termos, não utilize os nossos serviços.</p>
+          <p class="mb-4">A titularidade deste website é detida por: DietAdvance, com sede em Campos do Lumiar IAPMEI Edf. F, Estrada do Lumiar, 1649-038 Lisboa, e NIF [INSERIR NIF].</p>
           
-          <h4 class="font-semibold text-lg mb-2 mt-6">Alterações aos Termos</h4>
-          <p class="mb-4">Reservamo-nos o direito de alterar estes termos a qualquer momento. As alterações entram em vigor assim que publicadas no nosso site. Notificaremos os utilizadores sobre alterações significativas.</p>
+          <h4 class="font-semibold text-lg mb-2 mt-6">Dados de Contacto:</h4>
+          <ul class="list-disc pl-6 mb-4 space-y-2">
+            <li><strong>Email:</strong> geral@dietadvance.pt</li>
+            <li><strong>Telefone:</strong> +351 915 721 069 (Chamada para a rede móvel nacional)</li>
+            <li><strong>Horário de Atendimento:</strong> Segunda a Sexta, das 9:30h às 18:30h.</li>
+          </ul>
+          
+          <p class="mb-4">Este documento regula as condições de uso deste Website e a compra de produtos no mesmo (doravante "Condições"). A atividade principal desenvolvida através do Website consiste na revenda de produtos de diagnóstico rápido para a deteção de glúten (GlutenDetect).</p>
+          
+          <p class="mb-4">Ao utilizar este Website ou ao realizar uma encomenda, o Utilizador consente em ficar vinculado por estas Condições e pela nossa Política de Privacidade.</p>
         `
       },
       {
-        id: "product-description",
-        title: "Descrição do Produto",
+        id: "user",
+        title: "2. O Utilizador",
         content: `
-          <p class="mb-4">O GlutenDetect é um dispositivo de teste caseiro para deteção de glúten em amostras de urina ou fezes, destinado a ajudar pessoas com doença celíaca ou sensibilidade ao glúten a monitorizar a sua dieta.</p>
+          <p class="mb-4">O acesso e uso do Website confere a condição de Utilizador. O Utilizador declara ser maior de 18 anos e ter capacidade legal para celebrar contratos. O Utilizador compromete-se a:</p>
           
-          <h4 class="font-semibold text-lg mb-2 mt-6">Uso Intencionado</h4>
           <ul class="list-disc pl-6 mb-4 space-y-2">
-            <li>Monitorização de dieta isenta de glúten</li>
-            <li>Deteção de exposição acidental ao glúten</li>
-            <li>Apoio na gestão da doença celíaca</li>
-          </ul>
-          
-          <h4 class="font-semibold text-lg mb-2 mt-6">Limitações</h4>
-          <p class="mb-4">Este produto não se destina ao diagnóstico médico. Consulte sempre um profissional de saúde para diagnóstico e tratamento médico.</p>
-        `
-      },
-      {
-        id: "user-responsibilities",
-        title: "Responsabilidades do Utilizador",
-        content: `
-          <p class="mb-4">Como utilizador dos nossos serviços, concorda em cumprir as seguintes responsabilidades.</p>
-          
-          <h4 class="font-semibold text-lg mb-2 mt-6">Obrigações</h4>
-          <ul class="list-disc pl-6 mb-4 space-y-2">
-            <li>Fornecer informações verdadeiras e precisas</li>
-            <li>Utilizar o produto de acordo com as instruções</li>
-            <li>Não partilhar informações de conta com terceiros</li>
-            <li>Respeitar os direitos de propriedade intelectual</li>
-            <li>Reportar problemas ou preocupações de segurança</li>
-          </ul>
-          
-          <h4 class="font-semibold text-lg mb-2 mt-6">Conduta Proibida</h4>
-          <ul class="list-disc pl-6 mb-4 space-y-2">
-            <li>Utilizar o produto para fins ilegais</li>
-            <li>Tentar contornar medidas de segurança</li>
-            <li>Interferir com o funcionamento do serviço</li>
-            <li>Publicar conteúdo ofensivo ou inadequado</li>
+            <li>Fazer uso deste Website apenas para consultas ou encomendas legalmente válidas.</li>
+            <li>Não realizar encomendas falsas ou fraudulentas.</li>
+            <li>Facilitar dados de contacto (email, morada, telefone) verdadeiros e exatos.</li>
           </ul>
         `
       },
       {
-        id: "limitations-of-liability",
-        title: "Limitações de Responsabilidade",
+        id: "purchase-process",
+        title: "3. Processo de Compra",
         content: `
-          <p class="mb-4">A responsabilidade da GlutenDetect está limitada nos termos descritos abaixo.</p>
+          <p class="mb-4">Para realizar uma encomenda, o Utilizador deve seguir o procedimento de compra online: selecionar o produto (Teste de Urina GlutenDetect), adicionar ao carrinho e completar os passos de pagamento. Após a conclusão, o Utilizador receberá um email de "Confirmação de Encomenda". Posteriormente, será informado via email quando a encomenda for expedida ("Confirmação de Envio").</p>
           
-          <h4 class="font-semibold text-lg mb-2 mt-6">Limitação de Danos</h4>
-          <p class="mb-4">Em nenhuma circunstância a GlutenDetect será responsável por danos indiretos, incidentais, especiais ou consequenciais, incluindo perda de lucros ou dados.</p>
-          
-          <h4 class="font-semibold text-lg mb-2 mt-6">Responsabilidade Máxima</h4>
-          <p class="mb-4">A nossa responsabilidade total não excederá o valor pago pelos nossos produtos ou serviços no período de 12 meses anterior à reclamação.</p>
-          
-          <h4 class="font-semibold text-lg mb-2 mt-6">Isenção de Garantias</h4>
-          <p class="mb-4">Os nossos serviços são fornecidos "como estão", sem garantias de qualquer tipo, expressas ou implícitas.</p>
+          <p class="mb-4">Ao finalizar a compra, o Utilizador aceita que a fatura seja emitida em formato eletrónico. Caso deseje a fatura em papel, poderá solicitá-la através do email geral@dietadvance.pt.</p>
         `
       },
       {
-        id: "dispute-resolution",
-        title: "Resolução de Disputas",
+        id: "product-availability",
+        title: "4. Disponibilidade dos Produtos",
         content: `
-          <p class="mb-4">Em caso de disputa, comprometemo-nos a resolver a situação de forma justa e eficiente.</p>
+          <p class="mb-4">Todas as encomendas estão sujeitas à disponibilidade dos produtos. Em caso de dificuldade de fornecimento ou rutura de stock, a DietAdvance compromete-se a reembolsar qualquer montante que o Utilizador já tenha pago, no prazo máximo de 14 dias.</p>
+        `
+      },
+      {
+        id: "prices-payment",
+        title: "5. Preços e Pagamento",
+        content: `
+          <p class="mb-4">Os preços apresentados incluem IVA à taxa legal em vigor em Portugal. Os portes de envio são calculados à parte e apresentados antes da finalização da compra. O pagamento é processado de forma segura.</p>
           
-          <h4 class="font-semibold text-lg mb-2 mt-6">Processo de Resolução</h4>
-          <ol class="list-decimal pl-6 mb-4 space-y-2">
-            <li>Contacte o nosso serviço de apoio ao cliente</li>
-            <li>Forneça detalhes completos da disputa</li>
-            <li>Aguarda resposta da nossa equipa dentro de 5 dias úteis</li>
-            <li>Se necessário, escalaremos para gestão sénior</li>
-          </ol>
+          <p class="mb-4">Ao clicar em "Autorizar Pagamento" ou "Finalizar Compra", o Utilizador confirma que o meio de pagamento utilizado lhe pertence.</p>
+        `
+      },
+      {
+        id: "delivery",
+        title: "6. Entrega",
+        content: `
+          <p class="mb-4">As entregas são realizadas em Portugal Continental e Ilhas (Açores e Madeira). Salvo circunstâncias extraordinárias, a encomenda será entregue no prazo estimado indicado no momento da compra.</p>
           
-          <h4 class="font-semibold text-lg mb-2 mt-6">Jurisdição</h4>
-          <p class="mb-4">Estes termos são regidos pelas leis de Portugal. Quaisquer disputas serão resolvidas nos tribunais portugueses.</p>
+          <p class="mb-4">Se não for possível entregar a encomenda por ausência do Utilizador, a transportadora deixará indicação sobre como proceder para levantar a encomenda ou agendar nova entrega.</p>
+        `
+      },
+      {
+        id: "returns-policy",
+        title: "7. Política de Devoluções e Direito de Livre Resolução",
+        content: `
+          <p class="mb-4">De acordo com o Decreto-Lei n.º 24/2014, o Utilizador tem o direito de resolver o contrato (devolver o produto) no prazo de 14 dias seguidos sem necessidade de justificação.</p>
+          
+          <h4 class="font-semibold text-lg mb-2 mt-6">Exceção Importante (Produtos de Higiene/Saúde):</h4>
+          <p class="mb-4">O produto GlutenDetect é um dispositivo médico de diagnóstico in vitro selado. Por motivos de proteção da saúde e higiene, o Utilizador perde o direito de livre resolução se a embalagem do teste tiver sido aberta ou o selo de segurança violado após a entrega, nos termos do artigo 17.º, n.º 1, alínea e) do Decreto-Lei n.º 24/2014.</p>
+          
+          <p class="mb-4">Para exercer o direito de devolução (apenas em embalagens seladas e intactas), o Utilizador deve contactar-nos através do email geral@dietadvance.pt. Os custos de devolução do bem ficam a cargo do Utilizador.</p>
+        `
+      },
+      {
+        id: "legal-warranty",
+        title: "8. Garantia Legal",
+        content: `
+          <p class="mb-4">Nos termos do Decreto-Lei n.º 84/2021, os produtos beneficiam de uma garantia de conformidade de 3 anos a contar da entrega. Se o produto apresentar defeito de fabrico (ex: o teste não funcionar conforme as instruções técnicas, apesar de corretamente executado), o Utilizador deve contactar a DietAdvance para procedermos à análise e eventual substituição ou reembolso.</p>
+          
+          <p class="mb-4">Esta garantia não cobre defeitos causados por má utilização, negligência ou incumprimento das instruções de uso (ex: não recolher a amostra de urina corretamente ou não aguardar o tempo indicado).</p>
+        `
+      },
+      {
+        id: "liability-medical-disclaimer",
+        title: "9. Responsabilidade e Isenção Médica",
+        content: `
+          <p class="mb-4">A DietAdvance atua como revendedora autorizada.</p>
+          
+          <h4 class="font-semibold text-lg mb-2 mt-6">Aviso Médico:</h4>
+          <p class="mb-4">O GlutenDetect é uma ferramenta de monitorização dietética e não substitui o aconselhamento, diagnóstico ou tratamento médico profissional. Um resultado positivo ou negativo não deve ser usado como base única para decisões de saúde críticas sem consultar um médico gastroenterologista.</p>
+          
+          <p class="mb-4">A DietAdvance não se responsabiliza por interpretações erradas dos resultados ou alterações de dieta realizadas sem supervisão médica.</p>
+        `
+      },
+      {
+        id: "intellectual-property",
+        title: "10. Propriedade Intelectual",
+        content: `
+          <p class="mb-4">O Utilizador reconhece que todos os direitos de autor, marcas registadas (incluindo "Biomedal" e "GlutenDetect") e demais direitos de propriedade intelectual sobre os materiais ou conteúdos que fazem parte do Website pertencem aos seus licenciadores.</p>
+        `
+      },
+      {
+        id: "communications",
+        title: "11. Comunicações",
+        content: `
+          <p class="mb-4">A comunicação entre o Utilizador e a DietAdvance será feita preferencialmente por via eletrónica (email).</p>
+        `
+      },
+      {
+        id: "applicable-law",
+        title: "12. Legislação Aplicável e Jurisdição",
+        content: `
+          <p class="mb-4">A utilização do nosso Website e os contratos de compra através dele regem-se pela legislação portuguesa. Em caso de litígio, o consumidor pode recorrer a uma Entidade de Resolução Alternativa de Litígios de Consumo (RAL) da sua área geográfica ou usar a Plataforma Europeia de Resolução de Litígios em Linha (RLL).</p>
+        `
+      },
+      {
+        id: "complaints-book",
+        title: "13. Livro de Reclamações",
+        content: `
+          <p class="mb-4">A DietAdvance dispõe de Livro de Reclamações Eletrónico. O Utilizador pode aceder ao mesmo através do endereço: www.livroreclamacoes.pt.</p>
         `
       }
     ]
@@ -345,7 +386,7 @@ export default function PoliticasETermos() {
     },
     {
       id: "terms-of-service",
-      title: "Termos de Serviço",
+      title: "Termos e Condições Gerais de Venda",
       icon: <FileText className="w-5 h-5" />,
       subsections: legalContent.termsOfService.sections.map(section => ({
         id: section.id,
@@ -469,7 +510,7 @@ export default function PoliticasETermos() {
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-400 text-left">
                   {item.id === "privacy-policy" && "Como protegemos as suas informações pessoais"}
-                  {item.id === "terms-of-service" && "Termos que regem a utilização dos nossos serviços"}
+                  {item.id === "terms-of-service" && "Termos que regem a compra de produtos no nosso website"}
                   {item.id === "cookies-policy" && "Como utilizamos cookies para melhorar a sua experiência"}
                 </p>
               </motion.button>
@@ -723,19 +764,19 @@ export default function PoliticasETermos() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <h4 className="font-semibold text-primary dark:text-white mb-2">Email</h4>
-                <p className="text-gray-600 dark:text-gray-400">privacy@glutendetect.pt</p>
+                <p className="text-gray-600 dark:text-gray-400">geral@dietadvance.pt</p>
               </div>
               <div>
                 <h4 className="font-semibold text-primary dark:text-white mb-2">Telefone</h4>
-                <p className="text-gray-600 dark:text-gray-400">+351 123 456 789</p>
+                <p className="text-gray-600 dark:text-gray-400">+351 915 721 069</p>
               </div>
               <div>
                 <h4 className="font-semibold text-primary dark:text-white mb-2">Morada</h4>
-                <p className="text-gray-600 dark:text-gray-400">Rua da Saúde, 123<br />1000-001 Lisboa, Portugal</p>
+                <p className="text-gray-600 dark:text-gray-400">Campos do Lumiar IAPMEI Edf. F<br />Estrada do Lumiar, 1649-038 Lisboa</p>
               </div>
               <div>
                 <h4 className="font-semibold text-primary dark:text-white mb-2">Horário</h4>
-                <p className="text-gray-600 dark:text-gray-400">Segunda a Sexta: 9h00 - 18h00</p>
+                <p className="text-gray-600 dark:text-gray-400">Segunda a Sexta: 9:30h - 18:30h</p>
               </div>
             </div>
           </section>
