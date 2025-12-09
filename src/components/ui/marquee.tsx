@@ -13,7 +13,7 @@ interface MarqueeProps {
   [key: string]: any;
 }
 
-export default function Marquee({
+const Marquee = ({
   className,
   reverse,
   pauseOnHover = false,
@@ -22,7 +22,7 @@ export default function Marquee({
   repeat = 4,
   duration = "40s",
   ...props
-}: MarqueeProps) {
+}: MarqueeProps) => {
   return (
     <div
       {...props}
@@ -55,9 +55,9 @@ export default function Marquee({
         ))}
     </div>
   );
-}
+};
 
-export const MarqueeItem = ({
+const MarqueeItem = ({
   className,
   children,
   ...props
@@ -78,3 +78,6 @@ export const MarqueeItem = ({
     </div>
   );
 };
+
+export { Marquee, MarqueeItem };
+export default Marquee;
