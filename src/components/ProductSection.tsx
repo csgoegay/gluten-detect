@@ -158,7 +158,7 @@ const ProductSection = ({
                   </div>
                 </div>
                 
-                <Link href={buttonLink}>
+                <Link href="https://dietadvance.pt/loja/saude-gastro-intestinal/gluten-detect/">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
