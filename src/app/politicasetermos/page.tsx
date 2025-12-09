@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Shield, FileText, Cookie, Search, Menu, X, ChevronRight, ArrowUp } from "lucide-react";
+import { Shield, FileText, Cookie, Menu, X, ChevronRight, ArrowUp } from "lucide-react";
 import TopNavBar from "@/components/TopNavBar";
 import {
   Accordion,
@@ -317,7 +317,6 @@ const navLinks = [
 
 export default function PoliticasETermos() {
   const [activeSection, setActiveSection] = useState("privacy-policy");
-  const [searchTerm, setSearchTerm] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
 
@@ -360,13 +359,6 @@ export default function PoliticasETermos() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  // Filter content based on search
-  const filterContent = (content: string) => {
-    if (!searchTerm) return content;
-    const regex = new RegExp(`(${searchTerm})`, 'gi');
-    return content.replace(regex, '<mark class="bg-yellow-200 text-yellow-900">$1</mark>');
-  };
 
   // Scroll to section
   const scrollToSection = (sectionId: string) => {
@@ -457,30 +449,6 @@ export default function PoliticasETermos() {
         </div>
       </section>
 
-      {/* Search Bar */}
-      <section className="py-8 px-4 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-4xl mx-auto">
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-            <input
-              type="text"
-              placeholder="Pesquisar nas políticas..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-primary dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-gold"
-            />
-            {searchTerm && (
-              <button
-                onClick={() => setSearchTerm("")}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            )}
-          </div>
-        </div>
-      </section>
-
       {/* Main Content */}
       <div className="flex flex-col lg:flex-row max-w-7xl mx-auto px-4 py-8">
         {/* Sidebar Navigation */}
@@ -563,7 +531,7 @@ export default function PoliticasETermos() {
                     <AccordionContent className="px-6 py-4 bg-white dark:bg-gray-900">
                       <div 
                         className="prose prose-sm max-w-none"
-                        dangerouslySetInnerHTML={{ __html: filterContent(section.content) }}
+                        dangerouslySetInnerHTML={{ __html: section.content }}
                       />
                     </AccordionContent>
                   </AccordionItem>
@@ -600,7 +568,7 @@ export default function PoliticasETermos() {
                     <AccordionContent className="px-6 py-4 bg-white dark:bg-gray-900">
                       <div 
                         className="prose prose-sm max-w-none"
-                        dangerouslySetInnerHTML={{ __html: filterContent(section.content) }}
+                        dangerouslySetInnerHTML={{ __html: section.content }}
                       />
                     </AccordionContent>
                   </AccordionItem>
@@ -637,7 +605,7 @@ export default function PoliticasETermos() {
                     <AccordionContent className="px-6 py-4 bg-white dark:bg-gray-900">
                       <div 
                         className="prose prose-sm max-w-none"
-                        dangerouslySetInnerHTML={{ __html: filterContent(section.content) }}
+                        dangerouslySetInnerHTML={{ __html: section.content }}
                       />
                     </AccordionContent>
                   </AccordionItem>
