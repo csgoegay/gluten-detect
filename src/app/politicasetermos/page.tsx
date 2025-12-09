@@ -21,98 +21,104 @@ const legalContent = {
     lastUpdated: "15 de Dezembro de 2024",
     sections: [
       {
-        id: "information-we-collect",
-        title: "Informações que Recolhemos",
+        id: "gdpr-introduction",
+        title: "Introdução ao Regulamento Geral de Proteção de Dados",
         content: `
-          <p class="mb-4">Na GlutenDetect, estamos comprometidos em proteger a sua privacidade. Recolhemos apenas as informações necessárias para fornecer os nossos serviços e melhorar a sua experiência.</p>
+          <p class="mb-4">A partir de 25 de maio de 2018 é aplicável em todo o espaço da União Europeia o Regulamento (UE) 2016/679 ("Regulamento Geral de Proteção de Dados Pessoais"). O Regulamento Geral de Proteção de Dados Pessoais introduz alterações muito significativas no que diz respeito ao reforço dos direitos dos titulares dos dados pessoais e no que diz respeito às medidas que devem ser adotadas pelas empresas e entidades públicas para proteção dos dados pessoais.</p>
           
-          <h4 class="font-semibold text-lg mb-2 mt-6">Informações Pessoais</h4>
-          <ul class="list-disc pl-6 mb-4 space-y-2">
-            <li>Nome e informações de contacto (email, telefone)</li>
-            <li>Endereço de entrega para envio de produtos</li>
-            <li>Informações de pagamento (processadas de forma segura)</li>
-            <li>Informações de saúde relacionadas com a doença celíaca (opcional)</li>
-          </ul>
+          <p class="mb-4">A presente declaração de privacidade e tratamento de dados pessoais é um compromisso da Dietadvance, pessoa colectiva número 517593734, com sede em Rua das Figueiras Vila Pateo, LA – 2430-187 Marinha Grande, proprietária do site www.dietadvance.pt</p>
           
-          <h4 class="font-semibold text-lg mb-2 mt-6">Informações Técnicas</h4>
+          <p class="mb-4">Ao disponibilizar os seus dados pessoais à Dietadvance o utilizador reconhece e consente que os mesmos sejam processados de acordo com os termos desta declaração.</p>
+          
+          <p class="mb-4">O uso do site www.dietadvance.pt pressupõe a aceitação da nossa politica de privacidade.</p>
+          
+          <p class="mb-4">A Dietadvance reserva-se ao direito de alterar a política de privacidade sem aviso prévio, assim sendo, solicitamos ao utilizador que reveja periodicamente a nossa política de privacidade e proteção de dados, para se manter informado sobre como ajudar a proteger os dados pessoais que recolhemos.</p>
+        `
+      },
+      {
+        id: "data-purposes",
+        title: "Para que finalidades tratamos os seus Dados Pessoais?",
+        content: `
           <ul class="list-disc pl-6 mb-4 space-y-2">
-            <li>Endereço IP e dados de navegação</li>
-            <li>Tipo de navegador e sistema operativo</li>
-            <li>Páginas visitadas e tempo de navegação</li>
-            <li>Informações do dispositivo para otimização</li>
+            <li><strong>Identificação (Nome)</strong></li>
+            <li><strong>Contacto (E-mail – telemóvel – morada)</strong></li>
+            <li><strong>Gestão de cliente</strong></li>
+            <li><strong>Fichas de Identificação pessoal</strong></li>
+            <li><strong>Gestão de contactos, informações ou pedidos</strong></li>
+            <li><strong>Gestão de reclamações</strong></li>
+            <li><strong>Divulgação de ações – Envio de informação útil, comercial, marketing e promoções</strong></li>
+            <li><strong>Gestão de faturação, cobrança e pagamento</strong></li>
+            <li><strong>Resposta a solicitações de pedidos de informação</strong></li>
           </ul>
         `
       },
       {
-        id: "how-we-use-information",
-        title: "Como Utilizamos as Suas Informações",
+        id: "data-collection",
+        title: "Como recolhemos os seus dados pessoais?",
         content: `
-          <p class="mb-4">Utilizamos as suas informações para fornecer, manter e melhorar os nossos serviços, bem como para comunicar consigo sobre os nossos produtos.</p>
+          <p class="mb-4">Recolhemos os dados pessoais mediante o seu consentimento quando adquire serviços ou produtos Dietadvance. Essa recolha pode ser feita oralmente, por escrito ou através do nosso website.</p>
           
-          <h4 class="font-semibold text-lg mb-2 mt-6">Finalidades Principais</h4>
-          <ul class="list-disc pl-6 mb-4 space-y-2">
-            <li>Processar e entregar os seus pedidos</li>
-            <li>Fornecer suporte ao cliente</li>
-            <li>Enviar informações sobre produtos e atualizações</li>
-            <li>Personalizar a sua experiência no nosso site</li>
-            <li>Melhorar os nossos produtos e serviços</li>
-          </ul>
+          <p class="mb-4">Adicionalmente, com o seu consentimento, podemos enviar informações comerciais sobre produtos e serviços da Dietadvance e dos seus Parceiros.</p>
           
-          <h4 class="font-semibold text-lg mb-2 mt-6">Base Legal</h4>
-          <p class="mb-4">A nossa base legal para processar as suas informações inclui consentimento, execução de contrato, interesse legítimo e obrigações legais.</p>
-        `
-      },
-      {
-        id: "data-sharing",
-        title: "Partilha de Dados",
-        content: `
-          <p class="mb-4">Não vendemos as suas informações pessoais a terceiros. Partilhamos dados apenas nas circunstâncias descritas abaixo.</p>
+          <p class="mb-4">Os dados pessoais que fornece não serão partilhados com terceiros responsáveis por tratamentos dos dados sem a sua permissão.</p>
           
-          <h4 class="font-semibold text-lg mb-2 mt-6">Parceiros de Serviço</h4>
-          <ul class="list-disc pl-6 mb-4 space-y-2">
-            <li>Processadores de pagamento (Stripe, PayPal)</li>
-            <li>Serviços de entrega (CTT, DHL)</li>
-            <li>Plataformas de email marketing</li>
-            <li>Provedores de alojamento web</li>
-          </ul>
-          
-          <h4 class="font-semibold text-lg mb-2 mt-6">Requisitos Legais</h4>
-          <p class="mb-4">Podemos divulgar as suas informações se exigido por lei, ordem judicial ou para proteger os nossos direitos legais.</p>
+          <p class="mb-4">A Dietadvance poderá contratar outras empresas para fornecerem serviços em nome daquela, como, por exemplo, alojamento do Site, correio electrónico, resposta a questões de utilizadores sobre os serviços, envio de informações sobre novos serviços e produtos, ofertas especiais. São fornecidas a estas empresas apenas os dados pessoais necessários para a prestação do serviço em causa. As empresas estão obrigadas a manter a confidencialidade das informações e estão proibidas de utilizar as informações para outros fins, actuando como subcontratantes da Dietadvance.</p>
         `
       },
       {
         id: "data-security",
-        title: "Segurança dos Dados",
+        title: "Segurança dos dados",
         content: `
-          <p class="mb-4">Implementamos medidas de segurança robustas para proteger as suas informações pessoais contra acesso não autorizado, alteração, divulgação ou destruição.</p>
+          <p class="mb-4">A Dietadvance está empenhada em proteger a segurança dos seus dados pessoais.</p>
           
-          <h4 class="font-semibold text-lg mb-2 mt-6">Medidas de Segurança</h4>
-          <ul class="list-disc pl-6 mb-4 space-y-2">
-            <li>Encriptação SSL/TLS para todas as transmissões</li>
-            <li>Servidores seguros com firewalls avançados</li>
-            <li>Acesso restrito às informações pessoais</li>
-            <li>Auditorias de segurança regulares</li>
-            <li>Conformidade com GDPR e outras regulamentações</li>
-          </ul>
+          <p class="mb-4">Utilizamos uma variedade de tecnologias e procedimentos de segurança para ajudar a proteger os seus dados pessoais contra o acesso, a utilização ou a divulgação não autorizadas.</p>
+          
+          <p class="mb-4">Por exemplo, armazenamos os dados pessoais fornecidos em computadores e servidores com acesso limitado, localizados em instalações controladas.</p>
         `
       },
       {
-        id: "your-rights",
-        title: "Os Seus Direitos",
+        id: "data-protection-rights",
+        title: "Direitos de proteção de dados e Direitos dos clientes",
         content: `
-          <p class="mb-4">Ao abrigo do GDPR, tem direitos específicos sobre as suas informações pessoais. Estamos comprometidos em respeitar esses direitos.</p>
+          <h4 class="font-semibold text-lg mb-2 mt-6">– Direito de acesso</h4>
+          <p class="mb-4">Direito a obter a confirmação de quais são os seus dados pessoais que são tratados e informação sobre os mesmos, como por exemplo, quais as finalidades do tratamento, quais os prazos de conservação, entre outros. Direito a ver/ouvir ou obter cópia, por exemplo das faturas ou dos acordos escritos em que é interveniente.</p>
           
-          <h4 class="font-semibold text-lg mb-2 mt-6">Direitos do Utilizador</h4>
+          <h4 class="font-semibold text-lg mb-2 mt-6">– Direito de retificação</h4>
+          <p class="mb-4">Direito a solicitar a retificação dos seus dados pessoais que se encontrem inexatos ou solicitar que os dados pessoais incompletos sejam completados, como por exemplo a morada, o email, os contactos telefónicos, ou outros.</p>
+          
+          <h4 class="font-semibold text-lg mb-2 mt-6">– Direito a conhecer o anulamento</h4>
+          <p class="mb-4">Direito a obter o anulamento dos seus dados pessoais, desde que não se verifiquem fundamentos válidos para a sua conservação, como por exemplo, os casos em que a Dietadvance tem de conservar os dados por exigência de entidades oficiais.</p>
+          
+          <h4 class="font-semibold text-lg mb-2 mt-6">– Direito à portabilidade</h4>
+          <p class="mb-4">Direito da receber os dados que nos forneceu em formato digital de uso corrente e de leitura automática ou de solicitar a transmissão direta dos seus dados para outra entidade que passe a ser o novo responsável pelos seus dados pessoais.</p>
+          
+          <h4 class="font-semibold text-lg mb-2 mt-6">– Direito a retirar o consentimento ou direito de oposição</h4>
+          <p class="mb-4">Direito a se opor ou retirar o seu consentimento, a qualquer momento a um tratamento de dados, como por exemplo, no caso de tratamento de dados para fins de marketing, desde que não se verifiquem interesses legítimos que prevalecem sobre os seus interesses, direitos e liberdades.</p>
+          
+          <h4 class="font-semibold text-lg mb-2 mt-6">– Direito de limitação</h4>
+          <p class="mb-4">Direito a solicitar a limitação do tratamento dos seus dados pessoais, sob a forma de:</p>
           <ul class="list-disc pl-6 mb-4 space-y-2">
-            <li><strong>Acesso:</strong> Solicitar uma cópia das suas informações</li>
-            <li><strong>Retificação:</strong> Corrigir informações incorretas</li>
-            <li><strong>Eliminação:</strong> Solicitar a remoção das suas informações</li>
-            <li><strong>Portabilidade:</strong> Transferir as suas informações para outro serviço</li>
-            <li><strong>Oposição:</strong> Opor-se ao processamento das suas informações</li>
-            <li><strong>Restrição:</strong> Limitar o processamento das suas informações</li>
+            <li>Suspensão do tratamento;</li>
+            <li>Limitação do âmbito do tratamento a certas categorias de dados ou finalidades de tratamento.</li>
           </ul>
           
-          <p class="mb-4">Para exercer estes direitos, contacte-nos através de privacy@glutendetect.pt</p>
+          <h4 class="font-semibold text-lg mb-2 mt-6">– Perfil e decisões automatizadas</h4>
+          <p class="mb-4">A Dietadvance pode traçar o perfil dos clientes com base, por exemplo, nas suas preferências, interesses pessoais, utilização de serviço, localização, entre outros indicadores, nomeadamente para prestar serviços, aumentar a qualidade e a experiência dos produtos e serviços, adequar comunicações de marketing e de divulgação de ações. No entanto, esse tratamento deve estar baseado no consentimento do titular.</p>
+          
+          <p class="mb-4">Conforme descrito infra, pode aceder aos seus dados pessoais e pedir a sua atualização ou eliminação, nos termos da lei, dirigindo um pedido para: geral@dietadvance.pt</p>
+        `
+      },
+      {
+        id: "site-usage",
+        title: "Uso do site",
+        content: `
+          <p class="mb-4">Este site deve ser usado exclusivamente para seu uso pessoal. É proibida a sua modificação, reprodução, duplicação, cópia, distribuição, venda, revenda e outras formas de exploração, com fins comerciais ou não.</p>
+          
+          <p class="mb-4">Todos os direitos de propriedade intelectual sobre o Site e os seus conteúdos pertencem à Dietadvance.</p>
+          
+          <p class="mb-4">A Dietadvance concede-lhe apenas uma licença limitada, não exclusiva e não transferível, para visualizar ou imprimir o conteúdo do Site para uso exclusivamente pessoal, e não comercial.</p>
+          
+          <p class="mb-4">O utilizador compromete-se a não utilizar este Site para fins ilegais ou proibidos.</p>
         `
       }
     ]
@@ -772,7 +778,7 @@ export default function PoliticasETermos() {
               </div>
               <div>
                 <h4 className="font-semibold text-primary dark:text-white mb-2">Morada</h4>
-                <p className="text-gray-600 dark:text-gray-400">Campos do Lumiar IAPMEI Edf. F<br />Estrada do Lumiar, 1649-038 Lisboa</p>
+                <p className="text-gray-600 dark:text-gray-400">Rua das Figueiras Vila Pateo, LA<br />2430-187 Marinha Grande</p>
               </div>
               <div>
                 <h4 className="font-semibold text-primary dark:text-white mb-2">Horário</h4>
