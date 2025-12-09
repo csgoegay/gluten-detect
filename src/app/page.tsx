@@ -7,7 +7,6 @@ import BenefitsSection from "@/components/BenefitsSection";
 import FaqSection from "@/components/FaqSection";
 import SocialProofSection from "@/components/SocialProofSection";
 import ProductSection from "@/components/ProductSection";
-import { Science, Colorize, Timer } from "lucide-react";
 
 const navLinks = [
   { label: 'Como Funciona', href: '#how-it-works' },
