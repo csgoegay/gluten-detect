@@ -408,7 +408,7 @@ export default function PoliticasETermos() {
       <TopNavBar brandName="GlutenDetect" navLinks={navLinks} />
 
       {/* Header */}
-      <header className="bg-section-dark-blue text-white py-16 px-4 mt-16">
+      <header className="bg-section-dark-blue text-white py-16 px-4 pt-20">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
