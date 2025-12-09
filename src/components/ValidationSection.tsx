@@ -38,6 +38,13 @@ const ValidationSection = ({
   buttonText,
   buttonLink,
 }: ValidationSectionProps) => {
+  // Define the specific images for each endorsement
+  const endorsementImages = [
+    "/img/Seec.png",
+    "/img/Aragao.png", 
+    "/img/UniversidadeDeVigo.png"
+  ];
+
   return (
     <section className="px-4 py-16 sm:px-6 md:px-8 lg:py-24">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-center">
@@ -88,7 +95,7 @@ const ValidationSection = ({
                   >
                     <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-white p-2 shadow-sm filter grayscale hover:grayscale-0 transition-all duration-500">
                       <Image
-                        src="/img/Seec.png"
+                        src={endorsementImages[index] || "/img/Seec.png"}
                         alt={item.imageAlt}
                         width={64}
                         height={64}
