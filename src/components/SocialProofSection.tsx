@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Star, StarHalf } from "lucide-react";
-import { Marquee, MarqueeItem } from "@/components/ui/marquee";
+import { Marquee, MarqueeItem, MarqueeFade, MarqueeContent } from "@/components/ui/marquee";
 
 interface Testimonial {
   rating: number;
@@ -59,37 +59,37 @@ const SocialProofSection = ({
 }: SocialProofSectionProps) => {
   return (
     <section className="flex flex-1 justify-center py-14 md:py-24">
-      <div className="layout-content-container flex flex-col max-w-6xl flex-1 px-4 md:px-8">
+      <div className="layout-content-container flex flex-col w-full max-w-6xl flex-1 px-4 md:px-8">
         <h1 className="text-primary tracking-tight text-3xl md:text-4xl font-bold leading-tight text-center pb-8 md:pb-12">
           {headline}
         </h1>
 
-        {/* Mobile responsive marquee container with proper constraints */}
-        <div className="relative w-full overflow-hidden">
-          <div className="w-full max-w-full overflow-x-hidden">
-            <Marquee 
-              pauseOnHover 
-              className="[--gap:1rem] md:[--gap:2rem] [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]" 
-              duration="40s"
-            >
-              {testimonials.map((testimonial, index) => (
-                <MarqueeItem key={index} className="w-72 sm:w-80">
-                  <div className="flex h-full flex-col gap-4 rounded-xl bg-white dark:bg-gray-800 p-4 sm:p-6 shadow-lg border border-gray-100 dark:border-gray-700">
-                    <StarRating rating={testimonial.rating} />
-                    <div className="flex flex-col flex-1">
-                      <p className="text-text-main dark:text-gray-100 text-sm sm:text-base font-normal leading-relaxed mb-3 line-clamp-4">
-                        {testimonial.quote}
-                      </p>
-                      <p className="text-text-subtle dark:text-gray-400 text-xs sm:text-sm font-medium mt-auto">
-                        {testimonial.author}
-                      </p>
-                    </div>
+        {/* New marquee implementation with better mobile support */}
+        <Marquee className="w-full">
+          <MarqueeFade side="left" />
+          <MarqueeFade side="right" />
+          <MarqueeContent
+            speed={30}
+            pauseOnHover={true}
+            autoFill={true}
+          >
+            {testimonials.map((testimonial, index) => (
+              <MarqueeItem key={index} className="w-72 sm:w-80">
+                <div className="flex h-full flex-col gap-4 rounded-xl bg-white dark:bg-gray-800 p-4 sm:p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+                  <StarRating rating={testimonial.rating} />
+                  <div className="flex flex-col flex-1">
+                    <p className="text-text-main dark:text-gray-100 text-sm sm:text-base font-normal leading-relaxed mb-3 line-clamp-4">
+                      {testimonial.quote}
+                    </p>
+                    <p className="text-text-subtle dark:text-gray-400 text-xs sm:text-sm font-medium mt-auto">
+                      {testimonial.author}
+                    </p>
                   </div>
-                </MarqueeItem>
-              ))}
-            </Marquee>
-          </div>
-        </div>
+                </div>
+              </MarqueeItem>
+            ))}
+          </MarqueeContent>
+        </Marquee>
       </div>
     </section>
   );
