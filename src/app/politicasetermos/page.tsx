@@ -262,110 +262,39 @@ const legalContent = {
     lastUpdated: "15 de Dezembro de 2024",
     sections: [
       {
-        id: "what-are-cookies",
-        title: "O que são Cookies",
+        id: "cookie-introduction",
+        title: "O que são Cookies e Como os Utilizamos",
         content: `
-          <p class="mb-4">Cookies são pequenos ficheiros de texto que são armazenados no seu dispositivo quando visita um website. Eles permitem-nos reconhecê-lo e recordar as suas preferências.</p>
+          <p class="mb-4">Para prestar um melhor serviço ao utilizador, utilizamos cookies, ou seja, pequenas etiquetas de software que podem ser armazenadas no seu computador através do navegador de internet (browser), retendo apenas informação relacionada com as suas preferências.</p>
           
-          <h4 class="font-semibold text-lg mb-2 mt-6">Como Funcionam</h4>
+          <p class="mb-4">Estes cookies serão apenas utilizados pelo site www.dietadvance.pt e a sua utilização limita-se às seguintes finalidades:</p>
+          
           <ul class="list-disc pl-6 mb-4 space-y-2">
-            <li>O website envia um cookie para o seu navegador</li>
-            <li>O navegador armazena o cookie localmente</li>
-            <li>O navegador envia o cookie de volta em visitas futuras</li>
-            <li>O website reconhece o cookie e personaliza a experiência</li>
+            <li><strong>Permitir saber quem é o visitante</strong> e, dessa forma, prestar um serviço melhor, mais seguro e personalizado;</li>
+            <li><strong>Recolher direções IP dos utilizadores.</strong> A informação do cookie identifica o utilizador e se ele estiver inscrito em algum serviço, promoção, concurso ou evento promovido por nós, dá uma ordem para o sistema aceder à informação sobre o utilizador que temos armazenada. Assim, podemos personalizar as preferências do utilizador e facilitar a utilização dos seus serviços.</li>
+            <li><strong>Realizar estudos estatísticos</strong> que permitam distinguir entre utilizadores regulares, para assim poder calcular a quantidade de utilizadores e o seu crescimento.</li>
+            <li><strong>Reconhecer se os utilizadores visualizaram</strong> uma determinada parte do Site e assim evitar a aparição repetitiva da própria.</li>
           </ul>
         `
       },
       {
-        id: "types-of-cookies",
-        title: "Tipos de Cookies que Utilizamos",
+        id: "cookie-management",
+        title: "Gestão de Cookies",
         content: `
-          <p class="mb-4">Utilizamos diferentes tipos de cookies para várias finalidades, todos concebidos para melhorar a sua experiência.</p>
+          <p class="mb-4">O visitante do site tem o poder de desligar os seus cookies, nas opções do seu browser, ou efetuando alterações nas ferramentas de programas Anti-Virus. No entanto, isso poderá alterar a forma como interage com o nosso website, ou outros websites. Isso poderá afetar ou não permitir que faça logins em programas, sites ou fóruns da nossa e de outras redes.</p>
           
-          <h4 class="font-semibold text-lg mb-2 mt-6">Cookies Essenciais</h4>
-          <ul class="list-disc pl-6 mb-4 space-y-2">
-            <li>Autenticação e segurança</li>
-            <li>Gestão de sessões</li>
-            <li>Proteção contra CSRF</li>
-            <li>Manutenção do estado do utilizador</li>
-          </ul>
+          <p class="mb-4">Em algumas ocasiões, recolhemos informação no nosso Site por meio de cookies temporários ou de sessão. Estes cookies desaparecem quando se fecha o navegador da Internet. Não se guardam no disco rígido do utilizador; armazenam-se apenas na memória temporária que se apaga depois de fechado o navegador. Utilizamos cookies temporários para determinar, por exemplo, como é usado o nosso Site, para assim poder melhorar o design e a utilidade do mesmo. Os cookies temporários não estão associados a nenhum tipo de informação sua identificável ao nível pessoal.</p>
           
-          <h4 class="font-semibold text-lg mb-2 mt-6">Cookies de Desempenho</h4>
-          <ul class="list-disc pl-6 mb-4 space-y-2">
-            <li>Análise de tráfego do website</li>
-            <li>Medição de desempenho</li>
-            <li>Identificação de problemas técnicos</li>
-            <li>Otimização da velocidade do site</li>
-          </ul>
-          
-          <h4 class="font-semibold text-lg mb-2 mt-6">Cookies Funcionais</h4>
-          <ul class="list-disc pl-6 mb-4 space-y-2">
-            <li>Memorização de preferências</li>
-            <li>Personalização de conteúdo</li>
-            <li>Funcionalidades de redes sociais</li>
-            <li>Sugestões personalizadas</li>
-          </ul>
+          <p class="mb-4">Em qualquer caso, pode limitar ou restringir a admissão de cookies através das opções do seu navegador.</p>
         `
       },
       {
-        id: "cookie-categories",
-        title: "Categorias e Finalidades",
+        id: "liability-limitation",
+        title: "Limitação de responsabilidade",
         content: `
-          <p class="mb-4">Os nossos cookies estão organizados por categoria de acordo com a sua finalidade específica.</p>
+          <p class="mb-4">O site www.dietadvance.pt pode possuir ligações para outros sites. A nossa política de privacidade não é aplicada a sites de terceiros, pelo que, caso visite outro site a partir do nosso deverá ler a política de privacidade do mesmo para estar informado. Não nos responsabilizamos pela política de privacidade ou conteúdo presente nesses mesmos sites.</p>
           
-          <h4 class="font-semibold text-lg mb-2 mt-6">Categoria 1: Estritamente Necessários</h4>
-          <p class="mb-4">Essenciais para o funcionamento do website. Não podem ser desativados.</p>
-          
-          <h4 class="font-semibold text-lg mb-2 mt-6">Categoria 2: Desempenho e Análise</h4>
-          <p class="mb-4">Ajudam-nos a entender como os utilizadores interagem com o nosso site.</p>
-          
-          <h4 class="font-semibold text-lg mb-2 mt-6">Categoria 3: Funcionalidade</h4>
-          <p class="mb-4">Permitem funcionalidades avançadas e personalização.</p>
-          
-          <h4 class="font-semibold text-lg mb-2 mt-6">Categoria 4: Publicidade e Marketing</h4>
-          <p class="mb-4">Utilizados para publicidade personalizada e marketing.</p>
-        `
-      },
-      {
-        id: "managing-cookies",
-        title: "Gerir as Suas Preferências de Cookies",
-        content: `
-          <p class="mb-4">Tem controlo sobre os cookies que aceita no nosso website.</p>
-          
-          <h4 class="font-semibold text-lg mb-2 mt-6">Configurações do Navegador</h4>
-          <ul class="list-disc pl-6 mb-4 space-y-2">
-            <li>Bloquear todos os cookies</li>
-            <li>Aceitar apenas cookies de primeira parte</li>
-            <li>Eliminar cookies existentes</li>
-            <li>Notificar quando os cookies são definidos</li>
-          </ul>
-          
-          <h4 class="font-semibold text-lg mb-2 mt-6">O Nosso Banner de Cookies</h4>
-          <p class="mb-4">Quando visita o nosso site pela primeira vez, verá um banner de cookies onde pode:</p>
-          <ul class="list-disc pl-6 mb-4 space-y-2">
-            <li>Aceitar todos os cookies</li>
-            <li>Rejeitar cookies não essenciais</li>
-            <li>Personalizar as suas preferências</li>
-            <li>Saber mais sobre cada tipo de cookie</li>
-          </ul>
-        `
-      },
-      {
-        id: "third-party-cookies",
-        title: "Cookies de Terceiros",
-        content: `
-          <p class="mb-4">Alguns cookies no nosso website são definidos por serviços de terceiros que utilizamos.</p>
-          
-          <h4 class="font-semibold text-lg mb-2 mt-6">Serviços de Terceiros</h4>
-          <ul class="list-disc pl-6 mb-4 space-y-2">
-            <li><strong>Google Analytics:</strong> Análise de tráfego e comportamento</li>
-            <li><strong>Facebook Pixel:</strong> Publicidade personalizada</li>
-            <li><strong>Hotjar:</strong> Mapas de calor e gravações de sessão</li>
-            <li><strong>Stripe:</strong> Processamento de pagamentos</li>
-          </ul>
-          
-          <h4 class="font-semibold text-lg mb-2 mt-6">Políticas de Terceiros</h4>
-          <p class="mb-4">Cada serviço de terceiros tem a sua própria política de privacidade. Recomendamos que reveja estas políticas para entender como utilizam os seus dados.</p>
+          <p class="mb-4">O utilizador reconhece ainda que: a Internet é uma rede mundial de computadores e que qualquer informação enviada ou transmitida por si será necessariamente encaminhada por computadores de terceiros; a Dietadvance não é responsável por falhas na segurança das comunicações e não assume qualquer responsabilidade pelo uso indevido da sua informação por terceiros.</p>
         `
       }
     ]
