@@ -106,50 +106,6 @@ const featureData = {
   ],
 };
 
-const testimonialsData = [
-  {
-    rating: 5,
-    quote: "Levo sempre um teste na mala quando viajo. A paz de espírito de ver um resultado negativo depois de jantar num restaurante novo não tem preço.",
-    author: "Miguel Santos, Porto"
-  },
-  {
-    rating: 5,
-    quote: "Sempre que tenho dúvidas sobre um sintoma, faço o teste. É um alívio imediato saber se ingeri glúten ou não. É muito fácil de usar.",
-    author: "Ana Silva, Lisboa"
-  },
-  {
-    rating: 5,
-    quote: "Fundamental para festas de aniversário. Como mãe, uso para garantir que o meu filho não ingeriu glúten acidentalmente fora de casa.",
-    author: "Sofia Martins, Coimbra"
-  },
-];
-
-const featuredInData = {
-  title: "Destacado Em",
-  logos: [
-    {
-      src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDoLrzlwfNS1ra7NhtAuc2BIxlTjSZBpbNIA6rQLq7b8O3hvSwec_TWbJC6_TQwvTiFc87O9t21yYokBzuCcGJT-tldk_iapnop3l1lqCrB3lr5vGLxBPYEU_t97WQQ5HBzfO49jI0tfRCtvQubjr7WQhXq6w_mKTscrLaXJWAsoCf4LvF1i8SwsbdCJ99dIYLvvLaPV_5wQtYGFyHnuJftF3IudBwi5dVQCcTGC-ji0AxQDWlb57ZxEyVcfsf4nqqteKg3MDaFfC8',
-      alt: 'Forbes Logo'
-    },
-    {
-      src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBR_rY1e02n5i2eOaSYFHlQio3f6ilUanpgt3mc8ko62CL6LXj53tdrG8Ojwf3rAAWU-NkLelMqU_Oi4qO9HDVBnfG2w5s8l0DkohFA75qqw2fOLl1kUif76Lvl757WwmUc9u1UNP9uOpxAVDsu1oNZpjcuSkLoeU-4HybTs_B5PeH10pNg73ftPNeE5hEIBk_A7xFNpI7eSwdjzYXmUtex7PxqOxdyMecZD50K5uiJjY9sMhSQjGyoXPYSfm4gRNiyzE6ieLL4OrU',
-      alt: 'Medical News Today Logo'
-    },
-    {
-      src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDoLrzlwfNS1ra7NhtAuc2BIxlTjSZBpbNIA6rQLq7b8O3hvSwec_TWbJC6_TQwvTiFc87O9t21yYokBzuCcGJT-tldk_iapnop3l1lqCrB3lr5vGLxBPYEU_t97WQQ5HBzfO49jI0tfRCtvQubjr7WQhXq6w_mKTscrLaXJWAsoCf4LvF1i8SwsbdCJ99dIYLvvLaPV_5wQtYGFyHnuJftF3IudBwi5dVQCcTGC-ji0AxQDWlb57ZxEyVcfsf4nqqteKg3MDaFfC8',
-      alt: 'Healthline Logo'
-    },
-    {
-      src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDoLrzlwfNS1ra7NhtAuc2BIxlTjSZBpbNIA6rQLq7b8O3hvSwec_TWbJC6_TQwvTiFc87O9t21yYokBzuCcGJT-tldk_iapnop3l1lqCrB3lr5vGLxBPYEU_t97WQQ5HBzfO49jI0tfRCtvQubjr7WQhXq6w_mKTscrLaXJWAsoCf4LvF1i8SwsbdCJ99dIYLvvLaPV_5wQtYGFyHnuJftF3IudBwi5dVQCcTGC-ji0AxQDWlb57ZxEyVcfsf4nqqteKg3MDaFfC8',
-      alt: 'WebMD Logo'
-    },
-    {
-      src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBR_rY1e02n5i2eOaSYFHlQio3f6ilUanpgt3mc8ko62CL6LXj53tdrG8Ojwf3rAAWU-NkLelMqU_Oi4qO9HDVBnfG2w5s8l0DkohFA75qqw2fOLl1kUif76Lvl757WwmUc9u1UNP9uOpxAVDsu1oNZpjcuSkLoeU-4HybTs_B5PeH10pNg73ftPNeE5hEIBk_A7xFNpI7eSwdjzYXmUtex7PxqOxdyMecZD50K5uiJjY9sMhSQjGyoXPYSfm4gRNiyzE6ieLL4OrU',
-      alt: 'Celiac Foundation Logo'
-    },
-  ]
-};
-
 const faqData = [
   {
     question: 'Como funciona o GlutenDetect?',
@@ -258,17 +214,15 @@ export default function Home() {
           headline="Porquê Adivinhar Quando Pode Ter a Certeza?"
           benefits={benefitsData}
         />
+        <SocialProofSection
+          headline="A Comunidade Celíaca Confia no GlutenDetect."
+        />
         <FaqSection
           headline="As Suas Perguntas, Aqui Respondidas."
           faqItems={faqData}
           contactText="Ainda tem perguntas?"
           contactLinkText="Contacte a nossa equipa de apoio."
           contactLinkHref="/contactos"
-        />
-        <SocialProofSection
-          headline="A Comunidade Celíaca Confia no GlutenDetect."
-          testimonials={testimonialsData}
-          featuredIn={featuredInData}
         />
         <ProductSection {...productData} />
       </main>

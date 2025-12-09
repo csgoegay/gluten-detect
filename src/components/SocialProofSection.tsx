@@ -1,95 +1,180 @@
 "use client";
 
-import React from "react";
-import { Star, StarHalf } from "lucide-react";
-import { Marquee, MarqueeItem, MarqueeFade, MarqueeContent } from "@/components/ui/marquee";
+import { useState } from "react";
+import { AnimatePresence, type Transition, motion } from "framer-motion";
+import { PaginationDot } from "@/components/ui/pagination-dot";
+import { RatingStars } from "@/components/ui/rating-stars";
 
 interface Testimonial {
-  rating: number;
+  id: string;
   quote: string;
-  author: string;
-}
-
-interface Logo {
-  src: string;
-  alt: string;
-}
-
-interface FeaturedIn {
-  title: string;
-  logos: Logo[];
+  author: {
+    name: string;
+    title: string;
+  };
 }
 
 interface SocialProofSectionProps {
   headline: string;
   testimonials: Testimonial[];
-  featuredIn?: FeaturedIn;
 }
 
-// --- LUCIDE STAR RATING ---
-const StarRating = ({ rating }: { rating: number }) => {
-  const fullStars = Math.floor(rating);
-  const hasHalfStar = rating % 1 !== 0;
-  const emptyStars = 5 - Math.ceil(rating);
+const reviews: Testimonial[] = [
+  {
+    id: "review-01",
+    quote: "Levo sempre um teste na mala quando viajo. A paz de espírito de ver um resultado negativo depois de jantar num restaurante novo não tem preço.",
+    author: {
+      name: "Miguel Santos",
+      title: "Porto",
+    },
+  },
+  {
+    id: "review-02",
+    quote: "Sempre que tenho dúvidas sobre um sintoma, faço o teste. É um alívio imediato saber se ingeri glúten ou não. É muito fácil de usar.",
+    author: {
+      name: "Ana Silva", 
+      title: "Lisboa",
+    },
+  },
+  {
+    id: "review-03",
+    quote: "Fundamental para festas de aniversário. Como mãe, uso para garantir que o meu filho não ingeriu glúten acidentalmente fora de casa.",
+    author: {
+      name: "Sofia Martins",
+      title: "Coimbra",
+    },
+  },
+];
 
-  return (
-    <div className="flex items-center gap-0.5">
-      {[...Array(fullStars)].map((_, i) => (
-        <Star 
-          key={`full-${i}`} 
-          className="w-5 h-5 fill-amber-400 text-amber-400" 
-        />
-      ))}
-      {hasHalfStar && (
-        <StarHalf className="w-5 h-5 fill-amber-400 text-amber-400" />
-      )}
-      {[...Array(emptyStars)].map((_, i) => (
-        <Star 
-          key={`empty-${i}`} 
-          className="w-5 h-5 text-gray-300 dark:text-gray-600" 
-        />
-      ))}
-    </div>
-  );
+const transition: Transition = {
+  type: "spring",
+  duration: 0.8,
 };
 
 const SocialProofSection = ({
   headline,
-  testimonials,
+  testimonials = reviews,
 }: SocialProofSectionProps) => {
-  return (
-    <section className="flex flex-1 justify-center py-14 md:py-24">
-      <div className="layout-content-container flex flex-col w-full max-w-6xl flex-1 px-4 md:px-8">
-        <h1 className="text-primary tracking-tight text-3xl md:text-4xl font-bold leading-tight text-center pb-8 md:pb-12">
-          {headline}
-        </h1>
+  const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
 
-        {/* New marquee implementation with better mobile support */}
-        <Marquee className="w-full">
-          <MarqueeFade side="left" />
-          <MarqueeFade side="right" />
-          <MarqueeContent
-            speed={30}
-            pauseOnHover={true}
-            autoFill={true}
-          >
-            {testimonials.map((testimonial, index) => (
-              <MarqueeItem key={index} className="w-72 sm:w-80">
-                <div className="flex h-full flex-col gap-4 rounded-xl bg-white dark:bg-gray-800 p-4 sm:p-6 shadow-lg border border-gray-100 dark:border-gray-700">
-                  <StarRating rating={testimonial.rating} />
-                  <div className="flex flex-col flex-1">
-                    <p className="text-text-main dark:text-gray-100 text-sm sm:text-base font-normal leading-relaxed mb-3 line-clamp-4">
-                      {testimonial.quote}
-                    </p>
-                    <p className="text-text-subtle dark:text-gray-400 text-xs sm:text-sm font-medium mt-auto">
-                      {testimonial.author}
-                    </p>
-                  </div>
+  return (
+    <section className="bg-white dark:bg-gray-900 py-16 md:py-24">
+      <div className="mx-auto max-w-4xl px-4 md:px-8">
+        <div className="flex flex-col items-center gap-10">
+          <h1 className="text-3xl md:text-4xl font-bold text-primary dark:text-white text-center">
+            {headline}
+          </h1>
+          
+          <figure className="flex max-w-3xl flex-col gap-8 text-center">
+            <AnimatePresence initial={false} mode="popLayout">
+              <motion.blockquote
+                key={currentReviewIndex + "-quote"}
+                initial={{
+                  opacity: 0,
+                  scale: 0.98,
+                  y: 20,
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  y: 0,
+                  transition: {
+                    ...transition,
+                    delay: 0.4,
+                  },
+                }}
+                exit={{
+                  opacity: 0,
+                  scale: 0.98,
+                  y: 20,
+                  transition: {
+                    ...transition,
+                    delay: 0.06,
+                  },
+                }}
+                className="origin-bottom text-lg md:text-xl font-medium text-balance text-primary dark:text-white will-change-transform"
+              >
+                "{testimonials[currentReviewIndex].quote}"
+              </motion.blockquote>
+              
+              <motion.figcaption
+                key={currentReviewIndex + "-author"}
+                initial={{
+                  opacity: 0,
+                  scale: 0.98,
+                  y: 20,
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  y: 0,
+                  transition: {
+                    ...transition,
+                    delay: 0.5,
+                  },
+                }}
+                exit={{
+                  opacity: 0,
+                  scale: 0.98,
+                  y: 20,
+                  transition,
+                }}
+                className="flex origin-bottom flex-col items-center gap-4 will-change-transform"
+              >
+                <div className="flex flex-col items-center gap-2">
+                  <p className="text-lg font-semibold text-primary dark:text-white">
+                    {testimonials[currentReviewIndex].author.name}
+                  </p>
+                  <cite className="text-md text-gray-600 dark:text-gray-400 not-italic">
+                    {testimonials[currentReviewIndex].author.title}
+                  </cite>
                 </div>
-              </MarqueeItem>
-            ))}
-          </MarqueeContent>
-        </Marquee>
+                
+                <motion.div aria-hidden="true" className="flex gap-1">
+                  {Array.from({
+                    length: 5,
+                  }).map((_, index) => (
+                    <motion.div
+                      key={`${currentReviewIndex}-${index}`}
+                      initial={{
+                        opacity: 0,
+                        scale: 0.9,
+                        y: 6,
+                      }}
+                      animate={{
+                        opacity: 1,
+                        scale: 1,
+                        y: 0,
+                        transition: {
+                          ...transition,
+                          delay: 0.5 + index * 0.1,
+                        },
+                      }}
+                      exit={{
+                        opacity: 0,
+                        scale: 0.9,
+                        y: 6,
+                        transition: {
+                          ...transition,
+                          delay: 0,
+                        },
+                      }}
+                    >
+                      <RatingStars rating={5} size="md" />
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </motion.figcaption>
+            </AnimatePresence>
+          </figure>
+
+          <PaginationDot 
+            page={currentReviewIndex + 1} 
+            total={testimonials.length} 
+            size="lg" 
+            onPageChange={(page) => setCurrentReviewIndex(page - 1)} 
+          />
+        </div>
       </div>
     </section>
   );
