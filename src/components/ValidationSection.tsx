@@ -152,18 +152,6 @@ const ValidationSection = ({
                   </motion.div>
                 ))}
               </div>
-              <div className="mt-4 flex flex-wrap gap-4">
-                <Link href={buttonLink}>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.98 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                    className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] transition-colors hover:bg-primary/90"
-                  >
-                    <span className="truncate">{buttonText}</span>
-                  </motion.button>
-                </Link>
-              </div>
             </motion.div>
           </div>
         </div>
