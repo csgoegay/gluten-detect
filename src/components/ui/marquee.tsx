@@ -1,7 +1,8 @@
-import * as React from "react";
+"use client";
+
 import { cn } from "@/lib/utils";
 
-interface MarqueeProps extends React.HTMLAttributes<HTMLDivElement> {
+interface MarqueeProps {
   className?: string;
   reverse?: boolean;
   pauseOnHover?: boolean;
@@ -9,9 +10,10 @@ interface MarqueeProps extends React.HTMLAttributes<HTMLDivElement> {
   vertical?: boolean;
   repeat?: number;
   duration?: string;
+  [key: string]: any;
 }
 
-export function Marquee({
+export default function Marquee({
   className,
   reverse,
   pauseOnHover = false,
@@ -25,7 +27,7 @@ export function Marquee({
     <div
       {...props}
       className={cn(
-        "group flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)]",
+        "group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]",
         {
           "flex-row": !vertical,
           "flex-col": vertical,
@@ -41,7 +43,7 @@ export function Marquee({
         .map((_, i) => (
           <div
             key={i}
-            className={cn("flex shrink-0 justify-around [gap:var(--gap)]", {
+            className={cn("flex shrink-0 justify-around [gap:var(--gap)] min-w-0", {
               "animate-marquee flex-row": !vertical,
               "animate-marquee-vertical flex-col": vertical,
               "group-hover:[animation-play-state:paused]": pauseOnHover,
@@ -55,38 +57,24 @@ export function Marquee({
   );
 }
 
-export function MarqueeItem({
+export const MarqueeItem = ({
   className,
   children,
   ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
-  return (
-    <div {...props} className={cn("flex-shrink-0", className)}>
-      {children}
-    </div>
-  );
-}
-
-export function MarqueeFade({
-  side,
-  className,
-  ...props
 }: {
-  side: "left" | "right";
-} & React.HTMLAttributes<HTMLDivElement>) {
+  className?: string;
+  children: React.ReactNode;
+  [key: string]: any;
+}) => {
   return (
     <div
       {...props}
       className={cn(
-        "pointer-events-none absolute top-0 z-10 h-full w-20",
-        {
-          "left-0 bg-gradient-to-r from-background to-transparent":
-            side === "left",
-          "right-0 bg-gradient-to-l from-background to-transparent":
-            side === "right",
-        },
+        "flex-shrink-0 px-4", // Added padding and flex-shrink-0 for better mobile handling
         className
       )}
-    />
+    >
+      {children}
+    </div>
   );
-}
+};
