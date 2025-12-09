@@ -7,7 +7,6 @@ import BenefitsSection from "@/components/BenefitsSection";
 import FaqSection from "@/components/FaqSection";
 import SocialProofSection from "@/components/SocialProofSection";
 import ProductSection from "@/components/ProductSection";
-import { MadeWithDyad } from "@/components/made-with-dyad";
 import { Science, Colorize, Timer } from "lucide-react";
 
 const navLinks = [
