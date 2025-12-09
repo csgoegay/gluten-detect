@@ -28,8 +28,8 @@ const TopNavBar = ({
     return unsubscribe;
   }, [scrollY]);
 
-  // Always use dark blue background, remove transparency
-  const backgroundColor = "rgba(0, 51, 87, 0.9)";
+  // Use the same dark blue color as the header section
+  const backgroundColor = "rgba(0, 51, 87, 1)";
 
   const backdropBlur = useTransform(
     scrollY,
@@ -39,9 +39,8 @@ const TopNavBar = ({
 
   return (
     <motion.header 
-      className="fixed top-0 left-0 right-0 z-50 font-display transition-all duration-300"
+      className="fixed top-0 left-0 right-0 z-50 font-display transition-all duration-300 bg-section-dark-blue"
       style={{
-        backgroundColor,
         backdropFilter: backdropBlur,
         WebkitBackdropFilter: backdropBlur,
       }}
