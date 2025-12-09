@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { AnimatePresence, type Transition, motion } from "framer-motion";
 import { PaginationDot } from "@/components/ui/pagination-dot";
-import { RatingStars } from "@/components/ui/rating-stars";
 
 interface Testimonial {
   id: string;
@@ -119,7 +118,7 @@ const SocialProofSection = ({
                   y: 20,
                   transition,
                 }}
-                className="flex origin-bottom flex-col items-center gap-4 will-change-transform"
+                className="flex origin-bottom flex-col items-center gap-2 will-change-transform"
               >
                 <div className="flex flex-col items-center gap-2">
                   <p className="text-lg font-semibold text-primary dark:text-white">
@@ -129,41 +128,6 @@ const SocialProofSection = ({
                     {testimonials[currentReviewIndex].author.title}
                   </cite>
                 </div>
-                
-                <motion.div aria-hidden="true" className="flex gap-1">
-                  {Array.from({
-                    length: 5,
-                  }).map((_, index) => (
-                    <motion.div
-                      key={`${currentReviewIndex}-${index}`}
-                      initial={{
-                        opacity: 0,
-                        scale: 0.9,
-                        y: 6,
-                      }}
-                      animate={{
-                        opacity: 1,
-                        scale: 1,
-                        y: 0,
-                        transition: {
-                          ...transition,
-                          delay: 0.5 + index * 0.1,
-                        },
-                      }}
-                      exit={{
-                        opacity: 0,
-                        scale: 0.9,
-                        y: 6,
-                        transition: {
-                          ...transition,
-                          delay: 0,
-                        },
-                      }}
-                    >
-                      <RatingStars rating={5} size="md" />
-                    </motion.div>
-                  ))}
-                </motion.div>
               </motion.figcaption>
             </AnimatePresence>
           </figure>
