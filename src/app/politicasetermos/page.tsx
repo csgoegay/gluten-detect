@@ -5,6 +5,12 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Shield, FileText, Cookie, Search, Menu, X, ChevronRight, ArrowUp } from "lucide-react";
 import TopNavBar from "@/components/TopNavBar";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 // Navigation item type
 interface NavItem {
@@ -311,7 +317,6 @@ const navLinks = [
 
 export default function PoliticasETermos() {
   const [activeSection, setActiveSection] = useState("privacy-policy");
-  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
   const [searchTerm, setSearchTerm] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -355,19 +360,6 @@ export default function PoliticasETermos() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  // Toggle expanded items
-  const toggleExpanded = (itemId: string) => {
-    setExpandedItems(prev => {
-      const newSet = new Set(prev);
-      if (newSet.has(itemId)) {
-        newSet.delete(itemId);
-      } else {
-        newSet.add(itemId);
-      }
-      return newSet;
-    });
-  };
 
   // Filter content based on search
   const filterContent = (content: string) => {
@@ -560,38 +552,23 @@ export default function PoliticasETermos() {
                 </p>
               </div>
 
-              <div className="space-y-4">
+              <Accordion type="multiple" className="space-y-4">
                 {legalContent.privacyPolicy.sections.map((section) => (
-                  <details
-                    key={section.id}
-                    id={section.id}
-                    open={expandedItems.has(section.id)}
-                    onToggle={(e) => {
-                      if (e.currentTarget.open) {
-                        toggleExpanded(section.id);
-                      }
-                    }}
-                    className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden"
-                  >
-                    <summary className="px-6 py-4 bg-gray-50 dark:bg-gray-800 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-                      <div className="flex items-center justify-between">
-                        <h3 className="text-lg font-semibold text-primary dark:text-white">
-                          {section.title}
-                        </h3>
-                        <span className={`material-symbols-outlined text-accent-gold transform transition-transform ${
-                          expandedItems.has(section.id) ? "rotate-180" : ""
-                        }`}>
-                          expand_more
-                        </span>
-                      </div>
-                    </summary>
-                    <div 
-                      className="px-6 py-4 bg-white dark:bg-gray-900 prose prose-sm max-w-none"
-                      dangerouslySetInnerHTML={{ __html: filterContent(section.content) }}
-                    />
-                  </details>
+                  <AccordionItem key={section.id} value={section.id} className="border border-gray-200 dark:border-gray-700 rounded-lg">
+                    <AccordionTrigger className="px-6 py-4 bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-left">
+                      <h3 className="text-lg font-semibold text-primary dark:text-white">
+                        {section.title}
+                      </h3>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 py-4 bg-white dark:bg-gray-900">
+                      <div 
+                        className="prose prose-sm max-w-none"
+                        dangerouslySetInnerHTML={{ __html: filterContent(section.content) }}
+                      />
+                    </AccordionContent>
+                  </AccordionItem>
                 ))}
-              </div>
+              </Accordion>
             </motion.div>
           </section>
 
@@ -612,38 +589,23 @@ export default function PoliticasETermos() {
                 </p>
               </div>
 
-              <div className="space-y-4">
+              <Accordion type="multiple" className="space-y-4">
                 {legalContent.termsOfService.sections.map((section) => (
-                  <details
-                    key={section.id}
-                    id={section.id}
-                    open={expandedItems.has(section.id)}
-                    onToggle={(e) => {
-                      if (e.currentTarget.open) {
-                        toggleExpanded(section.id);
-                      }
-                    }}
-                    className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden"
-                  >
-                    <summary className="px-6 py-4 bg-gray-50 dark:bg-gray-800 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-                      <div className="flex items-center justify-between">
-                        <h3 className="text-lg font-semibold text-primary dark:text-white">
-                          {section.title}
-                        </h3>
-                        <span className={`material-symbols-outlined text-accent-gold transform transition-transform ${
-                          expandedItems.has(section.id) ? "rotate-180" : ""
-                        }`}>
-                          expand_more
-                        </span>
-                      </div>
-                    </summary>
-                    <div 
-                      className="px-6 py-4 bg-white dark:bg-gray-900 prose prose-sm max-w-none"
-                      dangerouslySetInnerHTML={{ __html: filterContent(section.content) }}
-                    />
-                  </details>
+                  <AccordionItem key={section.id} value={section.id} className="border border-gray-200 dark:border-gray-700 rounded-lg">
+                    <AccordionTrigger className="px-6 py-4 bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-left">
+                      <h3 className="text-lg font-semibold text-primary dark:text-white">
+                        {section.title}
+                      </h3>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 py-4 bg-white dark:bg-gray-900">
+                      <div 
+                        className="prose prose-sm max-w-none"
+                        dangerouslySetInnerHTML={{ __html: filterContent(section.content) }}
+                      />
+                    </AccordionContent>
+                  </AccordionItem>
                 ))}
-              </div>
+              </Accordion>
             </motion.div>
           </section>
 
@@ -664,38 +626,23 @@ export default function PoliticasETermos() {
                 </p>
               </div>
 
-              <div className="space-y-4">
+              <Accordion type="multiple" className="space-y-4">
                 {legalContent.cookiesPolicy.sections.map((section) => (
-                  <details
-                    key={section.id}
-                    id={section.id}
-                    open={expandedItems.has(section.id)}
-                    onToggle={(e) => {
-                      if (e.currentTarget.open) {
-                        toggleExpanded(section.id);
-                      }
-                    }}
-                    className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden"
-                  >
-                    <summary className="px-6 py-4 bg-gray-50 dark:bg-gray-800 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-                      <div className="flex items-center justify-between">
-                        <h3 className="text-lg font-semibold text-primary dark:text-white">
-                          {section.title}
-                        </h3>
-                        <span className={`material-symbols-outlined text-accent-gold transform transition-transform ${
-                          expandedItems.has(section.id) ? "rotate-180" : ""
-                        }`}>
-                          expand_more
-                        </span>
-                      </div>
-                    </summary>
-                    <div 
-                      className="px-6 py-4 bg-white dark:bg-gray-900 prose prose-sm max-w-none"
-                      dangerouslySetInnerHTML={{ __html: filterContent(section.content) }}
-                    />
-                  </details>
+                  <AccordionItem key={section.id} value={section.id} className="border border-gray-200 dark:border-gray-700 rounded-lg">
+                    <AccordionTrigger className="px-6 py-4 bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-left">
+                      <h3 className="text-lg font-semibold text-primary dark:text-white">
+                        {section.title}
+                      </h3>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 py-4 bg-white dark:bg-gray-900">
+                      <div 
+                        className="prose prose-sm max-w-none"
+                        dangerouslySetInnerHTML={{ __html: filterContent(section.content) }}
+                      />
+                    </AccordionContent>
+                  </AccordionItem>
                 ))}
-              </div>
+              </Accordion>
             </motion.div>
           </section>
 
