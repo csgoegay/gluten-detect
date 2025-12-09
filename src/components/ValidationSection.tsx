@@ -88,7 +88,7 @@ const ValidationSection = ({
                   >
                     <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-white p-2 shadow-sm filter grayscale hover:grayscale-0 transition-all duration-500">
                       <Image
-                        src={item.imageUrl}
+                        src="/img/Seec.png"
                         alt={item.imageAlt}
                         width={64}
                         height={64}
