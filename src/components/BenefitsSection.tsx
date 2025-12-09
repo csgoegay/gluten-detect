@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { staggerItemVariants } from "./animations/StaggerContainer";
+import { EASINGS } from "@/utils/easing";
 
 interface Benefit {
   iconName: string;
@@ -34,9 +35,9 @@ const BenefitsSection = ({ headline, benefits }: BenefitsSectionProps) => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ 
+            transition={{
               duration: 0.6,
-              ease: [0.25, 0.46, 0.45, 0.94]
+              ease: EASINGS.smooth
             }}
             className="text-white tracking-tight text-center text-3xl font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-3xl mx-auto"
           >

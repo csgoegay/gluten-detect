@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { EASINGS } from "@/utils/easing";
 
 interface HeroSectionProps {
   backgroundImageUrl: string;
@@ -34,11 +35,11 @@ const HeroSection = ({
 
   const wordVariants = {
     hidden: { opacity: 0, y: 20 },
-    show: { 
-      opacity: 1, 
+    show: {
+      opacity: 1,
       y: 0,
       transition: {
-        ease: [0.25, 0.46, 0.45, 0.94],
+        ease: EASINGS.smooth,
         duration: 0.6
       }
     },
@@ -80,10 +81,10 @@ const HeroSection = ({
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ 
+          transition={{
             delay: 0.8,
             duration: 0.6,
-            ease: [0.25, 0.46, 0.45, 0.94]
+            ease: EASINGS.smooth
           }}
           className="text-xl sm:text-2xl text-white/90 mb-8 max-w-2xl mx-auto"
         >
@@ -94,10 +95,10 @@ const HeroSection = ({
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ 
+          transition={{
             delay: 1.1,
             duration: 0.6,
-            ease: [0.25, 0.46, 0.45, 0.94]
+            ease: EASINGS.smooth
           }}
           className="relative inline-block"
         >

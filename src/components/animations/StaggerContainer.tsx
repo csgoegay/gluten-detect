@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { EASINGS } from "@/utils/easing";
 
 interface StaggerContainerProps {
   children: React.ReactNode;
@@ -41,11 +42,11 @@ export const StaggerContainer = ({
 
 export const staggerItemVariants = {
   hidden: { opacity: 0, y: 30 },
-  show: { 
-    opacity: 1, 
+  show: {
+    opacity: 1,
     y: 0,
     transition: {
-      ease: [0.25, 0.46, 0.45, 0.94],
+      ease: EASINGS.smooth,
       duration: 0.5
     }
   },

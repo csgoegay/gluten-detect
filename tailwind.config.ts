@@ -73,7 +73,6 @@ export default {
         "section-dark-blue": "#003357",
         "accent-gold": "#D09000",
         // Consolidated and new colors
-        "primary": "#003357",
         "accent-sky": "#38bdf8",
         // New text colors for social proof section
         "text-main": "#101518",

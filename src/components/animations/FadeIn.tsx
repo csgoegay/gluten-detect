@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { EASINGS } from "@/utils/easing";
 
 interface FadeInProps {
   children: React.ReactNode;
@@ -56,10 +57,10 @@ export const FadeIn = ({
       ref={ref}
       initial={getInitialPosition()}
       animate={isInView ? getFinalPosition() : getInitialPosition()}
-      transition={{ 
-        duration, 
-        delay, 
-        ease: [0.25, 0.46, 0.45, 0.94] // Custom cubic-bezier for smooth easing
+      transition={{
+        duration,
+        delay,
+        ease: EASINGS.smooth
       }}
       className={className}
     >
