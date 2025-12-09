@@ -13,7 +13,7 @@ interface MarqueeProps {
   [key: string]: any;
 }
 
-export default function Marquee({
+function Marquee({
   className,
   reverse,
   pauseOnHover = false,
@@ -50,7 +50,7 @@ export default function Marquee({
         className
       )}
       style={{
-        // Ensure the container never exceeds parent width
+        // Ensure to container never exceeds parent width
         width: "100%",
         maxWidth: "100%",
         overflow: "hidden",
@@ -104,3 +104,5 @@ export const MarqueeItem = ({
     />
   );
 };
+
+export default Marquee;
