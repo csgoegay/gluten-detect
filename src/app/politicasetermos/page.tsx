@@ -320,6 +320,7 @@ export default function PoliticasETermos() {
   const [activeSection, setActiveSection] = useState("privacy-policy");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [domPurify, setDomPurify] = useState<any>(null);
 
   // Navigation items
   const navItems: NavItem[] = [
@@ -351,6 +352,13 @@ export default function PoliticasETermos() {
       }))
     }
   ];
+
+  // Load DOMPurify on client side
+  useEffect(() => {
+    import("dompurify").then((module) => {
+      setDomPurify(module.default);
+    });
+  }, []);
 
   // Handle scroll for back to top button
   useEffect(() => {
@@ -530,9 +538,11 @@ export default function PoliticasETermos() {
                       </h3>
                     </AccordionTrigger>
                     <AccordionContent className="px-6 py-4 bg-white dark:bg-gray-900">
-                      <div 
+                      <div
                         className="prose prose-sm max-w-none"
-                        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(section.content) }}
+                        dangerouslySetInnerHTML={{
+                          __html: domPurify ? domPurify.sanitize(section.content) : section.content
+                        }}
                       />
                     </AccordionContent>
                   </AccordionItem>
@@ -567,9 +577,11 @@ export default function PoliticasETermos() {
                       </h3>
                     </AccordionTrigger>
                     <AccordionContent className="px-6 py-4 bg-white dark:bg-gray-900">
-                      <div 
+                      <div
                         className="prose prose-sm max-w-none"
-                        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(section.content) }}
+                        dangerouslySetInnerHTML={{
+                          __html: domPurify ? domPurify.sanitize(section.content) : section.content
+                        }}
                       />
                     </AccordionContent>
                   </AccordionItem>
@@ -604,9 +616,11 @@ export default function PoliticasETermos() {
                       </h3>
                     </AccordionTrigger>
                     <AccordionContent className="px-6 py-4 bg-white dark:bg-gray-900">
-                      <div 
+                      <div
                         className="prose prose-sm max-w-none"
-                        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(section.content) }}
+                        dangerouslySetInnerHTML={{
+                          __html: domPurify ? domPurify.sanitize(section.content) : section.content
+                        }}
                       />
                     </AccordionContent>
                   </AccordionItem>

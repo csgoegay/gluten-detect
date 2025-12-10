@@ -102,7 +102,7 @@ const HeroSection = ({
           }}
           className="relative inline-block"
         >
-          <Link href="https://dietadvance.pt/loja/saude-gastro-intestinal/gluten-detect/">
+          <Link href="/api/redirect-to-product?type=gluten-detect">
             <motion.button
               className="relative inline-flex items-center justify-center px-8 py-4 bg-accent-gold text-white font-semibold rounded-lg overflow-hidden group"
               whileHover={{ scale: 1.05 }}

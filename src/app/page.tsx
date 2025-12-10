@@ -173,7 +173,7 @@ const productData = {
   discountedPrice: "€33,85",
   discountPercentage: 32,
   buttonText: "Adicionar ao Carrinho",
-  buttonLink: "/cart/add?product_id=123",
+  buttonLink: "/api/redirect-to-product?type=gluten-detect",
   imageUrl: "/img/GlutenDetectTesteUrina.webp",
   imageAlt: "Imagem de alta qualidade da caixa do Kit Caseiro GlutenDetect, cassete de teste e outros conteúdos exibidos de forma organizada.",
 };
@@ -188,7 +188,7 @@ export default function Home() {
           mainHeadline="Está realmente sem glúten? O glúten oculto que não vê está a prejudicá-lo."
           subHeadline="Apresentamos o GlutenDetect: O primeiro e único teste caseiro para monitorizar a exposição ao glúten e proteger a sua saúde."
           buttonText="Assuma o Controlo da Sua Dieta Hoje"
-          buttonLink="#how-it-works"
+          buttonLink="/api/redirect-to-product?type=gluten-detect"
         />
         <TextWithImageSection
           headline="O Perigo que Não Sente"
