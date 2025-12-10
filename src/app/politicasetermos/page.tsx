@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Shield, FileText, Cookie, Menu, X, ChevronRight, ArrowUp } from "lucide-react";
+import DOMPurify from "dompurify";
 import TopNavBar from "@/components/TopNavBar";
 import {
   Accordion,
@@ -531,7 +532,7 @@ export default function PoliticasETermos() {
                     <AccordionContent className="px-6 py-4 bg-white dark:bg-gray-900">
                       <div 
                         className="prose prose-sm max-w-none"
-                        dangerouslySetInnerHTML={{ __html: section.content }}
+                        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(section.content) }}
                       />
                     </AccordionContent>
                   </AccordionItem>
@@ -568,7 +569,7 @@ export default function PoliticasETermos() {
                     <AccordionContent className="px-6 py-4 bg-white dark:bg-gray-900">
                       <div 
                         className="prose prose-sm max-w-none"
-                        dangerouslySetInnerHTML={{ __html: section.content }}
+                        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(section.content) }}
                       />
                     </AccordionContent>
                   </AccordionItem>
@@ -605,7 +606,7 @@ export default function PoliticasETermos() {
                     <AccordionContent className="px-6 py-4 bg-white dark:bg-gray-900">
                       <div 
                         className="prose prose-sm max-w-none"
-                        dangerouslySetInnerHTML={{ __html: section.content }}
+                        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(section.content) }}
                       />
                     </AccordionContent>
                   </AccordionItem>
