@@ -15,7 +15,7 @@ interface Testimonial {
 
 interface SocialProofSectionProps {
   headline: string;
-  testimonials: Testimonial[];
+  testimonials?: Testimonial[];
 }
 
 const reviews: Testimonial[] = [
