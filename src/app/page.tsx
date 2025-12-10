@@ -79,17 +79,17 @@ const endorsementData = {
   title: 'Recomendado Por',
   items: [
     {
-      imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDoLrzlwfNS1ra7NhtAuc2BIxlTjSZBpbNIA6rQLq7b8O3hvSwec_TWbJC6_TQwvTiFc87O9t21yYokBzuCcGJT-tldk_iapnop3l1lqCrB3lr5vGLxBPYEU_t97WQQ5HBzfO49jI0tfRCtvQubjr7WQhXq6w_mKTscrLaXJWAsoCf4LvF1i8SwsbdCJ99dIYLvvLaPV_5wQtYGFyHnuJftF3IudBwi5dVQCcTGC-ji0AxQDWlb57ZxEyVcfsf4nqqteKg3MDaFfC8',
+      imageUrl: '/img/Seec.png',
       imageAlt: 'Sociedade Espanhola de Doença Celíaca Logo',
       name: 'Sociedade Espanhola de Doença Celíaca (SEEC)',
     },
     {
-      imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBR_rY1e02n5i2eOaSYFHlQio3f6ilUanpgt3mc8ko62CL6LXj53tdrG8Ojwf3rAAWU-NkLelMqU_Oi4qO9HDVBnfG2w5s8l0DkohFA75qqw2fOLl1kUif76Lvl757WwmUc9u1UNP9uOpxAVDsu1oNZpjcuSkLoeU-4HybTs_B5PeH10pNg73ftPNeE5hEIBk_A7xFNpI7eSwdjzYXmUtex7PxqOxdyMecZD50K5uiJjY9sMhSQjGyoXPYSfm4gRNiyzE6ieLL4OrU',
+      imageUrl: '/img/Aragao.png',
       imageAlt: 'Associação de Celíacos de Aragão Logo',
       name: 'Associação de Celíacos de Aragão',
     },
     {
-      imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDoLrzlwfNS1ra7NhtAuc2BIxlTjSZBpbNIA6rQLq7b8O3hvSwec_TWbJC6_TQwvTiFc87O9t21yYokBzuCcGJT-tldk_iapnop3l1lqCrB3lr5vGLxBPYEU_t97WQQ5HBzfO49jI0tfRCtvQubjr7WQhXq6w_mKTscrLaXJWAsoCf4LvF1i8SwsbdCJ99dIYLvvLaPV_5wQtYGFyHnuJftF3IudBwi5dVQCcTGC-ji0AxQDWlb57ZxEyVcfsf4nqqteKg3MDaFfC8',
+      imageUrl: '/img/UniversidadeDeVigo.png',
       imageAlt: 'Universidade de Vigo Logo',
       name: 'Grupo de Investigação da Universidade de Vigo',
     },

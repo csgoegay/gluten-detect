@@ -12,16 +12,6 @@ const nextConfig: NextConfig = {
     }
     return config;
   },
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "lh3.googleusercontent.com",
-        port: "",
-        pathname: "/aida-public/**",
-      },
-    ],
-  },
   async headers() {
     return [
       {
@@ -33,7 +23,7 @@ const nextConfig: NextConfig = {
               "default-src 'self';",
               "script-src 'self' 'unsafe-eval' 'unsafe-inline';",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;",
-              "img-src 'self' data: https://lh3.googleusercontent.com;",
+              "img-src 'self' data:;",
               "font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;",
               "connect-src 'self';",
               "frame-src 'none';",

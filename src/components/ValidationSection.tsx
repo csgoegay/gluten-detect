@@ -38,7 +38,7 @@ const ValidationSection = ({
   buttonText,
   buttonLink,
 }: ValidationSectionProps) => {
-  // Define the specific images for each endorsement
+  // Define the specific images for each endorsement - now using local paths
   const endorsementImages = [
     "/img/Seec.png",
     "/img/Aragao.png", 
