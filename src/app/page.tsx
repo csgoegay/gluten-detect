@@ -9,10 +9,10 @@ import SocialProofSection from "@/components/SocialProofSection";
 import ProductSection from "@/components/ProductSection";
 
 const navLinks = [
-  { label: 'Como Funciona', href: '#how-it-works' },
+  { label: 'Como funciona', href: '#how-it-works' },
   { label: 'Ciência', href: '#science' },
   { label: 'FAQ', href: '#faq' },
-  { label: 'Comprar Agora', href: '/buy' },
+  { label: 'Comprar agora', href: 'https://dietadvance.pt/loja/saude-gastro-intestinal/gluten-detect/' },
 ];
 
 const howItWorksSteps = [
@@ -76,7 +76,7 @@ const benefitsData = [
 ];
 
 const endorsementData = {
-  title: 'Recomendado Por',
+  title: 'Recomendado por',
   items: [
     {
       imageUrl: '/img/Seec.png',
@@ -97,7 +97,7 @@ const endorsementData = {
 };
 
 const featureData = {
-  title: 'Baseado em Tecnologia Patenteada de Deteção de GIP',
+  title: 'Baseado em tecnologia patenteada de deteção de GIP',
   description: 'O GlutenDetect baseia-se numa tecnologia patenteada para detetar Peptídeos Imunogénicos do Glúten (GIP) e é validada por ensaios clínicos revistos por pares (peer-reviewed). Temos orgulho em ser reconhecidos e recomendados por instituições de renome como a Sociedade Espanhola de Doença Celíaca (SEEC), que destaca os testes GIP como uma ferramenta vital para monitorizar a adesão à dieta.',
   items: [
     { iconName: 'check_circle', text: 'Tecnologia patenteada para deteção não invasiva de glúten.' },
@@ -162,12 +162,12 @@ const faqData = [
 ];
 
 const productData = {
-  headline: "O Seu Kit Completo de Monitorização de Glúten em Casa",
+  headline: "O seu kit completo de monitorização de glúten em casa",
   description: "Tudo o que precisa para monitorizar a sua dieta sem glúten com confiança. Este kit fornece uma forma simples, fiável e rápida de detetar glúten oculto no seu sistema.",
   features: [
     "Kit de uso único pronto a usar",
-    "Resultados em Menos de 15 Minutos",
-    "Tecnologia Medicamente Validada",
+    "Resultados em menos de 15 minutos",
+    "Tecnologia medicamente validada",
   ],
   originalPrice: "€50,00",
   discountedPrice: "€33,85",
@@ -191,7 +191,7 @@ export default function Home() {
           buttonLink="/api/redirect-to-product?type=gluten-detect"
         />
         <TextWithImageSection
-          headline="O Perigo que Não Sente"
+          headline="O perigo que não sente"
           description="Você segue a sua dieta. Verifica os rótulos. Faz as perguntas certas. Mas os estudos revelam uma verdade assustadora: até 88% das pessoas em dieta sem glúten continuam a consumir glúten sem o saber. Este glúten oculto, consumido através de contaminação cruzada e alimentos mal rotulados, pode causar danos silenciosos e cumulativos nos seus intestinos."
           buttonText="Saiba Mais"
           buttonLink="#how-it-works"
@@ -199,26 +199,26 @@ export default function Home() {
           imageAlt="Uma pessoa atenta a ler cuidadosamente o rótulo dos ingredientes de um produto alimentar numa cozinha moderna e iluminada."
         />
         <HowItWorksSection
-          headline="O Processo Simples em 4 Passos"
+          headline="O processo simples em 4 passos"
           subtitle="Monitorize a sua dieta sem glúten com confiança em menos de 15 minutos"
           steps={howItWorksSteps}
         />
         <ValidationSection
-          headline="Comprovado Clinicamente, Recomendado por Especialistas."
+          headline="Comprovado clinicamente, recomendado por especialistas."
           endorsements={endorsementData}
           features={featureData}
           buttonText="Ver Estudos Clínicos"
           buttonLink="/estudos"
         />
         <BenefitsSection
-          headline="Porquê Adivinhar Quando Pode Ter a Certeza?"
+          headline="Porquê adivinhar quando pode ter a certeza?"
           benefits={benefitsData}
         />
         <SocialProofSection
-          headline="A Comunidade Celíaca Confia no GlutenDetect."
+          headline="A comunidade celíaca confia no GlutenDetect."
         />
         <FaqSection
-          headline="As Suas Perguntas, Aqui Respondidas."
+          headline="As suas perguntas, aqui respondidas."
           faqItems={faqData}
           contactText="Ainda tem perguntas?"
           contactLinkText="Contacte a nossa equipa de apoio."

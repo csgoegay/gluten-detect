@@ -100,14 +100,20 @@ const TopNavBar = ({
                 >
                   <Link
                     href={link.href}
-                    className="text-sm font-medium hover:text-white/80 transition-colors relative group"
+                    className={`text-sm font-medium transition-colors relative group ${
+                      link.label === 'Comprar agora'
+                        ? 'bg-accent-gold text-white px-4 py-2 rounded-md hover:bg-accent-gold/90 shadow-sm'
+                        : 'hover:text-white/80'
+                    }`}
                   >
                     {link.label}
-                    <motion.span
-                      className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-gold"
-                      whileHover={{ width: "100%" }}
-                      transition={{ duration: 0.3 }}
-                    />
+                    {link.label !== 'Comprar Agora' && (
+                      <motion.span
+                        className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-gold"
+                        whileHover={{ width: "100%" }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    )}
                   </Link>
                 </motion.div>
               ))}
@@ -187,7 +193,11 @@ const TopNavBar = ({
                     <Link
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="block py-3 px-4 text-white hover:bg-white/10 rounded-lg transition-colors text-base font-medium"
+                      className={`block py-3 px-4 text-white rounded-lg transition-colors text-base font-medium ${
+                        link.label === 'Comprar agora'
+                          ? 'bg-accent-gold hover:bg-accent-gold/90 shadow-sm'
+                          : 'hover:bg-white/10'
+                      }`}
                     >
                       {link.label}
                     </Link>
