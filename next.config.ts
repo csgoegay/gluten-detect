@@ -23,7 +23,7 @@ const nextConfig: NextConfig = {
               "default-src 'self';",
               "script-src 'self' 'unsafe-eval' 'unsafe-inline';",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;",
-              "img-src 'self' data:;",
+              "img-src 'self' data: blob:;",
               "font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;",
               "connect-src 'self';",
               "frame-src 'none';",
@@ -32,6 +32,15 @@ const nextConfig: NextConfig = {
               "form-action 'self';",
               "upgrade-insecure-requests;"
             ].join(' ')
+          }
+        ]
+      },
+      {
+        source: '/_next/static/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable'
           }
         ]
       },
