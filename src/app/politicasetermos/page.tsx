@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { Shield, FileText, Cookie, Menu, X, ChevronRight, ArrowUp } from "lucide-react";
 import DOMPurify from "dompurify";
@@ -320,7 +319,7 @@ export default function PoliticasETermos() {
   const [activeSection, setActiveSection] = useState("privacy-policy");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
-  const [domPurify, setDomPurify] = useState<any>(null);
+  const [isClient, setIsClient] = useState(false);
 
   // Navigation items
   const navItems: NavItem[] = [
@@ -353,11 +352,9 @@ export default function PoliticasETermos() {
     }
   ];
 
-  // Load DOMPurify on client side
+  // Set client-side flag
   useEffect(() => {
-    import("dompurify").then((module) => {
-      setDomPurify(module.default);
-    });
+    setIsClient(true);
   }, []);
 
   // Handle scroll for back to top button
@@ -541,7 +538,7 @@ export default function PoliticasETermos() {
                       <div
                         className="prose prose-sm max-w-none"
                         dangerouslySetInnerHTML={{
-                          __html: domPurify ? domPurify.sanitize(section.content) : section.content
+                          __html: isClient ? DOMPurify.sanitize(section.content) : section.content
                         }}
                       />
                     </AccordionContent>
@@ -580,7 +577,7 @@ export default function PoliticasETermos() {
                       <div
                         className="prose prose-sm max-w-none"
                         dangerouslySetInnerHTML={{
-                          __html: domPurify ? domPurify.sanitize(section.content) : section.content
+                          __html: isClient ? DOMPurify.sanitize(section.content) : section.content
                         }}
                       />
                     </AccordionContent>
@@ -619,7 +616,7 @@ export default function PoliticasETermos() {
                       <div
                         className="prose prose-sm max-w-none"
                         dangerouslySetInnerHTML={{
-                          __html: domPurify ? domPurify.sanitize(section.content) : section.content
+                          __html: isClient ? DOMPurify.sanitize(section.content) : section.content
                         }}
                       />
                     </AccordionContent>
