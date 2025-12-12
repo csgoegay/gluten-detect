@@ -185,7 +185,7 @@ export default function Home() {
       <main className="flex-grow">
         <HeroSection
           backgroundImageUrl="/img/upscalemedia-transformed.webp"
-          mainHeadline="Está realmente sem glúten? O glúten oculto que não vê está a prejudicá-lo."
+          mainHeadline="Está realmente sem glúten?<br/>O glúten oculto que não vê está a prejudicá-lo."
           subHeadline="Apresentamos o GlutenDetect: O primeiro e único teste caseiro para monitorizar a exposição ao glúten e proteger a sua saúde."
           buttonText="Assuma o Controlo da Sua Dieta Hoje"
           buttonLink="/api/redirect-to-product?type=gluten-detect"
