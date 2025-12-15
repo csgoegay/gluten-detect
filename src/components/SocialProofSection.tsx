@@ -93,7 +93,7 @@ const SocialProofSection = ({
                 }}
                 className="origin-bottom text-lg md:text-xl font-medium text-balance text-primary dark:text-white will-change-transform"
               >
-                "{testimonials[currentReviewIndex].quote}"
+                &quot;{testimonials[currentReviewIndex].quote}&quot;
               </motion.blockquote>
               
               <motion.figcaption

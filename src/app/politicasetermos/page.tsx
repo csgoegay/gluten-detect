@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Shield, FileText, Cookie, Menu, X, ChevronRight, ArrowUp } from "lucide-react";
-import DOMPurify from "dompurify";
 import TopNavBar from "@/components/TopNavBar";
 import {
   Accordion,
@@ -319,7 +318,6 @@ export default function PoliticasETermos() {
   const [activeSection, setActiveSection] = useState("privacy-policy");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
-  const [isClient, setIsClient] = useState(false);
 
   // Navigation items
   const navItems: NavItem[] = [
@@ -352,10 +350,6 @@ export default function PoliticasETermos() {
     }
   ];
 
-  // Set client-side flag
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
 
   // Handle scroll for back to top button
   useEffect(() => {
@@ -538,7 +532,7 @@ export default function PoliticasETermos() {
                       <div
                         className="prose prose-sm max-w-none"
                         dangerouslySetInnerHTML={{
-                          __html: isClient ? DOMPurify.sanitize(section.content) : section.content
+                          __html: section.content
                         }}
                       />
                     </AccordionContent>
@@ -577,7 +571,7 @@ export default function PoliticasETermos() {
                       <div
                         className="prose prose-sm max-w-none"
                         dangerouslySetInnerHTML={{
-                          __html: isClient ? DOMPurify.sanitize(section.content) : section.content
+                          __html: section.content
                         }}
                       />
                     </AccordionContent>
@@ -616,7 +610,7 @@ export default function PoliticasETermos() {
                       <div
                         className="prose prose-sm max-w-none"
                         dangerouslySetInnerHTML={{
-                          __html: isClient ? DOMPurify.sanitize(section.content) : section.content
+                          __html: section.content
                         }}
                       />
                     </AccordionContent>
