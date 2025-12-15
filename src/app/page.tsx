@@ -9,10 +9,10 @@ import SocialProofSection from "@/components/SocialProofSection";
 import ProductSection from "@/components/ProductSection";
 
 const navLinks = [
-  { label: 'Como funciona', href: '#how-it-works' },
+  { label: 'Como Funciona', href: '#how-it-works' },
   { label: 'Ciência', href: '#science' },
   { label: 'FAQ', href: '#faq' },
-  { label: 'Comprar agora', href: 'https://dietadvance.pt/loja/saude-gastro-intestinal/gluten-detect/' },
+  { label: 'Comprar Agora', href: '/buy' },
 ];
 
 const howItWorksSteps = [
@@ -76,7 +76,7 @@ const benefitsData = [
 ];
 
 const endorsementData = {
-  title: 'Recomendado por',
+  title: 'Recomendado Por',
   items: [
     {
       imageUrl: '/img/Seec.png',
@@ -97,7 +97,7 @@ const endorsementData = {
 };
 
 const featureData = {
-  title: 'Baseado em tecnologia patenteada de deteção de GIP',
+  title: 'Baseado em Tecnologia Patenteada de Deteção de GIP',
   description: 'O GlutenDetect baseia-se numa tecnologia patenteada para detetar Peptídeos Imunogénicos do Glúten (GIP) e é validada por ensaios clínicos revistos por pares (peer-reviewed). Temos orgulho em ser reconhecidos e recomendados por instituições de renome como a Sociedade Espanhola de Doença Celíaca (SEEC), que destaca os testes GIP como uma ferramenta vital para monitorizar a adesão à dieta.',
   items: [
     { iconName: 'check_circle', text: 'Tecnologia patenteada para deteção não invasiva de glúten.' },
@@ -162,12 +162,12 @@ const faqData = [
 ];
 
 const productData = {
-  headline: "O seu kit completo de monitorização de glúten em casa",
+  headline: "O Seu Kit Completo de Monitorização de Glúten em Casa",
   description: "Tudo o que precisa para monitorizar a sua dieta sem glúten com confiança. Este kit fornece uma forma simples, fiável e rápida de detetar glúten oculto no seu sistema.",
   features: [
     "Kit de uso único pronto a usar",
-    "Resultados em menos de 15 minutos",
-    "Tecnologia medicamente validada",
+    "Resultados em Menos de 15 Minutos",
+    "Tecnologia Medicamente Validada",
   ],
   originalPrice: "€50,00",
   discountedPrice: "€33,85",
@@ -185,13 +185,13 @@ export default function Home() {
       <main className="flex-grow">
         <HeroSection
           backgroundImageUrl="/img/upscalemedia-transformed.webp"
-          mainHeadline="Está realmente sem glúten?<br/>O glúten oculto que não vê está a prejudicá-lo."
+          mainHeadline="Será que foi o glúten? Pare de adivinhar e tenha a certeza absoluta em minutos."
           subHeadline="Apresentamos o GlutenDetect: O primeiro e único teste caseiro para monitorizar a exposição ao glúten e proteger a sua saúde."
           buttonText="Assuma o Controlo da Sua Dieta Hoje"
           buttonLink="/api/redirect-to-product?type=gluten-detect"
         />
         <TextWithImageSection
-          headline="O perigo que não sente"
+          headline="O Perigo que Não Sente"
           description="Você segue a sua dieta. Verifica os rótulos. Faz as perguntas certas. Mas os estudos revelam uma verdade assustadora: até 88% das pessoas em dieta sem glúten continuam a consumir glúten sem o saber. Este glúten oculto, consumido através de contaminação cruzada e alimentos mal rotulados, pode causar danos silenciosos e cumulativos nos seus intestinos."
           buttonText="Saiba Mais"
           buttonLink="#how-it-works"
@@ -199,26 +199,26 @@ export default function Home() {
           imageAlt="Uma pessoa atenta a ler cuidadosamente o rótulo dos ingredientes de um produto alimentar numa cozinha moderna e iluminada."
         />
         <HowItWorksSection
-          headline="O processo simples em 4 passos"
+          headline="O Processo Simples em 4 Passos"
           subtitle="Monitorize a sua dieta sem glúten com confiança em menos de 15 minutos"
           steps={howItWorksSteps}
         />
         <ValidationSection
-          headline="Comprovado clinicamente, recomendado por especialistas."
+          headline="Comprovado Clinicamente, Recomendado por Especialistas."
           endorsements={endorsementData}
           features={featureData}
           buttonText="Ver Estudos Clínicos"
           buttonLink="/estudos"
         />
         <BenefitsSection
-          headline="Porquê adivinhar quando pode ter a certeza?"
+          headline="Porquê Adivinhar Quando Pode Ter a Certeza?"
           benefits={benefitsData}
         />
         <SocialProofSection
-          headline="A comunidade celíaca confia no GlutenDetect."
+          headline="A Comunidade Celíaca Confia no GlutenDetect."
         />
         <FaqSection
-          headline="As suas perguntas, aqui respondidas."
+          headline="As Suas Perguntas, Aqui Respondidas."
           faqItems={faqData}
           contactText="Ainda tem perguntas?"
           contactLinkText="Contacte a nossa equipa de apoio."

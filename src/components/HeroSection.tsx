@@ -19,9 +19,8 @@ const HeroSection = ({
   buttonText,
   buttonLink,
 }: HeroSectionProps) => {
-  // Split the headline into lines first, then words for proper line break handling
-  const headlineLines = mainHeadline.split('<br/>');
-  const headlineWords = headlineLines.flatMap(line => line.split(' '));
+  // Split the headline into words for staggered animation
+  const headlineWords = mainHeadline.split(' ');
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -66,18 +65,14 @@ const HeroSection = ({
           className="mb-6"
         >
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-            {headlineLines.map((line, lineIndex) => (
-              <div key={lineIndex} className="mb-2">
-                {line.split(' ').map((word, wordIndex) => (
-                  <motion.span
-                    key={`${lineIndex}-${wordIndex}`}
-                    variants={wordVariants}
-                    className="inline-block mr-2"
-                  >
-                    {word}
-                  </motion.span>
-                ))}
-              </div>
+            {headlineWords.map((word, index) => (
+              <motion.span
+                key={index}
+                variants={wordVariants}
+                className="inline-block mr-2"
+              >
+                {word}
+              </motion.span>
             ))}
           </h1>
         </motion.div>
