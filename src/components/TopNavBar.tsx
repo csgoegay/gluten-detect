@@ -175,17 +175,17 @@ const TopNavBar = ({
             </div>
             
             {/* Navigation Links */}
-            <nav className="flex-1 p-6">
-              <div className="flex flex-col space-y-4">
+            <nav className="p-6">
+              <div className="flex flex-col space-y-4 w-full max-w-xs mx-auto">
                 {navLinks.map((link, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, x: 20 }}
-                    animate={{ 
-                      opacity: isMobileMenuOpen ? 1 : 0, 
-                      x: isMobileMenuOpen ? 0 : 20 
+                    animate={{
+                      opacity: isMobileMenuOpen ? 1 : 0,
+                      x: isMobileMenuOpen ? 0 : 20
                     }}
-                    transition={{ 
+                    transition={{
                       delay: index * 0.1,
                       duration: 0.3
                     }}
@@ -193,8 +193,8 @@ const TopNavBar = ({
                     <Link
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`block py-3 px-4 text-white rounded-lg transition-colors text-base font-medium ${
-                        link.label === 'Comprar agora'
+                      className={`block py-2 px-3 text-white rounded-lg transition-colors text-base font-medium text-center ${
+                        link.label === 'Comprar Agora'
                           ? 'bg-accent-gold hover:bg-accent-gold/90 shadow-sm'
                           : 'hover:bg-white/10'
                       }`}
