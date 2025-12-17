@@ -71,7 +71,7 @@ export default {
         "cta-secondary-hover": "#008f86",
         // New colors for How It Works section
         "section-dark-blue": "#003357",
-        "accent-gold": "#D09000",
+        "accent-gold": "#B37B00", // Darker shade for better contrast (WCAG AA compliant)
         // Consolidated and new colors
         "accent-sky": "#38bdf8",
         // New text colors for social proof section

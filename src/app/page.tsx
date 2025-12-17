@@ -1,18 +1,41 @@
+import dynamic from "next/dynamic";
 import TopNavBar from "@/components/TopNavBar";
 import HeroSection from "@/components/HeroSection";
-import TextWithImageSection from "@/components/TextWithImageSection";
-import HowItWorksSection from "@/components/HowItWorksSection";
-import ValidationSection from "@/components/ValidationSection";
-import BenefitsSection from "@/components/BenefitsSection";
-import FaqSection from "@/components/FaqSection";
-import SocialProofSection from "@/components/SocialProofSection";
-import ProductSection from "@/components/ProductSection";
+
+// Dynamic imports for below-the-fold sections to reduce initial bundle size
+const TextWithImageSection = dynamic(() => import("@/components/TextWithImageSection"), {
+  loading: () => <div className="min-h-screen bg-background-light dark:bg-background-dark" />,
+});
+
+const HowItWorksSection = dynamic(() => import("@/components/HowItWorksSection"), {
+  loading: () => <div className="min-h-screen bg-background-light dark:bg-background-dark" />,
+});
+
+const ValidationSection = dynamic(() => import("@/components/ValidationSection"), {
+  loading: () => <div className="min-h-screen bg-background-light dark:bg-background-dark" />,
+});
+
+const BenefitsSection = dynamic(() => import("@/components/BenefitsSection"), {
+  loading: () => <div className="min-h-screen bg-background-light dark:bg-background-dark" />,
+});
+
+const SocialProofSection = dynamic(() => import("@/components/SocialProofSection"), {
+  loading: () => <div className="h-96 bg-background-light dark:bg-background-dark" />,
+});
+
+const FaqSection = dynamic(() => import("@/components/FaqSection"), {
+  loading: () => <div className="min-h-screen bg-background-light dark:bg-background-dark" />,
+});
+
+const ProductSection = dynamic(() => import("@/components/ProductSection"), {
+  loading: () => <div className="min-h-screen bg-background-light dark:bg-background-dark" />,
+});
 
 const navLinks = [
   { label: 'Como Funciona', href: '#how-it-works' },
   { label: 'Ciência', href: '#science' },
-  { label: 'FAQ', href: '#faq' },
-  { label: 'Comprar Agora', href: '/buy' },
+  { label: 'Perguntas Frequentes', href: '#faq' },
+  { label: 'Comprar Agora', href: 'https://dietadvance.pt/loja/saude-gastro-intestinal/gluten-detect/' },
 ];
 
 const howItWorksSteps = [
@@ -222,7 +245,7 @@ export default function Home() {
           faqItems={faqData}
           contactText="Ainda tem perguntas?"
           contactLinkText="Contacte a nossa equipa de apoio."
-          contactLinkHref="/contactos"
+          contactLinkHref="mailto:geral@dietadvance.pt"
         />
         <ProductSection {...productData} />
       </main>

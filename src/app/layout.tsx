@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import GoToTopButton from "@/components/GoToTopButton";
+import MotionProvider from "@/components/providers/MotionProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,17 +24,16 @@ export default function RootLayout({
   return (
     <html lang="pt-PT" className={inter.variable}>
       <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-          rel="stylesheet"
-        />
+        {/* Google Fonts removed - migrating to Lucide React icons */}
       </head>
       <body className="bg-background-light dark:bg-background-dark font-display antialiased">
-        <div className="flex flex-col min-h-screen">
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </div>
-        <GoToTopButton />
+        <MotionProvider>
+          <div className="flex flex-col min-h-screen">
+            <main className="flex-grow">{children}</main>
+            <Footer />
+          </div>
+          <GoToTopButton />
+        </MotionProvider>
       </body>
     </html>
   );

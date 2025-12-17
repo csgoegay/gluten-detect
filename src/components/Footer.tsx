@@ -42,13 +42,14 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Coluna 1: Marca & Newsletter */}
             <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-accent-gold rounded-full flex items-center justify-center">
-                  <span className="material-symbols-outlined text-white text-sm">
-                    restaurant
-                  </span>
+              <div className="flex items-center">
+                <div className="h-14 w-auto">
+                  <img
+                    src="/img/glutendetect.png"
+                    alt="GlutenDetect"
+                    className="h-full w-full object-contain"
+                  />
                 </div>
-                <span className="text-xl font-bold">GlutenDetect</span>
               </div>
               <p className="text-gray-300 text-sm">
                 O seu companheiro de confiança para refeições seguras sem glúten.

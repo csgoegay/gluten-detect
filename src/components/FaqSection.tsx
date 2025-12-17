@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ChevronDown } from "lucide-react";
 
 interface FaqItem {
   question: string;
@@ -42,9 +43,7 @@ const FaqSection = ({
                 <p className="text-gray-900 dark:text-gray-100 text-base font-medium leading-normal">
                   {item.question}
                 </p>
-                <span className="material-symbols-outlined text-gray-700 dark:text-gray-300 group-open:rotate-180 transition-transform duration-300 ease-in-out">
-                  expand_more
-                </span>
+                <ChevronDown className="text-gray-700 dark:text-gray-300 group-open:rotate-180 transition-transform duration-300 ease-in-out" />
               </summary>
               <div className="overflow-hidden transition-all duration-300 ease-in-out max-h-0 group-open:max-h-screen">
                 <p className="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal pt-2 pb-2">

@@ -312,7 +312,7 @@ const navLinks = [
   { label: 'Como Funciona', href: '/#how-it-works' },
   { label: 'Ciência', href: '/#science' },
   { label: 'FAQ', href: '/#faq' },
-  { label: 'Comprar Agora', href: '/buy' },
+  { label: 'Comprar Agora', href: 'https://dietadvance.pt/loja/saude-gastro-intestinal/gluten-detect/' },
 ];
 
 export default function PoliticasETermos() {

@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { m, useMotionValue, useSpring } from "@/components/providers/MotionProvider";
 import { useState } from "react";
+import { CheckCircle2 } from "lucide-react";
 
 interface ProductSectionProps {
   headline: string;
@@ -67,7 +68,7 @@ const ProductSection = ({
         <div className="@container">
           <div className={`flex flex-col gap-8 lg:items-center lg:gap-12 ${reverseLayout ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
             <div className="w-full flex-1">
-              <motion.div 
+              <m.div
                 className="aspect-[4/3] w-full rounded-xl bg-gray-100 bg-cover bg-center bg-no-repeat dark:bg-gray-800 shadow-xl"
                 role="img"
                 aria-label={imageAlt}
@@ -83,8 +84,8 @@ const ProductSection = ({
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               />
             </div>
-            
-            <motion.div 
+
+            <m.div 
               initial={{ opacity: 0, x: reverseLayout ? 30 : -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -105,27 +106,27 @@ const ProductSection = ({
               
               <ul className="flex flex-col gap-3">
                 {features.map((feature, index) => (
-                  <motion.li 
-                    key={index} 
+                  <m.li
+                    key={index}
                     className="flex items-start gap-3 text-base text-primary/90 dark:text-gray-200"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
-                    transition={{ 
+                    transition={{
                       delay: 0.1 * index + 0.2,
                       duration: 0.5,
                       ease: [0.25, 0.46, 0.45, 0.94]
                     }}
                   >
-                    <motion.span 
-                      className="material-symbols-outlined text-accent-gold text-2xl leading-none mt-0.5 shrink-0"
+                    <m.div
                       whileHover={{ scale: 1.2, rotate: 10 }}
                       transition={{ type: "spring", stiffness: 300 }}
+                      className="text-accent-gold leading-none mt-0.5 shrink-0"
                     >
-                      check_circle
-                    </motion.span>
+                      <CheckCircle2 className="w-6 h-6" />
+                    </m.div>
                     <span className="leading-snug">{feature}</span>
-                  </motion.li>
+                  </m.li>
                 ))}
               </ul>
               
@@ -137,12 +138,12 @@ const ProductSection = ({
                       <span className="text-3xl font-bold text-price-green dark:text-green-400">
                         {discountedPrice}
                       </span>
-                      <motion.span 
+                      <m.div
                         className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200"
                         initial={{ scale: 0 }}
                         whileInView={{ scale: 1 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        transition={{ 
+                        transition={{
                           delay: 0.8,
                           type: "spring",
                           stiffness: 200,
@@ -150,7 +151,7 @@ const ProductSection = ({
                         }}
                       >
                         -{discountPercentage}%
-                      </motion.span>
+                      </m.div>
                     </div>
                     <span className="text-lg text-gray-500 line-through">
                       {originalPrice}
@@ -159,17 +160,17 @@ const ProductSection = ({
                 </div>
                 
                 <Link href="/api/redirect-to-product?type=gluten-detect">
-                  <motion.button
+                  <m.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
                     className="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-button-cta px-5 py-3 text-base font-bold leading-normal text-white transition-colors hover:bg-button-cta-hover sm:w-auto sm:px-8 sm:py-4"
                   >
                     <span className="truncate">{buttonText}</span>
-                  </motion.button>
+                  </m.button>
                 </Link>
               </div>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </div>
